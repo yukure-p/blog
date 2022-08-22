@@ -211,7 +211,28 @@ add_action( 'pre_get_posts','my_pre_get_posts' );
 
 
 
-
+//カスタム投稿日本語
+add_action( 'init', 'create_post_type_carlease' );
+function create_post_type_carlease() {
+  register_post_type( 'carlease', // post-type
+    array(
+      'labels' => array(
+      'name' => __( 'カーリース' ),
+      'add_new' => _x('新規追加', 'carlease'),
+      'add_new_item' => __('carleaseを追加'),
+      'singular_name' => __( 'carlease' )
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ,'comments' ),
+      'menu_position' =>200,
+      'show_in_rest' => true,
+      'has_archive' => true,
+      'with_front' => true,
+      // 'rewrite' => array( 'with_front' => false ),
+      // 'rest_base' => 'carlease',
+    )
+  );       
+}
 
 
 
