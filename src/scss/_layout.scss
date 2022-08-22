@@ -1,0 +1,348 @@
+@charset "utf-8";
+/*////////////////////////////////////////////////////
+
+	汎用レイアウト（レイアウトセット参照）
+		ここではレイアウトに関わるスタイルのみ記載し、
+		背景色や背景画像、ボーダー、シャドウなどのデザインバリエーションは、
+		_pattern.scss内に継承クラスで指定すること
+		（例：.wrapper01.style01）
+		l-header
+		l-header-inner 内側の枠
+		l-header-outer　外側の枠
+
+		l-frame > l-container > l-contents > l-box
+
+		l-frame コンテンツ部分の大枠　ページタイトルとコンテンツの区切り
+		l-container　コンテンツの内枠
+		l-contents　H1見出し区切り
+
+////////////////////////////////////////////////////*/
+
+
+
+/* ------------------------------------------------
+	l-frame
+------------------------------------------------ */
+.l-frame{
+	margin:0 auto 180px auto;
+	position:relative;
+	width:var(--cn-width);
+	@include media(sp){
+		width:var(--cn-sp-width);
+	}
+	.l-local & {
+		max-width:var(--local-max-width);
+		@include media(sp){
+			width:100%;
+		}
+	}
+}
+
+
+.l-container{
+	width:100%;
+	max-width:var(--contents-max-width);
+	margin: 0 auto;
+ 	@include flexbox;
+	@include flex-justify-content($justify:center);
+	column-gap:40px;
+	@include media(sp){
+		margin-bottom:100px;
+	}
+	// .l-top & {
+	// 	max-width:var(--cn-max-width);
+	// }
+	.l-local & {
+		max-width:var(--local-max-width);
+		margin-bottom:100px;
+		&.type01{
+			max-width:var(--cn-max-width);
+		}
+	}
+}
+
+
+.l-contents{
+	width:100%;
+	margin-top:100px;
+	.l-local & {
+		@include media(sp){
+			padding:0 3em;
+			@include box-sizing;
+
+		}
+		&:last-child{
+			margin-bottom:0;
+		}
+	}
+	@include media(sp){
+		margin-top:80px;
+
+	}
+}
+
+.l-entry{
+	margin: 20px auto 0px auto;
+	width:100%;
+	max-width:var(--cn-max-width);
+
+    .l-local & {
+    	width: 100%;
+    	@include flexbox;
+		@include flex-justify-content($justify:center);
+		@include flex-direction($direction:column);
+		margin-bottom:80px;
+		max-width:var(--cn-max-width);
+		@include media(sp){
+			margin-bottom:30px;
+			width: 90%;
+		}
+    }
+}
+
+.l-entry-inner {
+	width:80%;
+	max-width:calc(var(--local-max-width)*0.8);
+	@include flex-self($align: center);
+	margin-top:80px;
+	@include media(sp){
+		width:88%;
+		max-width:100%;
+	}
+}
+
+
+
+
+
+
+.l-section{
+	width:100%;
+	max-width:var(--contents-max-width);
+	@include flexbox;
+	@include flex-justify-content($justify:center);
+	// @include flex-direction($direction:row);
+	column-gap:40px;
+	margin:0 auto 160px auto;
+	@include media(tablet){
+		column-gap:0;
+	}
+	@include media(sp){
+		column-gap:0;
+		margin-bottom:80px;
+	}
+}
+
+
+
+
+/* ------------------------------------------------
+	
+------------------------------------------------ */
+.box-content{
+	@include flexbox;
+	background:var(--bg-color03);
+}
+
+.box-item{
+	@include flexbox;
+	@include flex-direction($direction:column);
+	@include flex-align($align: stretch);
+	.box-img{
+		width:100%;
+		img{
+			width:100%;
+		}
+	}
+	.box-info{
+		@include flexbox;
+		@include flex-direction($direction:column);
+		padding:2rem 1.5rem;
+		row-gap:15px;
+	}
+	.box-txt{
+		.box-tit{
+			font-size:var(--fSize);
+		}
+	}
+}
+
+
+
+
+
+.boxImg {
+	@include media(sp){
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.boxTxt {
+	@extend %clearfix;
+}
+
+
+#contents{
+	width:100%;
+	margin:0 auto;
+
+}
+
+
+/* ------------------------------------------------
+	#contentsエリアここから
+------------------------------------------------ */
+#contents {
+	width:100%;
+	@include media(sp){
+		overflow:hidden;
+		position: relative;
+	}
+}
+
+
+/* ------------------------------------------------
+	.wrapper コンテツの外枠
+------------------------------------------------ */
+.wrapper {
+	max-width:1440px;
+	margin:0 auto;
+	position: relative;
+	padding:0 5rem;
+	margin-bottom: 0;
+	@include media(sp){
+		width: 100%;
+		padding: 0;
+	}
+}
+
+/* ------------------------------------------------
+	.container コンテンツの枠　大見出しで区切る場合
+------------------------------------------------ */
+.container {
+	width: 100%;
+	margin: 5px auto 160px auto;
+	// padding: 0 2%;
+	display: block;
+	@include box-sizing;
+	// @extend %clearfix;
+	@include media(tablet){
+		min-width: 100%;
+	}
+	@include media(sp){
+		min-width: 100%;
+		width:100%;
+		padding: 0 3rem;
+		@include box-sizing();
+		margin: 80px auto 40px auto;
+	}
+	@include media(spS){
+		margin: 50px 0 0 0;
+	}
+	&.noSpace {
+		padding: 0;
+	}
+	&.top {
+		margin-bottom:0px;
+		margin-top:0px;
+	}
+	&.top-space{
+		margin-top:0px;
+	}
+	&:first-child{
+		margin-top:0;
+	}
+}
+
+.container-inner {
+	width: 78.6%;
+	// margin: $spaceL auto 160px auto;
+	// padding: 0 2%;
+	display: block;
+	@include box-sizing;
+	@extend %clearfix;
+	@include media(tablet){
+		min-width: 870px;
+	}
+	@include media(sp){
+		min-width: 100%;
+		width:100%;
+		padding: 0 4%;
+		@include box-sizing();
+		margin: 50px auto 40px auto;
+	}
+	@include media(spS){
+		margin: 50px 0 0 0;
+	}
+	&:first-child {
+		margin-top: 0;
+	}
+	&.noSpace {
+		padding: 0;
+	}
+}
+
+
+.container-outer {
+	width: 100%;
+	@include box-sizing;
+	&.style01{
+	}
+	&.style02{}
+}
+
+
+/* ------------------------------------------------
+	.boxContent containerの内側でコンテツつを区切る場合
+------------------------------------------------ */
+.content{
+	width: 100%;
+	@include box-sizing;
+	.edit & {
+		margin-bottom:120px;
+		@include media(sp){
+			margin-bottom:60px;
+		}
+		&:last-child{
+			margin-bottom:160px;
+			@include media(sp){
+				margin-bottom:40px;
+			}
+		}
+	}
+}
+
+
+/* ------------------------------------------------
+	.innerシリーズここから
+------------------------------------------------ */
+.inner01 {
+	padding: 0 ;
+}
+/* ------------------------------------------------
+	.sectionシリーズここから
+------------------------------------------------ */
+.section {
+	// margin-bottom: $spaceLL;
+	// padding: 0 $spaceR;
+	@extend %clearfix;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	@include media(sp){
+	
+	}
+	@include media(spS){
+
+	}
+}
+
+
+
+
+
+
+

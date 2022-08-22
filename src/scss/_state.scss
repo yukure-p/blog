@@ -1,0 +1,106 @@
+@charset "utf-8";
+/*////////////////////////////////////////////////////
+
+	状態の変化があるcssを書く
+
+	is-○○　系統
+
+////////////////////////////////////////////////////*/
+
+// ヘッダーのナビ一時非表示
+
+.is-view{
+	overflow-y:hidden;
+	.l-gnav{
+		visibility:visible;
+		opacity:1;
+		z-index:9997;
+		height:100vh;
+		// top:var(--header-height);
+		@include transition($property: all, $time: 0.8s, $timing: 0s ease-in-out);
+	}
+	.gnav-line{
+		@include transition($property: all, $time: 0.2s, $timing: 0s ease-in-out);
+		&:nth-child(2){
+			display:none;
+		}		
+		&:nth-child(1){
+			@include rotate($origin: center center, $property: 45deg);
+			top:1px;
+		}
+		&:nth-child(3){
+			@include rotate($origin: center center, $property: -45deg);
+			top:0px;
+		}
+	}
+	.gnav-menu{
+		opacity:1;
+	}
+}
+
+
+.is-load{
+	.spin{
+		display:block !important;
+	}
+	.num{
+		display:none;
+	}
+}
+
+.lazyload{
+	opacity:0;
+
+}
+
+.is-lazyload{
+	opacity:1;
+	@include transition($property: all, $time: 2.6s, $timing: cubic-bezier(0, 0.48, 0.12, 0.99));
+}
+
+
+.non-active{
+	display:none !important;
+}
+
+/* ------------------------------------------------
+	サイドメニュー 目次
+------------------------------------------------ */
+@include media(pc){
+	.index a.active {
+	  color: #333333;
+	  background-color: #f3f3f3;
+	}
+}
+/* ------------------------------------------------
+	language
+------------------------------------------------ */
+
+
+.delay-load {
+  // opacity: 0;
+}
+.other{
+	opacity:0;
+}
+.is-l-box {
+  opacity: 1;
+  @include transition(all,.5s .0s, ease);
+}
+
+
+#typewriter::after {
+    content: "|";
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

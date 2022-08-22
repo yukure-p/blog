@@ -1,0 +1,810 @@
+@charset "utf-8";
+/*////////////////////////////////////////////////////
+
+		body,html
+		header
+		main
+		footer
+
+		htmlタグに対しての設定のみ記述すること
+
+////////////////////////////////////////////////////*/
+//ipad対策 (2デバイス対応の場合　マルチデバイスの場合は不要)
+//body,html {
+//	@include media(tab-pc){
+//		min-width: $cnW;
+//	}
+//	@media print{
+//		min-width: $cnW;
+//	}
+//}
+html {
+	@include media(sp){
+	}
+}
+
+body {
+
+	width:100%;
+	max-width:2400px;
+	background:var(--bg-color01);
+
+	@include media(sp){
+		min-width: 320px;
+		margin:0;
+		&:before{
+			border: 5px solid var(--thema-color01);
+		}
+	}
+}
+
+
+header {
+	height: auto;
+	width: 100%;
+	z-index: 9998;
+	@include sticky;
+	left: 0;
+	top: 0;
+	background:var(--bg-color03);
+	@include media(sp){
+		display:block;
+		height: 50px;
+	}
+}
+
+main{
+	width: 100%;
+}
+
+
+aside{
+
+}
+
+footer {
+	width: 100%;
+	position:relative;
+	// background-color:var(--bg-color02);
+	// color:$baseColor01;
+	// border-top:1px solid var(--border-color01);
+	@include media(sp){
+	width:calc(100%);
+	left:inherit;
+	}
+}
+
+
+
+
+/* ------------------------------------------------
+   header
+------------------------------------------------ */
+.l-header{
+	margin:0 auto;
+	height:var(--header-height);
+	position:relative;
+	width:var(--cn-width);
+	max-width:var(--cn-max-width);
+	display:grid;
+	grid-template-columns: 1fr var(--search-width) var(--nav-width);
+	column-gap:30px;
+	nav{
+		@include media(sp){
+			display:block;
+		}
+	}
+
+
+}
+.logo{
+	@include flexbox;
+	@include flex-align($align: center);
+	position:relative;
+	width:var(--logo-width);
+	// --nav-harf: calc(var(--search-width) + var(--nav-width) * 50%);
+	// --logo-width-harf:calc(var(--logo-width)/2);
+	// --logo-position:calc(var(--logo-width-harf) - var(--nav-harf));
+	// left:calc(50% - var(--logo-position));
+	@include media(sp){
+		--sp-logo-position:calc(var(--logo-width-harf) - var(--sp-nav-gnav-width));
+		top:15px;
+		left:calc(50% - var(--sp-logo-position));
+	}
+	img{
+		width:100%;
+	}
+}
+.h-logo{
+	width:100%;
+	fill:var(--base-color01);
+}
+
+.l-header-search{
+	@include flexbox;
+	@include flex-justify-content($justify:center);
+	@include flex-align($align: center);
+	form{
+		position:relative;
+		::placeholder {
+		color: var(--font-color03);
+		}  
+		&:before{
+			display:inline-block;
+			content:'';
+			background:inherit;
+			position:absolute;
+			width:20px;
+			height:20px;
+			top:5px;
+			left:12px;
+			border-radius:50%;
+			@include transition($property: all, $time: .5s, $timing: cubic-bezier(0, 0.49, 0.05, 0.99));
+		}
+		@include media(pc){
+			&:hover{
+				&:before{
+					background:var(--bg-color04);
+					width:40px;
+					height:40px;
+					left: 3px;
+					top:-4px;
+					@include scale($property: 1.2);
+					display:inline-block;
+				}
+			}
+		}
+	}
+}
+
+$tl: 0.6s; // transition length
+
+.search-box {
+	transition: width $tl, border-radius $tl,  box-shadow $tl;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	background-image:url("/wp-content/themes/custom/img/common/search.svg");
+	background-repeat:no-repeat;
+	background-size:20px 20px;
+	background-position:center center;
+	position:absolute;
+	right:0;
+	top:-7px;
+	background-color: initial;
+	-webkit-appearance:none;/*SafariやChromeのデフォルトの設定を無効*/
+	&:focus {
+		transition: width $tl cubic-bezier(0, 0.6, 0.32, 1), border-radius $tl, ;
+		border: none;
+		outline: none;
+		box-shadow: none;
+		text-indent:50px;
+		cursor: text;
+		width: 200px;
+		border-radius: auto;
+		background: var(--bg-color04);
+		padding-top:2px;
+		background-image:url("/wp-content/themes/custom/img/common/search.svg");
+		background-repeat:no-repeat;
+		background-size:20px 20px;
+		background-position:15px center;
+
+	}
+	&:not(:focus) {
+		text-indent:-5000px;
+	} 
+}
+
+#search-submit {
+	position: relative;left: -5000px;
+}
+
+
+
+
+
+
+.gnav-botton{
+	width:100%;
+	height:100%;
+	@include flexbox;
+	@include flex-justify-content($justify:center);
+	@include flex-align($align: center);
+	@include flex-direction($direction:column);
+	cursor:pointer;
+	@include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0.32, 0.35, 0.96));
+}
+
+.gnav-botton-inner{
+	width:48px;
+	height:48px;
+	background:var(--bg-color02);
+	border-radius:50%;
+	@include flexbox;
+	@include flex-direction($direction:column);
+	@include flex-justify-content($justify:center);
+	@include flex-align($align: center);
+	position:relative;
+	&:before{
+		display:inline-block;
+		content:'';
+		background:var(--bg-color02);
+		position:absolute;
+		width:48px;
+		height:48px;
+		top:0;
+		left:0;
+		border-radius:50%;
+		@include transition($property: all, $time: .5s, $timing: cubic-bezier(0, 0.49, 0.05, 0.99));
+	}
+	@include media(pc){
+		&:hover{
+			&:before{
+				@include scale($property: 1.2);
+				display:inline-block;
+			}
+		}
+	}
+}
+.gnav-line{
+	width:22px;
+	height:2px;
+	background:var(--bg-color03);
+	border-radius: 10px;
+	position:relative;
+	&:nth-child(1){
+		top:-5px;
+	}
+	&:nth-child(3){
+		top:5px;
+	}
+}
+
+
+
+/* ------------------------------------------------
+   ナビゲーション
+------------------------------------------------ */
+
+.l-gnav{
+	position:fixed;
+	visibility:hidden;
+	width:100vw;
+	height:0;
+	overflow-y: scroll;
+	top:0;
+	background:var(--bg-color03);
+	// opacity:0;
+
+	@include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0, 0.3, 0.99));
+	
+	@include media(sp){
+		width:100vw;
+		height:100vh;
+	}
+	.gnav-menu{
+		@include flexbox;
+		@include flex-direction($direction:column);
+		@include flex-align($align: center);
+		@include flex-justify-content($justify:center);
+		width:100%;
+		height:100%;
+		opacity:0;
+		// @include transition($property: all, $time: 0.2s, $timing: 0s ease-in-out);
+		// @include transition($property: all, $time: 0.5s, $timing: cubic-bezier(0.58, -0.01, 1, 0.11));
+	}
+
+	.gnav-menu-inner{
+		width:100%;
+		@include flexbox;
+		@include flex-direction($direction:row);
+		@include flex-justify-content($justify:center);
+	}
+	.gnav-menu-box{
+		width:100%;
+		@include media(sp){
+			display:none !important;
+		}
+		&:first-child{
+			@include flexbox;
+			@include flex-justify-content($justify:end);
+			border-right:1px solid var(--border-color01);
+
+		}
+		&:last-child{
+			@include flex-align($align: flex-start);
+			.gnav-menu-list{
+				margin-left:50px;
+			}
+		}
+		.gnav-menu-list{
+			@include flexbox;
+			@include flex-direction($direction:column);
+			row-gap:60px;
+			margin-right:50px;
+			li{
+				font-size:var(--font-nav);
+				font-weight: lighter;
+				line-height:1;
+				height:auto;
+				font-weight:bold;			
+			}
+			&:last-child{
+				ul{
+					margin-top:30px;
+					li{
+						font-size:var(--fSize5);
+						text-indent:1.5em;
+						position:relative;
+						margin-bottom:20px;
+						@include media(tablet){
+							margin-left:30px;
+							text-indent:1px;
+							line-height: 1.3em;
+						}
+						&:last-child{
+							margin-bottom:0;
+						}
+						&:before{
+							font-size:var(--fSize8);
+							content:'-';
+							top:-3px;
+							left:-24px;
+							position:absolute;
+						}
+					}
+				}
+			}
+		}
+	}
+	.gnav-menu-sns{
+		@include flexbox;
+		@include flex-direction($direction:row);
+		@include flex-justify-content($justify:center);
+		column-gap:50px;
+		margin-top:60px;
+		li{
+
+			width:30px;
+			height:30px;
+			@include flexbox;
+			@include flex-align($align: center);
+			@include flex-justify-content($justify:center);
+			position:relative;
+			&:before{
+				content:'';
+				background:#333;
+				border-radius:50%;
+				display:inline-block;
+				width:36px;
+				height:36px;
+				position:absolute;
+				z-index:-1;
+				@include transition($property: all, $time: .5s, $timing: cubic-bezier(0, 0.49, 0.05, 0.99));
+			}
+			&:hover{
+				cursor:pointer;
+				&:before{
+					@include scale($property: 1.2);
+					display:inline-block;
+				}
+			}
+			a{
+				display:contents;
+			}
+			img{
+				width:65%;
+				height:65%;
+				z-index:1;
+			}
+			&:nth-child(2){
+				img{
+					width:60%;
+					height:60%;
+				}
+			}
+		}
+
+	}
+
+	.gnav-menu-box-sp{
+		@include media(pc){
+			display:none !important;
+		}
+		@include media(sp){
+			display:block;
+			@include flexbox;
+			@include flex-direction($direction:row);
+			@include flex-justify-content($justify:center);
+			li{
+				font-size:var(--fSize4);
+				font-weight:bold;
+				margin-bottom:25px;
+				ul{
+					margin-top:15px;
+					li{
+						font-size:var(--fSize2);
+						position:relative;
+						text-indent:1em;
+						margin-bottom:15px;
+						&:before{
+							font-size:var(--fSize2);
+							content:'-';
+							top:-3px;
+							left:-14px;
+							position:absolute;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+/* ------------------------------------------------
+   サイドメニュー
+------------------------------------------------ */
+.l-aside{
+	width:320px;
+	// background:#ffe4c4;
+	@include sticky;
+	top:100px;
+	height:auto;
+	background:var(--bg-color03);
+	font-size:var(--fSize);
+	border-radius:6px;
+	margin-top:100px;
+	@include media(tablet){
+		display:none;
+	}
+	@include media(sp){
+		display:none;
+	}
+}
+
+
+.l-aside-inner{
+  padding:0 2rem 2rem 2rem;
+  @include media(tablet){
+  	padding:0 2rem 0 2rem;
+  	border-left:1px solid var(--bg-color04);
+  	border-right:1px solid var(--bg-color04);
+  	border-bottom:1px solid var(--bg-color04);
+  }
+  @include media(sp){
+  	padding:0 2rem 0 2rem;
+  	border-left:1px solid var(--bg-color04);
+  	border-right:1px solid var(--bg-color04);
+  	border-bottom:1px solid var(--bg-color04);
+  }
+
+}
+
+.aside-tit{
+  font-size:var(--fSize2); 
+  @include flexbox;
+  @include flex-justify-content($justify:flex-start);
+  background:var(--bg-color02);
+  color:var(--font-color02);
+  padding:.5em 0;
+  border-radius:6px 6px 0 0;
+  text-indent:2rem;
+  .l-local & {
+	 &:before{
+		content:'';
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		display:inline-block;
+		position:relative;
+		background: url("/wp-content/themes/custom/img/common/icon01.svg");
+		background-repeat: no-repeat;
+		width:32px;
+		height:32px;
+		left:-10px;
+		top:4px;
+	 }
+	}
+}
+
+.l-aside-menu{
+	font-size:var(--fSize);
+	@include media(tablet){
+		margin-top:0;
+		padding:2rem 0;
+	}
+	@include media(sp){
+		margin-top:0;
+		padding:2rem 0;
+	}
+	li{
+		font-weight:bold;
+		letter-spacing:.1em;
+		border-bottom:1px solid var(--border-color02);
+		@includ box-sizing;
+		@include media(tablet){
+			margin-bottom:10px;
+		}
+		@include media(sp){
+			margin-bottom:10px;
+		}
+		&:last-child{
+			margin-bottom:0;
+			border-bottom:none;
+		}
+		a{
+			width:100%;
+			@include box-sizing;
+			display:inline-block;
+			padding: 1.4rem 0 1.2rem 0; 
+			text-indent:4.2rem;
+		}
+		&:nth-of-type(1){
+			a{
+				background: url("/wp-content/themes/custom/img/common/cate-icon01.svg");
+				background-repeat: no-repeat;
+				background-size:30px 30px;
+				background-position:0 12px;
+			}
+		}
+		&:nth-of-type(2){
+			a{
+				background: url("/wp-content/themes/custom/img/common/cate-icon02.svg");
+				background-repeat: no-repeat;
+				background-size:23px 23px;
+				background-position:5px 14px;
+			}
+		}
+	}
+	.l-aside-menu-under{
+		margin-left:1em;
+		font-size:var(--fSize-2);
+		li{
+			font-weight:normal;
+			margin-bottom:0px;
+			@include media(tablet){
+				margin-bottom:5px;
+				&:last-child{
+					margin-bottom:10px;
+				}
+			}
+			@include media(sp){
+				margin-bottom:5px;
+				&:last-child{
+					margin-bottom:10px;
+				}
+			}
+		}
+	}
+}
+
+/* ------------------------------------------------
+	l-footer
+------------------------------------------------ */
+
+.l-footer{
+	background:var( --thema-color01);
+	padding-top:30px;
+	@include media(sp){
+		width:100%;
+		@include box-sizing;
+	}
+}
+
+.l-footer-inner{
+	width:var(--cn-width);
+	margin:60px auto 0 auto;
+	@include media(tablet){
+		margin:30px auto 0 auto;
+	}
+	@include media(sp){
+		width:var(--cn-sp-width);
+		margin:30px auto 0 auto;
+	}
+}
+
+
+.f-logo-box{
+	width:100%;
+	@include flexbox;
+	@include flex-align($align: start);
+	border-bottom:1px solid var(--border-color03);
+	padding-bottom:20px;
+	@include media(sp){
+		margin-bottom:0;
+		@include flex-justify-content($justify:center);
+	}
+	.f-logo{
+		img{
+			width:170px;
+			@include media(tablet){
+				width:140px;
+			}
+		}
+		
+		@include media(sp){
+			img{
+				width:140px;
+			}
+			
+		}
+	}
+}
+
+
+.f-box{
+	@include flexbox;
+	// @include flex-direction($direction:column);
+	@include flex-justify-content($justify:space-between);
+}
+
+.f-txt-box{
+	@include flexbox;
+	@include flex-direction($direction:column);
+	width:50%;
+	// 	@include flex-justify-content($justify:space-between);
+	@include media(tablet){
+		width:30%;
+	}
+	@include media(sp){
+		width:100%;
+		@include flex-justify-content($justify:center);
+	}
+}
+
+.f-txt{
+	font-size:var(--fSize-4);
+	font-weight:normal;
+	width:100%;
+	padding-top:20px;
+	margin-bottom:20px;
+	@include media(sp){
+		margin-top:0;
+	}
+
+}
+
+
+.f-link-box{
+	margin-top:20px;
+}
+
+
+.f-link-sns{
+	@include flexbox;
+	@include flex-direction($direction:row);
+	@include media(sp){
+		@include flex-justify-content($justify:center);
+		margin-top:10px;
+	}
+	column-gap:30px;
+	li{
+		@include flexbox;
+		@include flex-direction($direction:row);
+		font-size:var(--fSize-4);
+		a{
+			@include flexbox;
+			@include flex-direction($direction:row);
+		}
+		svg{
+			width:16px;
+			height:16px;
+			fill:#333;
+		}
+		span{
+			margin-left:10px;
+		}
+	}
+}
+
+
+
+
+
+.f-link-box{
+	width:385px;
+	@include flexbox;
+	@include flex-justify-content($justify:space-between);
+	@include flex-align($align: start);
+	column-gap:40px;
+	@include media(sp){
+		display:none;
+	}
+}
+
+.f-link-menu{
+	width:100%;
+	@include flexbox;
+	@include flex-direction($direction:column);
+	// @include flex-align($align: center);
+	&:first-child{
+		width:150px;
+		@include box-sizing;
+		padding-left: 40px;
+		border-left:1px solid var(--border-color03);
+		border-right:1px solid var(--border-color03);
+	}
+	&:last-child{
+		width:200px;
+	}
+	@include media(sp){
+		margin-top:20px;
+	}
+	.f-link{
+		@include flexbox;
+		@include flex-direction($direction:column);
+		row-gap:10px;
+		li{
+			font-size:var(--fSize-2);
+			// margin-left:10px;
+			&:last-child{
+				margin-right:0px;
+			}
+			ul{
+				margin-top:10px;
+				li{
+					font-size:var(--fSize-4);
+					margin-bottom:10px;
+					margin-left:8px;
+					&:before{
+						content:'-';
+						font-size:var(--fSize-2);
+						position:relative;
+						left:-5px;
+
+					}
+					&:last-child{
+						margin-bottom:0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.copy{
+	width:var(--cn-width);
+	margin:60px auto 0 auto;
+	font-size:var(--fSize-5);
+	@include flexbox;
+    @include flex-justify-content($justify:flex-end);
+    padding-bottom:15px;
+    @include media(sp){
+    	@include flex-justify-content($justify:center);
+    }
+}
+/* ------------------------------------------------
+	パンクズ
+------------------------------------------------ */
+
+.breadcrumb{
+	margin-top:10px;
+	@include flexbox;
+	@include flex-direction($direction:row);
+	@include flex-align($align: start);
+	li{
+		color:var(--font-color02);
+		font-size:var(--fSize-5);
+		a{
+			// color:var(--font-color02);
+		}
+		&:after{
+			position:relative;
+			display:inline-block;
+			content:'/';
+			margin:0 5px;
+			// color:var(--font-color02);
+		}
+		&:last-child{
+			&:after{
+				display:none;
+			}
+		}
+
+	}
+}
+

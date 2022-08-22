@@ -1,0 +1,126 @@
+@charset "utf-8";
+/*////////////////////////////////////////////////////
+
+	汎用レイアウト（レイアウトセット参照）
+		ここではレイアウトに関わるスタイルのみ記載し、
+		背景色や背景画像、ボーダー、シャドウなどのデザインバリエーションは、
+		_pattern.scss内に継承クラスで指定すること
+		（例：.wrapper01.style01）
+
+////////////////////////////////////////////////////*/
+/* ------------------------------------------------
+	.boxFlexContentシリーズここから
+------------------------------------------------ */
+
+// .box-flex-content {
+// 	@include flexbox;
+// 	@include flex-direction;
+// 	@include flex-align;
+// 	&.reverse {
+// 		@include flex-direction(row-reverse);
+// 	}
+// 	// @include media(sp){
+// 	// 	display: block;
+// 	// }
+// 	/*IE9以下*/
+// 	&.type01 {
+// 		@include flex-align($align: start);
+// 		&>.box-img{
+// 			width:34.8%;
+// 			@include media(sp){
+// 				width: 100%;
+// 			}
+// 		}
+// 		&>.box-content{
+// 			width:65.2%;
+// 			@include media(sp){
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// 	&.type02{
+// 		// @include flex-align($align: start);
+// 		&>.box-img{
+// 			width:34.8%;
+// 			@include media(sp){
+// 				width: 100%;
+// 			}
+// 		}
+// 		&>.box-content{
+// 			width:65.2%;
+// 			@include media(sp){
+// 				width: 100%;
+// 			}
+// 		}
+// 	}
+// }
+
+
+.row-2col{
+	@include flexbox;
+	@include flex-direction($direction:row);
+	@include flex-justify-content($justify:space-between);
+	
+}
+
+/* ------------------------------------------------
+	.box-flexListシリーズここから
+------------------------------------------------ */
+
+.flexList01 {
+	@include flexbox;
+	@include flex-direction($direction:row);
+	@include flex-wrap;
+	@include flex-justify-content($justify:center);
+	column-gap:40px;
+	@include box-sizing;
+	@include media(tablet){
+		@include flex-wrap;
+		row-gap:60px;
+	}
+	@include media(sp){
+		@include flex-wrap;
+		row-gap:60px;
+		column-gap:0px;
+	}
+	&>.box-content {
+		@include box-sizing;
+		width: 25%;
+		@include media(tablet){
+			width: 47%;
+			@include box-sizing;
+		}
+		@include media(sp){
+			width: 47%;
+			@include box-sizing;
+		}
+		&>.box-txt {
+			// padding: $spaceR;
+		}
+	}
+
+	&.type01{
+		&>.box-content {
+			@include box-sizing;
+			width:13%;
+			height:auto;
+		}
+	}
+}
+
+
+
+/* ------------------------------------------------
+	.gridシリーズここから
+------------------------------------------------ */
+
+.l-gid{
+	display:grid;
+	grid-template-columns:1fr 1fr ;
+	gap:70px 40px;
+	@include media(tablet){
+		gap:60px 30px;
+		grid-template-columns:1fr 1fr;
+	}
+}
+

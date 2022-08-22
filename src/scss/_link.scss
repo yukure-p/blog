@@ -1,0 +1,258 @@
+@charset "utf-8";
+/*////////////////////////////////////////////////////
+
+	汎用リンク
+
+////////////////////////////////////////////////////*/
+
+/* ------------------------------------------------
+	gnav
+------------------------------------------------ */
+@include media(pc){
+	.link-gnav{
+		position:relative;
+		&:after{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			display: block;
+			content: '';
+			width: 22px;
+			height: 22px;
+			margin: -12px 0 0 -12px;
+			border-radius: 50%;
+			border: 1px solid #cfcfcf;
+			transition: all .1s;
+			opacity: 0;
+		}
+		&:hover {
+			cursor: pointer;
+			&:after{
+				@include animation(circle .5s);
+				@include keyframes(circle){
+					0% {
+						transform: scale(.1);
+						opacity: 0;
+					}
+					50% {
+						opacity: 1;
+					}
+					100% {
+						transform: scale(2.0);
+						opacity: 0;
+						display:none;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ------------------------------------------------
+	ベース設定
+------------------------------------------------ */
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+a {
+	text-decoration: none;
+	//マウスオーバーの設定
+	&.img-eff{
+
+		&:hover {
+		}
+	}
+	@include media(pc){
+		&:before{
+
+		}
+		&:hover {
+			cursor:pointer;
+			// color:$fontColor01;
+		}
+	}
+	&:link {
+		// color:$fontColor01;
+	}
+	&:visited {
+	}
+}
+
+/* ------------------------------------------------
+	テキストリンク
+------------------------------------------------ */
+/* インラインリンク */
+a.link01 {
+	position:relative;
+	
+	@include media(pc){
+		@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
+		&:hover {
+			cursor:pointer;
+			@include opacity(0.6);
+			// &:after{
+			// 	width:100%;
+			// }
+		}
+	}
+}
+
+a.link02 {
+	@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
+	background:var(--link-color02);
+	padding:5px 10px;
+	height:10px;
+	border-radius:10px;
+	@include media(pc){
+		&:hover {
+			// @include opacity(0.6);
+			color:var(--font-color03);
+			background:var(--link-color03);
+			cursor:pointer;
+		}
+	}
+}
+
+// 未使用
+// a.link03 {
+// 	position:relative;
+//     background:var(--link-color02);
+//     padding:4px 8px;
+//     height:10px;
+//     @include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
+// 	@include media(pc){
+// 		&:before{
+// 			z-index:-1;
+// 			content:'';
+// 			display:inline-block;
+// 			position:absolute;
+// 			background:var(--link-color01);
+// 			height:100%;
+// 			width:0;
+// 			left:0;
+// 			bottom:0;
+// 			@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
+// 		}
+// 		&:hover {
+// 			cursor:pointer;
+// 			background:none;
+// 			color:var(--font-color03);
+// 			width:0;
+// 			&:before{
+// 				width:100%;
+// 			}
+// 		}
+// 	}
+// }
+
+
+
+/*　ブロックリンク　*/
+@include media(pc){
+.linkBl01 {
+	overflow:hidden;
+	display:block;
+	// @include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+		img{
+			@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0.77, 0, 1, 1));
+		}
+		&:hover {
+			cursor:pointer;
+			img{
+				@include scale($property: 1.1);
+			}
+		}
+	}
+}
+.linkBlock02 {
+	//マウスオーバーの設定
+	.PC & {
+		&:hover {
+
+		}
+	}
+}
+
+/* ------------------------------------------------
+	ボタン
+------------------------------------------------ */
+.btn01 {
+
+	color:var(--font-color03);
+	text-align: center;
+	&>a,
+	{
+		@include transition;
+		color:var(--font-color03);
+		display:inline-block;
+		text-align: center;
+		width:100%;
+		padding:10px;
+		background-color:var(--bg-color02);
+		&:hover {
+			cursor:pointer;
+			@include opacity(0.6);
+		}
+	}
+}
+
+
+
+/* ------------------------------------------------
+	sns 
+------------------------------------------------ */
+
+a.sns-btn{
+	@include flexbox;
+	@include flex-align($align: center);
+	@include flex-justify-content($justify:center);
+	// display:inline-block;
+	border-radius:50%;
+	position:relative;
+	width:100%;
+	height:100%;
+	img{
+		position:relative;
+		z-index:2;
+	}
+	&:before{
+		content:'';
+		@include transition($property: all, $time: .5s, $timing: cubic-bezier(0, 0.49, 0.05, 0.99));
+		width:36px;
+		height:36px;
+		border-radius:50%;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	&:hover{
+		&:before{
+			display:inline-block;
+			z-index:1;
+			@include scale($property: 1.2); 
+		}
+	}
+	.f-link-sns & {
+
+		&:before{
+			content:'';
+			@include transition($property: all, $time: .5s, $timing: cubic-bezier(0, 0.49, 0.05, 0.99));
+			width:24px;
+			height:24px;
+			border-radius:50%;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+	}
+}
+
+a.sns-btn-c01{
+	background:var(--bg-color02);
+	&:before{
+		background:var(--bg-color02);
+	}
+}
