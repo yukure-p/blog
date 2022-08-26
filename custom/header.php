@@ -94,7 +94,6 @@
   <!-- /.l-header -->
 </header>
 <?php get_template_part('inc/nav'); ?>
-<!-- get_template_part('inc/sidebar');  -->
 
 
 

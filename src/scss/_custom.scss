@@ -264,61 +264,7 @@
 
 
 
-/* ------------------------------------------------
-  記事ページここから
------------------------------------------------- */
 
-.contents-box{
-  max-width:880px;
-  width:100%;
-  background:var(--bg-color03);
-  padding-bottom:80px;
-  margin-top:0;
-  border-radius: 0 0 6px 6px;
-  background:var(--bg-color03);
-  @include media(tablet){
-  	max-width:100%;
-  }
-  @include media(sp){
-  	max-width:100%;
-  	padding-bottom:50px;
-  }
-}
-
-.table-of-content{
-	display:none;
-	@include media(tablet){
-		display:block;
-		padding: 0 4rem;
-		margin-top:40px;
-		padding-bottom:0;
-	}
-  @include media(sp){
-		display:block;
-		padding: 0 3rem;
-		margin-top:40px;
-		padding-bottom:0;
-  }
-}
-
-.c-box{
-  letter-spacing: .5em;
-	 font-feature-settings: "palt";
-	 padding:0 4rem;
-	 margin-top:60px;
-	 @include media(sp){
-	 	padding:0 3rem;
-	 }
-	 img{
-		width:100%;
-	 }
-}
-.entry-img{
-  img{
-	 width:100%;
-	 border-radius: 6px 6px 0 0;
-  }
-}
 
 
 
@@ -570,11 +516,22 @@ span.wpcf7-not-valid-tip,
 
 
 
+/* ------------------------------------------------
+  tabel
+------------------------------------------------ */
+.tb-box{
+	overflow-x: auto;
+	max-width:initial;
+}
 
+.tb-th-f{
+	font-size:var(--fSize-6);
+	font-weight:normal;
+}
 
-
-
-
+.tb-th-w{
+	width:70%;
+}
 
 
 

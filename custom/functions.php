@@ -110,11 +110,19 @@ add_action('after_setuptheme','yukury_block_setup');
 
 // パンくずリスト
 function breadcrumb() {
-  $home = '<li><a href="'.get_bloginfo('url').'">HOME</a></li>';
-  $arch = '<li><a href="'.get_bloginfo('url').'/list">記事一覧</a></li>';
+  $top = esc_url (home_url());
+  $home = '<li><a href="'.esc_url (home_url()).'">HOME</a></li>';
   $archiv = '<li>記事一覧</li>';
+  $post_label = '<li>'.esc_html(get_post_type_object(get_post_type())->label).'</li>';
+  $post_label_name = esc_html(get_post_type_object(get_post_type())->label); 
+    if($post_label_name=='カーリース'){
+    $my_post_url = 'car_lease';
+    } else if ($post_label_name=='ショップカートASP'){
+    $my_post_url = 'asp_cart';
+    }
+  $post_url = '<li><a href="'.esc_url (home_url($my_post_url)).'">'.$post_label_name.'</a></li>'; 
+  // $post_name =  '<li>'.esc_html(get_the_title($post->ID)).'</li>';
   echo '<ul class="breadcrumb">';
-
   // トップページの場合
   if ( is_front_page() ) {
 
@@ -139,30 +147,22 @@ function breadcrumb() {
 
   // アーカイブページの場合
   } else if ( is_archive() ) {
+
   echo $home;
-  echo $archiv;
+  echo $post_label;
 
 
 
   
 
   // 投稿ページの場合
-  } else if ( is_single() ) {
+  } else if( is_singular() ) {
+  if ( is_single() ) {
     echo $home;
-  $cat = get_the_category();
-    if( isset($cat[0]->cat_ID) ) $cat_id = $cat[0]->cat_ID;
-    $cat_list = array();
-    while ($cat_id != 0){
-        $cat = get_category( $cat_id );
-        $cat_link = get_category_link( $cat_id );
-        array_unshift( $cat_list, '<li><a href="'.$cat_link.'">'.$cat->name.'</a></li>' );
-        $cat_id = $cat->parent;
-    }
-    foreach($cat_list as $value){
-        echo $value;
-    }
+    echo $post_url;
     
-    the_title('<li>', '</li>');
+  }
+  the_title('<li>', '</li>');
 
 
   // 固定ページの場合
@@ -212,9 +212,84 @@ add_action( 'pre_get_posts','my_pre_get_posts' );
 
 
 
+//カスタム投稿車
+add_action( 'init', 'create_post_type_car_lease' );
+function create_post_type_car_lease() {
+  register_post_type( 'car_lease', // post-type
+    array(
+      'labels' => array(
+      'name' => __( 'カーリース' ),
+      'add_new' => _x('新規追加', 'カーリース'),
+      'add_new_item' => __('カーリースを追加'),
+      'singular_name' => __( 'car_lease' )
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ,'comments' ),
+      'menu_position' =>200,
+      'show_in_rest' => true,
+      'has_archive' => true,
+      'with_front' => true,
+      // 'rewrite' => array( 'with_front' => false ),
+      // 'rest_base' => 'car_lease',
+    )
+  );
+  //カスタムタクソノミー、カテゴリタイプ*
+  register_taxonomy(
+    'car_cat',
+    'car_lease',
+    array(
+      'hierarchical' => true,
+      'update_count_callback' => '_update_post_term_count',
+      'label' => 'カテゴリ',
+      'singular_label' => 'カテゴリ',
+      'public' => true,
+      'show_ui' => true,
+      'show_admin_column' => true,
+      // 'rewrite' => false,
+      // 'rewrite' => array( 'slug' => 'car_lease' ), //変更後のスラッグ
+    )
+  );         
+}
 
 
-
+//カスタム投稿ASP
+add_action( 'init', 'create_post_type_asp_cart' );
+function create_post_type_asp_cart() {
+  register_post_type( 'asp_cart', // post-type
+    array(
+      'labels' => array(
+      'name' => __( 'ショップカートASP' ),
+      'add_new' => _x('新規追加', 'ショップカートASP'),
+      'add_new_item' => __('ショップカートASPを追加'),
+      'singular_name' => __( 'asp_cart' )
+      ),
+      'public' => true,
+      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ,'comments' ),
+      'menu_position' =>200,
+      'show_in_rest' => true,
+      'has_archive' => true,
+      'with_front' => true,
+      // 'rewrite' => array( 'with_front' => false ),
+      // 'rest_base' => 'asp_cart',
+    )
+  );
+  //カスタムタクソノミー、カテゴリタイプ*
+  register_taxonomy(
+    'asp_cat',
+    'asp_cart',
+    array(
+      'hierarchical' => true,
+      'update_count_callback' => '_update_post_term_count',
+      'label' => 'カテゴリ',
+      'singular_label' => 'カテゴリ',
+      'public' => true,
+      'show_ui' => true,
+      'show_admin_column' => true,
+      // 'rewrite' => false,
+      // 'rewrite' => array( 'slug' => 'car_lease' ), //変更後のスラッグ
+    )
+  );         
+}
 
 
 
@@ -240,6 +315,130 @@ function wpcf7_validate_email_filter_extend( $result, $tag ) {
     }
     return $result;
 }
+
+
+
+// function sample_function(){
+// if (!check_ajax_referer( 'my_nonce' )){
+// wp_die();
+// }
+//   $car_lease = $_POST['car_lease'];
+//   $asp_cart = $_POST['asp_cart'];
+
+//     die();
+
+// }
+// // //ログインしているユーザー向け関数
+// add_action( 'wp_ajax_sample_function', 'ajax_func' );
+// //非ログインユーザー用関数
+// add_action( 'wp_ajax_nopriv_sample_function', 'ajax_func' );
+
+// function my_ajax_search(){
+//     // 「ad_url.ajax_url」のようにしてURLを指定できるようになる
+
+//   wp_enqueue_script(
+//    'script-ajax', 
+//    get_template_directory_uri().'/js/async.js', 
+//    array(), 
+//    null, 
+//    true );
+
+//     wp_localize_script( 'script-ajax', 'async',array( 
+//       'url' => admin_url( 'admin-ajax.php')
+//       ));
+// }
+// add_action( 'wp_enqueue_scripts', 'my_ajax_search' );
+
+
+// URL変更
+function car_lease_post_type_link( $link, $post ){
+  if ( $post->post_type === 'car_lease' ) {
+    return home_url( '/car_lease/' . $post->ID );
+  } else {
+    return $link;
+  }
+}
+add_filter( 'post_type_link', 'car_lease_post_type_link', 1, 2 );
+
+function car_lease_rewrite_rules_array( $rules ) {
+  $new_rewrite_rules = array( 
+    'car_lease/([0-9]+)/?$' => 'index.php?post_type=car_lease&p=$matches[1]',
+  );
+  return $new_rewrite_rules + $rules;
+}
+add_filter( 'rewrite_rules_array', 'car_lease_rewrite_rules_array' );
+
+
+
+function asp_cart_post_type_link( $link, $post ){
+  if ( $post->post_type === 'asp_cart' ) {
+    return home_url( '/asp_cart/' . $post->ID );
+  } else {
+    return $link;
+  }
+}
+add_filter( 'post_type_link', 'asp_cart_post_type_link', 1, 2 );
+
+function asp_cart_rewrite_rules_array( $rules ) {
+  $new_rewrite_rules = array( 
+    'asp_cart/([0-9]+)/?$' => 'index.php?post_type=asp_cart&p=$matches[1]',
+  );
+  return $new_rewrite_rules + $rules;
+}
+add_filter( 'rewrite_rules_array', 'asp_cart_rewrite_rules_array' );
+
+
+
+
+// 検索フォーム複数設置用
+// add_filter('template_include','custom_search_template');
+// function custom_search_template($template){
+//    if ( is_search() ){
+//       $post_types = get_query_var('post_type');
+//       foreach ( (array) $post_types as $post_type )
+//       if( $post_types == 'car_lease' ) {
+//       $templates[] = "search-car_lease.php";
+//     }else if ($post_types == 'asp_cart'){
+//       $templates[] = "search-asp_cart.php";
+//     }else{
+//       $templates[] = 'search.php';
+//     }
+      
+      
+//       $template = get_query_template('search',$templates);
+//    }
+//     return $template;
+// }
+
+// add_filter( 'template_include', 'my_search_template' );
+// function my_search_template( $template ) {
+//     $type = filter_input( INPUT_GET, 'post_type' );
+//     $new_template = '';
+//      $post_types = get_query_var('post_type');
+//      // echo $post_types;
+//     if( $type == $post_types ) {
+//       $new_template = STTYLESHEETPATH. '/search-car_lease.php';
+//         // switch ( $type ) {
+//         //     case 'car_lease':
+//         //         $new_template = STTYLESHEETPATH. '/search-car_lease.php';
+//         //         break;
+//         //     case 'taxonomy':
+//         //         $new_template = '';
+//         //         break;
+//         //     default:
+//         //        $new_template = '';
+//         // }
+//    }
+   
+//    if( $new_template ) {
+//        if( file_exists( $new_template ) ) {
+//           return $new_template;
+//        }
+//    }
+
+//    return $template;
+// }
+
 
 
 

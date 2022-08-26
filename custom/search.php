@@ -3,7 +3,6 @@
   <div class="l-frame">
 
     <div class="l-entry">
-      <?php breadcrumb(); ?>
       <section>
         <div class="entry-box">
           <h1 class="tit-01"><span>「<?php the_search_query(); ?>」の検索結果</span></h1>

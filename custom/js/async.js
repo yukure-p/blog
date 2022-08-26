@@ -31,69 +31,65 @@ function onMediaQueryChange() {
   });
   btn.addEventListener('click', function (event) {
     event.preventDefault(); // pcの時
-
-    if (mediaQueryList.matches === true) {
-      // topページ
-      if (frontpage === true) {
-        var elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 200;
-        window.scrollTo({
-          top: elementPosition,
-          behavior: "smooth"
-        });
-      } else {
-        // 詳細ページ　simirarがある場合
-        if (similar !== null) {
-          var elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
-          active.classList.remove('non-active');
-          window.scrollTo({
-            top: elementsimilar,
-            behavior: "smooth"
-          });
-        } else {
-          // 詳細ページsimilarがない場合とtaxページ
-          var place = document.getElementById('place');
-          var elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
-          active.classList.remove('non-active');
-          window.scrollTo({
-            top: elementplace,
-            behavior: "smooth"
-          });
-        }
-      } // スマホの時
-
-    } else {
-      // スマホのトップページ
-      if (frontpage === true) {
-        var _elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 40;
-
-        window.scrollTo({
-          top: _elementPosition,
-          behavior: "smooth"
-        }); // スマホのトップページ以外
-      } else {
-        if (similar !== null) {
-          var _elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
-
-          active.classList.remove('non-active');
-          window.scrollTo({
-            top: _elementsimilar,
-            behavior: "smooth"
-          });
-        } else {
-          // 詳細ページsimilarがない場合とtaxページ
-          var _place = document.getElementById('place');
-
-          var _elementplace = _place.getBoundingClientRect().bottom + window.pageYOffset + 500;
-
-          active.classList.remove('non-active');
-          window.scrollTo({
-            top: _elementplace,
-            behavior: "smooth"
-          });
-        }
-      }
-    } // フォームデータを新規に作成
-
+    // if( mediaQueryList.matches === true ){ 
+    // topページ
+    // if(frontpage === true ){ 
+    //     const elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 200;
+    //     window.scrollTo({
+    //          top: elementPosition,
+    //          behavior: "smooth"
+    //     });
+    // }else {
+    //     // 詳細ページ　simirarがある場合
+    //     if(similar !== null ){ 
+    //         const elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
+    //         active.classList.remove('non-active');
+    //         window.scrollTo({
+    //             top: elementsimilar,
+    //             behavior: "smooth"
+    //         });
+    //         }else{
+    //             // 詳細ページsimilarがない場合とtaxページ
+    //             const place = document.getElementById('place');
+    //             const elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
+    //             active.classList.remove('non-active');
+    //             window.scrollTo({
+    //                 top: elementplace,
+    //                 behavior: "smooth"
+    //             });
+    //     }
+    // }
+    // スマホの時
+    //     } else{ 
+    //     // スマホのトップページ
+    //     if(frontpage === true){
+    //         const elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 40;
+    //         window.scrollTo({
+    //              top: elementPosition,
+    //              behavior: "smooth"
+    //         });
+    //     // スマホのトップページ以外
+    //     }else{
+    //         if(similar !== null ){ 
+    //             const elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
+    //             active.classList.remove('non-active');
+    //             window.scrollTo({
+    //                 top: elementsimilar,
+    //                 behavior: "smooth"
+    //             });
+    //             }else{
+    //                 // 詳細ページsimilarがない場合とtaxページ
+    //                 const place = document.getElementById('place');
+    //                 const elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
+    //                 active.classList.remove('non-active');
+    //                 window.scrollTo({
+    //                     top: elementplace,
+    //                     behavior: "smooth"
+    //                 });
+    //         }
+    //     }
+    // }
+    // フォームデータを新規に作成
 
     var fd = new FormData(fetchForm); // フォームデータにデータ追加
 
@@ -112,11 +108,11 @@ function onMediaQueryChange() {
 
       var html = parser.parseFromString(docu, "text/html");
       var number = html.querySelector('.number'); // console.log(number);
+      // const num = number.textContent;
+      // const result = document.querySelector('.num');
+      // // console.log(result);
+      // result.textContent = num
 
-      var num = number.textContent;
-      var result = document.querySelector('.num'); // console.log(result);
-
-      result.textContent = num;
       var set = html.querySelector('body'); // console.log(set);
 
       var Nbox = set.innerHTML;

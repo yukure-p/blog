@@ -11,23 +11,57 @@
 ------------------------------------------------ */
 /*ベーシックなテーブルスタイル*/
 .tb_basic01 {
+	width:100%;
+	table-layout: fixed;
+	table{
+		width:100%;
+		border-collapse:  collapse;
+	}
 	&>thead>tr {
 		&>th{
-
+			 border: solid 1px #d1d1d1;
+			 padding:10px 15px;
+			 font-size:var(--fSize);
+			 text-align:center;
+			 vertical-align:middle;
+			 width:100px;
+			 background:#f3f1ed;
+			 &:nth-of-type(1){
+			 	width:250px;
+			 }
 		}
 		&>td{
-		
+			 border: solid 1px#d1d1d1;
 		}
 	}
 	&>tbody>tr,
 	&>tr{
 		&>th{
-
+			border: solid 1px #d1d1d1;
+			text-align:left;
+			padding: 10px 0 10px 20px;
+			font-size:var(--fSize);
+			vertical-align:middle;
+			background:#f3f1ed;
 		}
 		&>td {
-
+			border: solid 1px #d1d1d1;
+			text-align:center;
+			vertical-align:middle;
+			font-size:var(--fSize-3);
 		}
 	}
+	.var-txt{
+		 // writing-mode: vertical-rl;
+		@include flexbox;
+		@include flex-justify-content($justify:center);
+		@include flex-direction($direction:column);
+		@include flex-align($align: center);
+	}
+}
+
+.p-off{
+	padding:0 !important;
 }
 /*装飾のないシンプルなテーブル*/
 .tb_simple01 {

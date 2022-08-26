@@ -24,7 +24,7 @@
 	l-frame
 ------------------------------------------------ */
 .l-frame{
-	margin:0 auto 180px auto;
+	margin:0 auto ;
 	position:relative;
 	width:var(--cn-width);
 	@include media(sp){
@@ -42,7 +42,7 @@
 .l-container{
 	width:100%;
 	max-width:var(--contents-max-width);
-	margin: 0 auto;
+	margin: 100px auto 180px auto;
  	@include flexbox;
 	@include flex-justify-content($justify:center);
 	column-gap:40px;
@@ -53,10 +53,10 @@
 	// 	max-width:var(--cn-max-width);
 	// }
 	.l-local & {
-		max-width:var(--local-max-width);
-		margin-bottom:100px;
-		&.type01{
-			max-width:var(--cn-max-width);
+		margin: 74px auto 120px auto;
+		&.related{
+			display:block;
+			margin:0 auto 180px auto;
 		}
 	}
 }
@@ -64,8 +64,11 @@
 
 .l-contents{
 	width:100%;
-	margin-top:100px;
+	// margin-top:100px;
 	.l-local & {
+		&.related{
+			margin-top: 60px;
+		}
 		@include media(sp){
 			padding:0 3em;
 			@include box-sizing;
@@ -85,14 +88,12 @@
 	margin: 20px auto 0px auto;
 	width:100%;
 	max-width:var(--cn-max-width);
-
     .l-local & {
     	width: 100%;
     	@include flexbox;
 		@include flex-justify-content($justify:center);
 		@include flex-direction($direction:column);
-		margin-bottom:80px;
-		max-width:var(--cn-max-width);
+		margin: 0px auto;
 		@include media(sp){
 			margin-bottom:30px;
 			width: 90%;
@@ -111,6 +112,12 @@
 	}
 }
 
+.l-entry-info{
+	// margin-top:20px;
+	.category-tag{
+		margin-top:20px;
+	}
+}
 
 
 
@@ -123,7 +130,7 @@
 	@include flex-justify-content($justify:center);
 	// @include flex-direction($direction:row);
 	column-gap:40px;
-	margin:0 auto 160px auto;
+	margin:0 auto;
 	@include media(tablet){
 		column-gap:0;
 	}
@@ -135,6 +142,76 @@
 
 
 
+
+
+/* ------------------------------------------------
+  記事ページここから
+------------------------------------------------ */
+
+.contents-box{
+  max-width:880px;
+  width:100%;
+  background:var(--bg-color03);
+  margin-top:0;
+  border-radius: 0 0 6px 6px;
+  background:var(--bg-color03);
+  padding:0 4rem 8rem 4rem;
+  @include box-sizing;
+  &.colum1{
+  	max-width:100%;
+  }
+  @include media(tablet){
+  	max-width:100%;
+  }
+  @include media(sp){
+  	max-width:100%;
+  	padding-bottom:50px;
+  }
+  .entry{
+  	padding-top:40px;
+  }
+}
+
+.table-of-content{
+	display:none;
+	@include media(tablet){
+		display:block;
+		padding: 0 4rem;
+		margin-top:40px;
+		padding-bottom:0;
+	}
+  @include media(sp){
+		display:block;
+		padding: 0 3rem;
+		margin-top:40px;
+		padding-bottom:0;
+  }
+}
+
+.c-box{
+  letter-spacing: .5em;
+	 font-feature-settings: "palt";
+	 margin-bottom:120px;
+	 &:first-child{
+	 	margin-top:60px;
+	 }
+	 &:last-child{
+	 	margin-bottom:0;
+	 }
+	 @include media(sp){
+	 	padding:0 3rem;
+	 }
+	 img{
+		width:100%;
+	 }
+}
+.entry-img{
+	margin-top: 30px;
+  img{
+	 width:100%;
+	 border-radius: 6px 6px 0 0;
+  }
+}
 
 /* ------------------------------------------------
 	
@@ -159,6 +236,11 @@
 		@include flex-direction($direction:column);
 		padding:2rem 1.5rem;
 		row-gap:15px;
+		.date{
+			font-size:var(--fSize-7);
+			color:var(--font-color03);
+		}
+
 	}
 	.box-txt{
 		.box-tit{
@@ -189,6 +271,35 @@
 	width:100%;
 	margin:0 auto;
 
+}
+
+
+
+
+/* ------------------------------------------------
+	使い回し
+------------------------------------------------ */
+
+.category-tag{
+	a {
+		// background-color:var(--bg-color01);
+		padding:.3rem 1.2rem .3rem 2.4rem;
+		border-radius:12px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 7px 5px;
+		display:inline-block;
+		position:relative;
+		background-image: url("/wp-content/themes/custom/img/common/icon-cate.svg");
+		background-repeat: no-repeat;
+		background-size:13px 13px;
+	}
+	a.car {
+			background-color:var(--bg-car);					
+	}
+	a.asp {
+			background-color:var(--bg-asp);
+	}
 }
 
 

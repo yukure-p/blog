@@ -16,8 +16,8 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 
   // フォントカラー
   --font-color01: #333333;//
-  --font-color02: #ffffff;//data
-  // --font-color03:#c9c9c9;//form placeholder
+  --font-color02: #ffffff;//
+  --font-color03:#8d8d8d;//date
   // --font-color04: #ffffff;//
   // --font-color05:#656565;//list-tit a のカラー
 
@@ -30,8 +30,8 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   // --bg-color05: #F5F5F5;
   // --bg-color06: #535353;
   // --bg-color07: #f3f3f3;
-  // --bg-color08: #cacaca;
-
+  --bg-car: #f9eb7b;
+  --bg-asp: #a8e2ff;
 
 
   // ボーダーカラー
@@ -73,7 +73,7 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --fSize12: calc((28* 0.1) * 1rem);
   --fSize13: calc((29* 0.1) * 1rem);
   --fSize14: calc((30* 0.1) * 1rem);
-  --font-entry: calc((34* 0.1) * 1rem);//記事ページ見出し
+  --font-entry: calc((30* 0.1) * 1rem);//記事ページ見出し
   --font-nav: calc((34* 0.1) * 1rem);
   --EnfontR: calc((34* 0.1) * 1rem);
   --EnfontL: calc((36* 0.1) * 1rem);

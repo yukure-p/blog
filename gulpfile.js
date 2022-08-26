@@ -8,7 +8,8 @@ const cssnext = require("postcss-cssnext")  // CSSNext利用
 const cleanCSS = require("gulp-clean-css"); // 圧縮
 const rename = require("gulp-rename");      // ファイル名変更
 const sourcemaps = require("gulp-sourcemaps");  // ソースマップ作成
-const mqpacker = require('css-mqpacker');     //メディアクエリをまとめる
+const mqpacker = require("css-mqpacker");     //メディアクエリをまとめる
+const clean = require("gulp-clean");//ファイル削除
 
 //js babel
 const babel = require("gulp-babel");
@@ -52,7 +53,18 @@ const destPath = {
  inc: 'custom/inc/',
  img: 'custom/img/',
  php: 'custom/',
+ del: 'custom/',
 }
+
+
+
+//ファイル削除
+function cleanDirectory(done){
+ src(destPath.del,{read: false})
+ .pipe(clean())
+ done()
+}
+
 
 
 //sass
@@ -161,6 +173,11 @@ const imgImagemin = () => {
 }
 
 
+
+
+
+
+
 //ローカルサーバー立ち上げ、ファイル監視と自動リロード
 const browserSyncFunc = () => {
  browserSync.init(browserSyncOption);
@@ -188,3 +205,5 @@ const watchFiles = () => {
 }
 
 exports.default = series(series(cssSass, jsBabel, imgImagemin, phpCopy, incCopy), parallel(watchFiles, browserSyncFunc));
+
+exports.clean = series(cleanDirectory)

@@ -2,18 +2,9 @@
 <?php if(have_posts()):?>
 <?php while (have_posts()): the_post(); ?>
 <div class="l-frame">
-<section>
     <div class="l-entry">
       <?php breadcrumb(); ?>
-      <div class="l-entry-inner">
-        <h1 class="l-entry-title" ><span>テイクアウト注文の予約・決済システム「テイクイーツ」はWeb制作会社にも飲食店にもメリットが大きすぎた9</span></h1>
-        <div class="date">
-          <time datetime="<?php echo get_the_date('Y.n.d'); ?>"><?php echo get_the_date('Y.n.d'); ?></time>
-        </div>
-      </div>
-      
     </div>
-</section>
 
 <section>
   
@@ -22,7 +13,16 @@
 
         <main>
           <div class="contents-box">
-            <div class="entry-img"><img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" ></div>
+            <div class="entry">
+                <h1 class="l-entry-title" ><span>テイクアウト注文の予約・決済システム「テイクイーツ」はWeb制作会社にも飲食店にもメリットが大きすぎたl</span></h1>
+                <div class="l-entry-info row-2col">
+                  
+                  <time datetime="<?php echo get_the_date('Y.n.d'); ?>"><?php echo get_the_date('Y.n.d'); ?></time>
+                  <?php get_template_part('inc/cat-tag'); ?>
+                  
+                </div>
+                <div class="entry-img"><img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" ></div>
+            </div>
             <div class="table-of-content">
                 <h1 class="aside-tit">この記事の目次</h1>
                 <div class="l-aside-inner">
@@ -53,7 +53,7 @@
                   </ol>
                 </div>
               </div>
-
+              <article>
               <div class="c-box box" id="index1">
                 <h2 class="c-tit02">タイトルh2タイトルh2タイトルh2</h2>
                 <p class="c-txt">テキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスと</p>
@@ -65,8 +65,8 @@
               </div>
 
 
-              <div class="c-box box" id="index2">
-                <h3 class="c-tit02">aaaaaaaaaaaaa</h3>
+              <div class="c-box box" >
+                <h3 class="c-tit02" id="index2">aaaaaaaaaaaaa</h3>
                 <p class="c-txt">テキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスと</p>
                 <p class="c-txt">テキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスと</p>
                 <p class="c-txt">テキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスと</p>
@@ -151,43 +151,21 @@
                 <p class="c-txt">テキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとスとテキスとテキスとテキスとテキスとテキスとテキスとスとテキスとテキスとテキスとテキスとテキスとテキスと</p>
                 <p class="c-txt">テキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとテキスとスとテキスとテキスとテキスとテキスとテキスとテキスとスとテキスとテキスとテキスとテキスとテキスとテキスと</p>
               </div>
-
+            </article>
           </div>
 
         </main>
+<?php endwhile; ?>
+<?php endif; ?>
 
-        <aside>
-          <div class="l-aside">
-            <h1 class="aside-tit">この記事の目次</h1>
-            <div class="l-aside-inner">
-              <ol class="l-aside-menu index" id="indexList">
-                <li><a href="#index1">サイドメニュー</a>
-                  <ol class="l-aside-menu-under">
-                    <li><a href="#index2">ああああああaaaaaaaaa</a></li>
-                    <li><a href="#index3">いいいいいいbbbbbbbbbbb</a></li>
-                    <li><a href="#index4">うううううcccccccccccc</a></li>
-                  </ol>
-                </li>
-                <!-- <li><a href="#index2" >サイドメニュー</a></li> -->
-                <!-- <li><a href="#index3">サイドメニュー</a></li>
-                <li><a href="#index4">サイドメニュー</a></li> -->
-                <li><a href="#index5">サイドメニュー</a></li>
-                <li><a href="#index6">サイドメニュー</a>
+         <aside>
+          <div class="l-aside-outer">
+            <?php get_template_part('inc/aside'); ?>
+            <?php get_template_part('inc/local-aside'); ?>
 
-                  <ol class="l-aside-menu-under">
-                    <li><a href="#index7">ああああああaaaaaaaaa</a></li>
-                    <li><a href="#index8">いいいいいいbbbbbbbbbbb</a></li>
-                    <li><a href="#index9">いいいいいいbbbbbbbbbbb</a></li>
-                    
-                  </ol>
-                </li>
-                <!-- <li><a href="#index7">サイドメニュー</a></li>
-                <li><a href="#index8">サイドメニュー</a></li> -->
-                
-              </ol>
-            </div>
           </div>
-        </aside>
+         </aside>
+
       </div>
     </div>
   
@@ -195,84 +173,52 @@
 </section>
 
 
-
+<?php
+// おすすめの記事一覧を取得
+$posts = get_field('related');
+if( $posts ):
+?>
    <section>
-      <div class="l-container">
-         <h1 class="tit-01"><span>関連記事</span></h1>
-         <div class="l-contents">
+      <div class="l-container related">
+         <h1 class="tit-01"><span>関連する記事</span></h1>
+         <div class="l-contents related">
             <ul class="contents-list l-gid type01">
-               <li class="box-content">
+
+                <?php foreach( $posts as $post ): ?>
+                <li class="box-content">
                   <div class="box-item">
-                     <div class="date">
-                        <time datetime="">2022.08.30</time>
-                     </div>
-                     <div class="box-img">
-                        <a href="" class="linkBl01">
-                        <img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" >
+                     <figure class="box-img">
+                        <a href="<?php echo get_permalink($post->ID); ?>" class="linkBl01">
+                       <?php
+                        // アイキャッチ画像を取得
+                        $thumbnail_id = get_post_thumbnail_id($post->ID);
+                        $thumb_url = wp_get_attachment_image_src($thumbnail_id, 'small');
+                        if (get_post_thumbnail_id($post->ID)) {
+                          echo '<figure><img src="' . $thumb_url[0] . '" alt=""></figure>';
+                        } else {
+                          // アイキャッチ画像が登録されていなかったときの画像
+                          echo '<figure><img src="' . get_template_directory_uri() . '/img/img-default.png" alt=""></figure>';
+                        }
+                        ?>
                         </a>
-                     </div>
+                     </figure>
+                     <div class="box-info">
+                     <!-- <div class="row-2col">
+                        <time datetime=""><?php the_time('Y.m.d') ?></time>
+                        <?php get_template_part('inc/cat-tag'); ?>
+                     </div> -->
                      <div class="box-txt">
                         <h1 class="box-tit">
-                        <a href="" class="link03">タイトルタイトルタイトルタイトルタイトル</a>
+                        <a href="<?php echo get_permalink($post->ID); ?>" class="link03"><?php echo get_the_title($post->ID); ?></a>
                         </h1>
+                     </div>
 
                      </div>
                   </div>
-               </li>
-               <li class="box-content">
-                  <div class="box-item">
-                     <div class="date">
-                        <time datetime="">2022.08.30</time>
-                     </div>
-                     <div class="box-img">
-                        <a href="" class="linkBl01">
-                        <img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" >
-                        </a>
-                     </div>
-                     <div class="box-txt">
-                        <h1 class="box-tit">
-                        <a href="" class="link03">タイトルタイトルタイトルタイトルタイトル</a>
-                        </h1>
+                </li>
 
-                     </div>
-                  </div>
-               </li>
-               <li class="box-content">
-                  <div class="box-item">
-                     <div class="date">
-                        <time datetime="">2022.08.30</time>
-                     </div>
-                     <div class="box-img">
-                        <a href="" class="linkBl01">
-                        <img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" >
-                        </a>
-                     </div>
-                     <div class="box-txt">
-                        <h1 class="box-tit">
-                        <a href="" class="link03">タイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトルタイトル</a>
-                        </h1>
+                <?php endforeach; ?>
 
-                     </div>
-                  </div>
-               </li>
-               <li class="box-content">
-                  <div class="box-item">
-                     <div class="date">
-                        <time datetime="">2022.08.30</time>
-                     </div>
-                     <div class="box-img">
-                        <a href="" class="linkBl01">
-                        <img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" >
-                        </a>
-                     </div>
-                     <div class="box-txt">
-                        <h1 class="box-tit">
-                        <a href="" class="link03">タイトルタイトルタイトルタイトルタイトル</a>
-                        </h1>
-                        
-                     </div>
-                  </div>
-               </li>
             </ul>
         
 
@@ -280,6 +226,7 @@
         </div>
       </div>
      </section>
+     <?php endif; ?>
 </div>
 
 
@@ -295,8 +242,7 @@
 
 
 
-<?php endwhile; ?>
-<?php endif; ?>
+
 
 
 

@@ -60,6 +60,7 @@
 	@include flexbox;
 	@include flex-direction($direction:row);
 	@include flex-justify-content($justify:space-between);
+	@include flex-align($align: center);
 	
 }
 
@@ -121,6 +122,9 @@
 	@include media(tablet){
 		gap:60px 30px;
 		grid-template-columns:1fr 1fr;
+	}
+	&.type01{
+		grid-template-columns:1fr 1fr 1fr 1fr;
 	}
 }
 

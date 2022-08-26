@@ -45,70 +45,70 @@ function onMediaQueryChange(){
 
 
             // pcの時
-            if( mediaQueryList.matches === true ){ 
+            // if( mediaQueryList.matches === true ){ 
 
                 // topページ
-                if(frontpage === true ){ 
-                    const elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 200;
-                    window.scrollTo({
-                         top: elementPosition,
-                         behavior: "smooth"
-                    });
-                }else {
-                    // 詳細ページ　simirarがある場合
-                    if(similar !== null ){ 
-                        const elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
-                        active.classList.remove('non-active');
-                        window.scrollTo({
-                            top: elementsimilar,
-                            behavior: "smooth"
-                        });
-                        }else{
-                            // 詳細ページsimilarがない場合とtaxページ
-                            const place = document.getElementById('place');
-                            const elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
-                            active.classList.remove('non-active');
-                            window.scrollTo({
-                                top: elementplace,
-                                behavior: "smooth"
-                            });
-                    }
-                }
+                // if(frontpage === true ){ 
+                //     const elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 200;
+                //     window.scrollTo({
+                //          top: elementPosition,
+                //          behavior: "smooth"
+                //     });
+                // }else {
+                //     // 詳細ページ　simirarがある場合
+                //     if(similar !== null ){ 
+                //         const elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
+                //         active.classList.remove('non-active');
+                //         window.scrollTo({
+                //             top: elementsimilar,
+                //             behavior: "smooth"
+                //         });
+                //         }else{
+                //             // 詳細ページsimilarがない場合とtaxページ
+                //             const place = document.getElementById('place');
+                //             const elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
+                //             active.classList.remove('non-active');
+                //             window.scrollTo({
+                //                 top: elementplace,
+                //                 behavior: "smooth"
+                //             });
+                //     }
+                // }
 
 
                 // スマホの時
-                } else{ 
+            //     } else{ 
 
-                // スマホのトップページ
-                if(frontpage === true){
-                    const elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 40;
-                    window.scrollTo({
-                         top: elementPosition,
-                         behavior: "smooth"
-                    });
+            //     // スマホのトップページ
+            //     if(frontpage === true){
+            //         const elementPosition = position.getBoundingClientRect().top + window.pageYOffset - header - 40;
+            //         window.scrollTo({
+            //              top: elementPosition,
+            //              behavior: "smooth"
+            //         });
 
-                // スマホのトップページ以外
-                }else{
-                    if(similar !== null ){ 
-                        const elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
-                        active.classList.remove('non-active');
-                        window.scrollTo({
-                            top: elementsimilar,
-                            behavior: "smooth"
-                        });
-                        }else{
-                            // 詳細ページsimilarがない場合とtaxページ
-                            const place = document.getElementById('place');
-                            const elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
-                            active.classList.remove('non-active');
-                            window.scrollTo({
-                                top: elementplace,
-                                behavior: "smooth"
-                            });
-                    }
-                }
+            //     // スマホのトップページ以外
+            //     }else{
+            //         if(similar !== null ){ 
+            //             const elementsimilar = similar.getBoundingClientRect().bottom + window.pageYOffset - header + 100;
+            //             active.classList.remove('non-active');
+            //             window.scrollTo({
+            //                 top: elementsimilar,
+            //                 behavior: "smooth"
+            //             });
+            //             }else{
+            //                 // 詳細ページsimilarがない場合とtaxページ
+            //                 const place = document.getElementById('place');
+            //                 const elementplace = place.getBoundingClientRect().bottom + window.pageYOffset + 500;
+            //                 active.classList.remove('non-active');
+            //                 window.scrollTo({
+            //                     top: elementplace,
+            //                     behavior: "smooth"
+            //                 });
+            //         }
+            //     }
 
-            }
+            // }
 
 
 
@@ -137,10 +137,10 @@ function onMediaQueryChange(){
 
             const number = html.querySelector('.number');
             // console.log(number);
-            const num = number.textContent;
-            const result = document.querySelector('.num');
-            // console.log(result);
-            result.textContent = num
+            // const num = number.textContent;
+            // const result = document.querySelector('.num');
+            // // console.log(result);
+            // result.textContent = num
 
             const set = html.querySelector('body');
             // console.log(set);
