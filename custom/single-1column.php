@@ -273,6 +273,208 @@ Template Post Type: car_lease
                     </tr>
                     </tbody>              
                   </table>
+
+
+
+
+
+                    <table class="tb_basic01" border="1">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th><div class="var-txt">オートフラット</div></th>
+                        <th><div class="var-txt">カルモ</div></th>
+                        <th><div class="var-txt">KINTO</div></th>
+                        <th><div class="var-txt">クルカ</div></th>
+                        <th><div class="var-txt">コスモMyカーリース</div></th>
+                        <th><div class="var-txt">sompoで乗ーる</div></th>
+                        <th><div class="var-txt">NORIDOKI</div></th>
+                        <th><div class="var-txt">ニコノリ</div></th>
+                        <th><div class="var-txt">モータ</div></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <th>選べる車種</th>
+                      <td>国産車</td>
+                      <td>国産車</td>
+                      <td>トヨタ・レクサストヨタ</td>
+                      <td>最安値で提供できる車のみ</td>
+                      <td>国産車・全車種</td>
+                      <td>国産車・輸入車</td>
+                      <td>低価格で提供できる車のみ</td>
+                      <td>国産車</td>
+                      <td>国産車・レクサス</td>
+                    </tr>
+                    <tr>
+                      <th class="tb-th-w">契約年数</th>
+                      <td>3年～7年</td>
+                      <td>１〜１１年　</td>
+                      <td>３・５・７年3年</td>
+                      <td>3年</td>
+                      <td>３６ヶ月〜８４ヶ月 （３６ヶ月未満も可）</td>
+                      <td>3・5・7・９年</td>
+                      <td>3年</td>
+                      <td>１年〜９年</td>
+                      <td>５・７・１１年</td>
+                    </tr>
+                    <tr>
+                      <th>中途解約</th>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○※オプション</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>走行距離制限（月間）</th>
+                      <td>2,500km ※マイメンテプラン1,500km</td>
+                      <td>契約６年以下 1,500km７年以上の契約 無制限</td>
+                      <td>1,500km</td>
+                      <td>1,000km （貨物）2,000kmm</td>
+                      <td>以下から選択 500km 1,500km 2,000km</td>
+                      <td>以下から選択 1,000km 1,500km 2,000km 3,000km</td>
+                      <td>1,000km</td>
+                      <td>契約時に走行距離制限を決める</td>
+                      <td>制限なし</td>
+                    <tr>
+                    <tr>
+                      <th>車もらえる</th>
+                      <td>-</td>
+                      <td>○ （７年以上の契約及び 月額500円のオプション加入時）</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○ （９年リースの場合）</td>
+                      <td>○ （９年リース・残価なしプラン）</td>
+                      <td>-</td>
+                      <td>○ オプション加入</td>
+                      <td>○</td>
+                    <tr>
+                      <th>乗り換え</th>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th>再リース</th>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>契約車の買取</th>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>ディーラーオプション</th>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>所定のオプションパッケージの中から選択</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th>メーカーオプション</th>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>所定のオプションパッケージの中から選択</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th>車のカスタム</th>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-指定車のみ可</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th>頭金対応</th>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th>ボーナス払い対応</th>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th>クレジットカード払い</th>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○dinaersのみ</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th>法人・個人事業主</th>
+                      <td>法人向け カーリース「オートフラットBiz」</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                    </tr>
+                    </tbody>              
+                  </table>
                 </div>
               </div>
 
