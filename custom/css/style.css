@@ -1723,13 +1723,16 @@ footer {
 	テーブル
 ------------------------------------------------ */
 /*ベーシックなテーブルスタイル*/
-.tb_basic01 {
-  width: 100%;
-  table-layout: fixed;
+.tb-box {
+  overflow: auto;
+  height: 50vh;
 }
-.tb_basic01 table {
-  width: 100%;
+
+.tb_basic01 {
+  width: auto;
+  table-layout: fixed;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 .tb_basic01 > thead > tr > th {
   border: solid 1px #d1d1d1;
@@ -1738,23 +1741,22 @@ footer {
   font-size: 1.6rem;
   text-align: center;
   vertical-align: middle;
-  width: 100px;
-  background: #f3f1ed;
-}
-.tb_basic01 > thead > tr > th:nth-of-type(1) {
   width: 250px;
+  background: #f3f1ed;
+  position: sticky;
+  top: 0;
 }
 .tb_basic01 > thead > tr > td {
   border: solid 1px #d1d1d1;
 }
 .tb_basic01 > tbody > tr > th, .tb_basic01 > tr > th {
   border: solid 1px #d1d1d1;
-  text-align: left;
   padding: 10px 0 10px 20px;
   font-size: 16px;
   font-size: 1.6rem;
   vertical-align: middle;
   background: #f3f1ed;
+  width: 200px;
 }
 .tb_basic01 > tbody > tr > td, .tb_basic01 > tr > td {
   border: solid 1px #d1d1d1;
@@ -1762,25 +1764,8 @@ footer {
   vertical-align: middle;
   font-size: 13px;
   font-size: 1.3rem;
-}
-.tb_basic01 .var-txt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.p-off {
-  padding: 0 !important;
+  padding: 15px;
+  white-space: nowrap;
 }
 
 /*装飾のないシンプルなテーブル*/
@@ -2278,20 +2263,58 @@ span.wpcf7-not-valid-tip,
 /* ------------------------------------------------
   tabel
 ------------------------------------------------ */
-.tb-box {
-  overflow-x: auto;
-  max-width: none;
-  max-width: initial;
+.gridd {
+  overflow: auto;
 }
 
-.tb-th-f {
-  font-size: 10px;
-  font-size: 1rem;
-  font-weight: normal;
+.grid {
+  display: grid;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.grid .h {
+  position: sticky;
+  top: 100px;
+  height: 100px;
+}
+.grid .rhh {
+  position: sticky;
+  left: 0px;
 }
 
-.tb-th-w {
-  width: 70%;
+.table-glid {
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, auto);
+  overflow: auto;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px 200px;
+  background: #cecece;
+  position: fixed;
+  top: 100px;
+  overflow: auto;
+}
+.inner div {
+  border-right: 1px solid #fff;
+  padding: 20px;
+}
+
+.inner01 {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px 200px 200px 200px;
+}
+.inner01 .m {
+  position: sticky;
+  left: 0px;
+}
+.inner01 .m:first-child {
+  background: #cecece;
+  border-bottom: 1px solid #fff;
 }
 
 /*////////////////////////////////////////////////////

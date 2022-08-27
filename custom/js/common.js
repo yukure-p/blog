@@ -109,4 +109,12 @@ var tab = function tab() {
   }, false);
 };
 
-tab();
+tab(); //スクロール固定
+
+var scroll = function scroll() {
+  var bar = document.querySelector('.tb-box'); // bar.style.overflow = "auto";
+  // bar.style.top = "100px";
+  // bar.style.overflow = "auto";
+};
+
+scroll();

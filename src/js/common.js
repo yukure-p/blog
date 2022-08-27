@@ -108,3 +108,20 @@ document.addEventListener('DOMContentLoaded', function(){
 
 };
 tab();
+
+
+
+//スクロール固定
+const scroll = () => {
+  const bar = document.querySelector('.tb-box');
+  // bar.style.overflow = "auto";
+  // bar.style.top = "100px";
+  // bar.style.overflow = "auto";
+
+}
+
+scroll();
+
+
+
+

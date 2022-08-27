@@ -10,13 +10,47 @@
 	テーブル
 ------------------------------------------------ */
 /*ベーシックなテーブルスタイル*/
+
+.tb-box{
+	// overflow: scroll;
+	 // width: calc(100vw - 1rem);
+	// overflow-x: auto;
+	// overflow: scroll;
+	// max-width:initial;
+	 // overflow: hidden;
+	  // grid-area: content;
+	  overflow: auto;
+	  height:50vh;
+}
+
+// .var-txt{
+// 	position: -webkit-sticky;
+//   position: sticky;
+//   top: 0px;
+//   z-index: 2;
+// }
+
+
+
 .tb_basic01 {
-	width:100%;
+	 width: auto;
 	table-layout: fixed;
-	table{
-		width:100%;
-		border-collapse:  collapse;
-	}
+	border-collapse: collapse;
+	border-spacing: 0;
+	// table{
+	// 	width:100%;
+	// 	border-collapse:  collapse;
+	// 	position: relative;
+	// 	height:auto;
+	// 	thead{
+	// 		th{
+	// 	// 		position: -webkit-sticky;
+ //  // position: sticky;
+ //  // top: 0;
+ //  // z-index:1;
+	// 		}
+	// 	}
+	// }
 	&>thead>tr {
 		&>th{
 			 border: solid 1px #d1d1d1;
@@ -24,11 +58,11 @@
 			 font-size:var(--fSize);
 			 text-align:center;
 			 vertical-align:middle;
-			 width:100px;
+			 width:250px;
 			 background:#f3f1ed;
-			 &:nth-of-type(1){
-			 	width:250px;
-			 }
+			 position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 		}
 		&>td{
 			 border: solid 1px#d1d1d1;
@@ -38,31 +72,56 @@
 	&>tr{
 		&>th{
 			border: solid 1px #d1d1d1;
-			text-align:left;
+			// text-align:left;
 			padding: 10px 0 10px 20px;
 			font-size:var(--fSize);
 			vertical-align:middle;
 			background:#f3f1ed;
+			 width:200px;
 		}
 		&>td {
 			border: solid 1px #d1d1d1;
 			text-align:center;
 			vertical-align:middle;
 			font-size:var(--fSize-3);
+			padding:15px;
+			white-space:nowrap;
 		}
 	}
-	.var-txt{
-		 // writing-mode: vertical-rl;
-		@include flexbox;
-		@include flex-justify-content($justify:center);
-		@include flex-direction($direction:column);
-		@include flex-align($align: center);
-	}
+
+
 }
 
-.p-off{
-	padding:0 !important;
-}
+// .tb-box thead {
+// 	position: -webkit-sticky;
+//   position: sticky;
+//   top: 100px;
+//   z-index: 2;
+// }
+
+// .tb-box  thead th {
+// 	position: -webkit-sticky;
+//   position: sticky;
+//   top: 100px;
+//   z-index: 2;
+// }
+
+// table tbody th:first-child {
+//  position: -webkit-sticky;
+//   position: sticky;
+//   left: 0;
+// }
+// table tbody th {
+//   position: sticky;
+//   left: 0;
+//   z-index: 1;
+// }
+
+
+
+// .p-off{
+// 	padding:0 !important;
+// }
 /*装飾のないシンプルなテーブル*/
 .tb_simple01 {
 	width: auto !important;
@@ -85,3 +144,17 @@
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
