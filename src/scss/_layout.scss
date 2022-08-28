@@ -192,6 +192,7 @@
   letter-spacing: .5em;
 	 font-feature-settings: "palt";
 	 margin-bottom:120px;
+	 position:relative;
 	 &:first-child{
 	 	margin-top:60px;
 	 }
@@ -204,6 +205,11 @@
 	 img{
 		width:100%;
 	 }
+	 	.tb-notice{
+		position:absolute;
+		top:90px;
+		z-index:5;
+	}
 }
 .entry-img{
 	margin-top: 30px;

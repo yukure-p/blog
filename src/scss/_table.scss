@@ -12,57 +12,50 @@
 /*ベーシックなテーブルスタイル*/
 
 .tb-box{
-	// overflow: scroll;
-	 // width: calc(100vw - 1rem);
-	// overflow-x: auto;
-	// overflow: scroll;
-	// max-width:initial;
-	 // overflow: hidden;
-	  // grid-area: content;
-	  overflow: auto;
-	  height:50vh;
+	position:relative;
+	top:-30px;
 }
 
-// .var-txt{
-// 	position: -webkit-sticky;
-//   position: sticky;
-//   top: 0px;
-//   z-index: 2;
-// }
 
-
+#fix{
+	height:70px;
+	position:fixed;
+	top:0;
+	width:100%;
+	z-index:-10;
+}
 
 .tb_basic01 {
-	 width: auto;
-	table-layout: fixed;
+	width: 100%;
+	// table-layout: fixed;
 	border-collapse: collapse;
 	border-spacing: 0;
-	// table{
-	// 	width:100%;
-	// 	border-collapse:  collapse;
-	// 	position: relative;
-	// 	height:auto;
-	// 	thead{
-	// 		th{
-	// 	// 		position: -webkit-sticky;
- //  // position: sticky;
- //  // top: 0;
- //  // z-index:1;
-	// 		}
-	// 	}
-	// }
+	white-space:nowrap;
+	
 	&>thead>tr {
+		&:first-child{
+			&>th{
+			border:none;
+			background:#fff;
+			}
+		}
+		&:nth-of-type(2){
+			&>th{
+				&:first-child{
+					// border:none;
+					// background:#fff;
+				}
+			}
+		}
 		&>th{
-			 border: solid 1px #d1d1d1;
+			 border: solid 1px #fff;
 			 padding:10px 15px;
-			 font-size:var(--fSize);
+			 font-size:var(--fSize-3);
 			 text-align:center;
 			 vertical-align:middle;
-			 width:250px;
 			 background:#f3f1ed;
-			 position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+			 width:200px;
+			 height:40px;
 		}
 		&>td{
 			 border: solid 1px#d1d1d1;
@@ -71,57 +64,104 @@
 	&>tbody>tr,
 	&>tr{
 		&>th{
-			border: solid 1px #d1d1d1;
-			// text-align:left;
-			padding: 10px 0 10px 20px;
+			border: solid 1px #fff;
+			text-align:left;
+			padding: 10px 20px 10px 20px;
 			font-size:var(--fSize);
 			vertical-align:middle;
 			background:#f3f1ed;
-			 width:200px;
+			width:330px;
 		}
 		&>td {
-			border: solid 1px #d1d1d1;
+			border-left: solid 1px #f2f2f2;
+			border-right: solid 1px #f2f2f2;
 			text-align:center;
 			vertical-align:middle;
 			font-size:var(--fSize-3);
 			padding:15px;
 			white-space:nowrap;
 		}
+		&:nth-of-type(2){
+			&>td{
+			background:#f9f9f9;
+			}
+		}
+		&:nth-of-type(4){
+			&>td{
+			border-top: solid 1px #f2f2f2;
+			}
+		}
+		&:nth-of-type(5){
+			&>td{
+			background:#f9f9f9;
+			}
+		}
+		&:nth-of-type(7){
+			&>td{
+			background:#f9f9f9;
+			}
+		}
+		&:nth-of-type(9){
+			&>td{
+			background:#f9f9f9;
+			}
+		}
+		&:last-child{
+			&>td{
+			border-bottom: solid 1px #f2f2f2;
+			}
+		}				
+	}
+	&>tbody>tr>th{
+		 // width:300px;
 	}
 
+	.th-in-f{
+		font-size:var(--fSize-6);
+		font-weight:normal;
+		letter-spacing:.1rem;
+	}
+	.th-w{
+		// width:300px !important;
+		// table-layout:initial !important;
+		padding: 10px 30px 10px 30px !important;
+	}
 
+	.th-w-r{
+		width:50px !important;
+		padding: 10px 8px 10px 8px !important;
+	}
+
+	.notice-type-top{
+		font-size:var(--fSize-6);
+		display:block;
+		// margin-top:5px;
+	}
+	.notice-type-bottom{
+		font-size:var(--fSize-6);
+		display:block;
+		margin-bottom:8px;
+	}
+	.notice-i{
+		font-size:var(--fSize-6);
+		display:inline-block;
+		position:relative;
+		top:-4px;
+	}
 }
 
-// .tb-box thead {
-// 	position: -webkit-sticky;
-//   position: sticky;
-//   top: 100px;
-//   z-index: 2;
-// }
-
-// .tb-box  thead th {
-// 	position: -webkit-sticky;
-//   position: sticky;
-//   top: 100px;
-//   z-index: 2;
-// }
-
-// table tbody th:first-child {
-//  position: -webkit-sticky;
-//   position: sticky;
-//   left: 0;
-// }
-// table tbody th {
-//   position: sticky;
-//   left: 0;
-//   z-index: 1;
-// }
 
 
 
-// .p-off{
-// 	padding:0 !important;
-// }
+
+
+
+
+
+
+
+
+
 /*装飾のないシンプルなテーブル*/
 .tb_simple01 {
 	width: auto !important;
@@ -145,7 +185,7 @@
 	}
 }
 
-
+div.scroll_div { overflow: auto; }
 
 
 

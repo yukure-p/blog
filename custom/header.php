@@ -64,6 +64,8 @@
   }else if ( is_search() ) {
     $my_body_class = 'l-list';
   }
+
+   
 ?>
 <body id="jp" <?php echo ( $my_body_class ) ? ' class="' . $my_body_class . '"' : ''; ?>>
 

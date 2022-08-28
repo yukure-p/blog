@@ -1181,6 +1181,7 @@ footer {
   -webkit-font-feature-settings: "palt";
           font-feature-settings: "palt";
   margin-bottom: 120px;
+  position: relative;
 }
 .c-box:first-child {
   margin-top: 60px;
@@ -1190,6 +1191,11 @@ footer {
 }
 .c-box img {
   width: 100%;
+}
+.c-box .tb-notice {
+  position: absolute;
+  top: 90px;
+  z-index: 5;
 }
 
 .entry-img {
@@ -1573,6 +1579,10 @@ footer {
   margin-bottom: 0;
 }
 
+.f-bold {
+  font-weight: bold;
+}
+
 /*
 # リストスタイル .ulBasic01
 
@@ -1724,48 +1734,111 @@ footer {
 ------------------------------------------------ */
 /*ベーシックなテーブルスタイル*/
 .tb-box {
-  overflow: auto;
-  height: 50vh;
+  position: relative;
+  top: -30px;
+}
+
+#fix {
+  height: 70px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -10;
 }
 
 .tb_basic01 {
-  width: auto;
-  table-layout: fixed;
+  width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  white-space: nowrap;
+}
+.tb_basic01 > thead > tr:first-child > th {
+  border: none;
+  background: #fff;
 }
 .tb_basic01 > thead > tr > th {
-  border: solid 1px #d1d1d1;
+  border: solid 1px #fff;
   padding: 10px 15px;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 13px;
+  font-size: 1.3rem;
   text-align: center;
   vertical-align: middle;
-  width: 250px;
   background: #f3f1ed;
-  position: sticky;
-  top: 0;
+  width: 200px;
+  height: 40px;
 }
 .tb_basic01 > thead > tr > td {
   border: solid 1px #d1d1d1;
 }
 .tb_basic01 > tbody > tr > th, .tb_basic01 > tr > th {
-  border: solid 1px #d1d1d1;
-  padding: 10px 0 10px 20px;
+  border: solid 1px #fff;
+  text-align: left;
+  padding: 10px 20px 10px 20px;
   font-size: 16px;
   font-size: 1.6rem;
   vertical-align: middle;
   background: #f3f1ed;
-  width: 200px;
+  width: 330px;
 }
 .tb_basic01 > tbody > tr > td, .tb_basic01 > tr > td {
-  border: solid 1px #d1d1d1;
+  border-left: solid 1px #f2f2f2;
+  border-right: solid 1px #f2f2f2;
   text-align: center;
   vertical-align: middle;
   font-size: 13px;
   font-size: 1.3rem;
   padding: 15px;
   white-space: nowrap;
+}
+.tb_basic01 > tbody > tr:nth-of-type(2) > td, .tb_basic01 > tr:nth-of-type(2) > td {
+  background: #f9f9f9;
+}
+.tb_basic01 > tbody > tr:nth-of-type(4) > td, .tb_basic01 > tr:nth-of-type(4) > td {
+  border-top: solid 1px #f2f2f2;
+}
+.tb_basic01 > tbody > tr:nth-of-type(5) > td, .tb_basic01 > tr:nth-of-type(5) > td {
+  background: #f9f9f9;
+}
+.tb_basic01 > tbody > tr:nth-of-type(7) > td, .tb_basic01 > tr:nth-of-type(7) > td {
+  background: #f9f9f9;
+}
+.tb_basic01 > tbody > tr:nth-of-type(9) > td, .tb_basic01 > tr:nth-of-type(9) > td {
+  background: #f9f9f9;
+}
+.tb_basic01 > tbody > tr:last-child > td, .tb_basic01 > tr:last-child > td {
+  border-bottom: solid 1px #f2f2f2;
+}
+.tb_basic01 .th-in-f {
+  font-size: 10px;
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
+}
+.tb_basic01 .th-w {
+  padding: 10px 30px 10px 30px !important;
+}
+.tb_basic01 .th-w-r {
+  width: 50px !important;
+  padding: 10px 8px 10px 8px !important;
+}
+.tb_basic01 .notice-type-top {
+  font-size: 10px;
+  font-size: 1rem;
+  display: block;
+}
+.tb_basic01 .notice-type-bottom {
+  font-size: 10px;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 8px;
+}
+.tb_basic01 .notice-i {
+  font-size: 10px;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+  top: -4px;
 }
 
 /*装飾のないシンプルなテーブル*/
@@ -1786,6 +1859,10 @@ footer {
 .tb_simple01 > tr > th {
   white-space: nowrap;
   padding-right: 1em;
+}
+
+div.scroll_div {
+  overflow: auto;
 }
 
 /*////////////////////////////////////////////////////

@@ -23,15 +23,19 @@ function vlog_enqueue_scripts(){
 
 if (is_front_page()){
         // $scriptPath = '/js/entry.min.js';
+    } else if( is_single(63) ){
+      // $scriptPath = '/js/fixed.js';
+      wp_enqueue_script(
+          'custom_script',
+          get_template_directory_uri() . '/js/fixed.js',
+          '',
+          date("His"),
+          true
+      );
+      
     }
 
-    // wp_enqueue_script(
-    //     'custom_script',
-    //     get_template_directory_uri() . $scriptPath,
-    //     '',
-    //     date("His"),
-    //     true
-    // );
+
 
   wp_enqueue_script(
     '',

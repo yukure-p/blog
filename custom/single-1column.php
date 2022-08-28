@@ -6,6 +6,7 @@ Template Post Type: car_lease
 ?>
 
 <?php get_header(); ?>
+<div id="fix"></div>
 <?php if(have_posts()):?>
 <?php while (have_posts()): the_post(); ?>
 <div class="l-frame">
@@ -63,10 +64,221 @@ Template Post Type: car_lease
               <article>
               <div class="c-box box" id="index1">
                 <h2 class="c-tit02">カーリース比較表</h2>
-
-                <div id="app">
-                <div class="tb-box">
-                    <table class="tb_basic01">
+                <span class="tb-notice">「※オプション」「※条件あり」は各サービスの詳細をご参照ください</span>
+              <div class="tb-box scroll_div">
+                  <table class="tb_basic01" border="1" _fixedhead="rows:2; cols:2; div-auto-size: none;body-header-id: fix;">
+                    <thead>
+                      <tr>
+                        <th colspan="2"></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                        <th><div></div></th>
+                      </tr>
+                      <tr>
+                        <th colspan="2"></th>
+                        <th><div>選べる車種</div></th>
+                        <th><div>契約年数</div></th>
+                        <th><div>中途解約</div></th>
+                        <th><div>走行距離制限<br><span class="notice-type-top">（月間）</span></div></th>
+                        <th><div>車貰える</div></th>
+                        <th><div>再リース</div></th>
+                        <th><div>ディーラー<br>オプション</div></th>
+                        <th><div>メーカー<br>オプション</div></th>
+                        <th><div>車の<br>カスタム</div></th>
+                        <th><div>頭金対応</div></th>
+                        <th><div>ボーナス<br>払い対応</div></th>
+                        <th><div>カード決済</div></th>
+                        <th><div>契約車の<br>買取</div></th>
+                        <th><div>法人・<br>個人事業主</div></th>
+                      </tr>
+                    </thead>
+                    <tbody> 
+                    <tr>
+                      <th colspan="2">オートフラット</th>
+                      <td>国産車</td>
+                      <td>3年～7年</td>
+                      <td>-</td>
+                      <td>2,500km<span class="notice-type-top">(マイメンテプラン<br>1,500km)</span></td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○<span class="notice-type-top">※条件あり</span></td>
+                      <td>○</td>
+                      <td>-<span class="notice-type-top">※別サービスであり</span></td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">カルモ</th>
+                      <td>国産車</td>
+                      <td>1〜11年</td>
+                      <td>-</td>
+                      <td>無制限<span class="notice-type-bottom">(７年以上の契約)</span>1,500km<span class="notice-type-top">(契約６年以下)</span></td>
+                      <td>○<span class="notice-type-top">※オプション</span></td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th class="th-w" rowspan="2">KINTO</th>
+                      <th class="th-w-r"><div class="th-in-f">初期費用<br>フリープラン</div></th>
+                      <td>トヨタ・レクサス</td>
+                      <td>3・5・7年</td>
+                      <td>-</td>
+                      <td rowspan="2">1,500km</td>
+                      <td rowspan="2">-</td>
+                      <td>-</td>
+                      <td rowspan="2">-</td>
+                      <td rowspan="2">-</td>
+                      <td rowspan="2">-</td>
+                      <td>○</td>
+                      <td rowspan="2">-</td>
+                      <td rowspan="2">◎</td>
+                      <td rowspan="2">-</td>
+                      <td rowspan="2">○</td>
+                    </tr>
+                    <tr>
+                      <th class="th-w-r"><div class="th-in-f">解約金<br>フリープラン</div></th>
+                      <td>トヨタ</td>
+                      <td>3年</td>
+                      <td><span class="f-bold">◎</span></td>
+                      <td>○</td>
+                      <td>-</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">クルカ</th>
+                      <td>最安値で<br>提供できる<br>車のみ</td>
+                      <td>3年</td>
+                      <td>-</td>
+                      <td>1,000km<br>2,000km<span class="notice-i">(貨物)</span></td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">コスモMyカーリース</th>
+                      <td>国産車</td>
+                      <td>36ヶ月〜84ヶ月<span class="notice-type-top">（36ヶ月未満も可）</span></td>
+                      <td>-</td>
+                      <td>
+                          500km<br>
+                          1,500km<br>
+                          2,000km<span class="notice-type-top">(上記から選択)</span>
+                        </td>
+                      <td>○<span class="notice-type-top">※条件あり</span></td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">sompoで乗ーる</th>
+                      <td>国産車・輸入車</td>
+                      <td>3・5・7・9年</td>
+                      <td>○<span class="notice-type-top">※オプション</span></td>
+                      <td>
+                          1,000km<br>
+                          1,500km<br>
+                          2,000km<br>
+                          3,000km
+                          <span class="notice-type-top">(上記から選択)</span>
+                        </td>
+                      <td>○<br><span class="notice-type-top">※条件あり</span></td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                    <tr>
+                      <th colspan="2">NORIDOKI</th>
+                      <td>低価格で<br>提供できる<br>車のみ</td>
+                      <td>3年</td>
+                      <td>-</td>
+                      <td>1,000km</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○<span class="notice-type-top">※条件あり</span></td>
+                      <td>-</td>
+                      <td>不明</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">ニコノリ</th>
+                      <td>国産車</td>
+                      <td>1年〜9年</td>
+                      <td>-</td>
+                      <td>契約時に<br>距離制限を決める</td>
+                      <td>○<span class="notice-type-top">※オプション</span></td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">モータ</th>
+                      <td>国産車・レクサス</td>
+                      <td>5・7・11年</td>
+                      <td>-</td>
+                      <td>制限なし</td>
+                      <td>◎</td>
+                      <td>-</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>◎</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>-</td>
+                      <td>-</td>
+                      <td>-</td>
+                    </tr>
+                    </tbody>              
+                  </table>
+  <!--                   <table class="tb_basic01">
                     <thead>
                       <tr>
                         <th rowspan="2" class="var-txt"></th>
@@ -279,64 +491,12 @@ Template Post Type: car_lease
                       <td>-</td>
                     </tr>
                     </tbody>              
-                  </table>
+                  </table> -->
                 </div>
-                </div>
+      
 
- <div class="w">
-                <div class="table-glid">
-                  <div class="inner">
-                    <div>見出し</div>
-                    <div>見出し</div>
-                    <div>見出し</div>
-                    <div>見出し</div>
-                    <div>見出し</div>
-                    <div>見出し</div>
-                    <div>見出し</div>
-                    <div>見出し</div>
-                  </div>
-                  <div class="inner01">
-                    <div class="m">見出し</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                  </div>
-                  <div class="inner01">
-                    <div class="m">見出し</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                  </div>
-                  <div class="inner01">
-                    <div class="m">見出し</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                  </div>
-                  <div class="inner01">
-                    <div class="m">見出し</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                    <div>内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
-                  </div>
-                </div>
-</div>
+
+
 
 
 
@@ -492,7 +652,11 @@ if( $posts ):
 </div>
 
 
-
+<script>
+window.onload = function(){
+FixedMidashi.create();
+};
+</script>  
 
         
 
