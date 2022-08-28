@@ -66,7 +66,7 @@ Template Post Type: car_lease
                 <h2 class="c-tit02">カーリース比較表</h2>
                 <span class="tb-notice">「※オプション」「※条件あり」は各サービスの詳細をご参照ください</span>
               <div class="tb-box scroll_div">
-                  <table class="tb_basic01" border="1" _fixedhead="rows:2; cols:2; div-auto-size: none;body-header-id: fix;">
+<!--                   <table class="tb_basic01" border="1" _fixedhead="rows:2; cols:2; div-auto-size: none;body-header-id: fix;">
                     <thead>
                       <tr>
                         <th colspan="2"></th>
@@ -277,24 +277,42 @@ Template Post Type: car_lease
                       <td>-</td>
                     </tr>
                     </tbody>              
-                  </table>
-  <!--                   <table class="tb_basic01">
+                  </table> -->
+  <table class="tb_basic01" _fixedhead="rows:3; cols:1; div-auto-size: none;body-header-id: fix;">
                     <thead>
                       <tr>
-                        <th rowspan="2" class="var-txt"></th>
-                        <th rowspan="2"><div class="var-txt">オートフラット</div></th>
-                        <th colspan="2" rowspan="2"><div class="var-txt">カルモ</div></th>
-                        <th colspan="2" class="h"><div class="var-txt">KINTO</div></th>
-                        <th rowspan="2" ><div class="var-txt">クルカ</div></th>
-                        <th rowspan="2"><div class="var-txt">コスモMyカーリース</div></th>
-                        <th rowspan="2"><div class="var-txt">sompoで乗ーる</div></th>
-                        <th rowspan="2"><div class="var-txt">NORIDOKI</div></th>
-                        <th rowspan="2"><div class="var-txt">ニコノリ</div></th>
-                        <th rowspan="2"><div class="var-txt">モータ</div></th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
+                        <th>&nbsp;</th>
                       </tr>
                       <tr>
-                        <th class="hh"  class="var-txt">初期費用フリープラン</th>
-                        <th class="hh"  class="var-txt">解約金フリープラン</th>
+                        <th rowspan="2" class="th-width"></th>
+                        <th rowspan="2" class="th-width">オートフラット</th>
+                        <th colspan="2" rowspan="2" class="th-width">カルモ</th>
+                        <th colspan="2" class="th-width">KINTO</th>
+                        <th rowspan="2" class="th-width">クルカ</th>
+                        <th rowspan="2" class="th-width">コスモMyカーリース</th>
+                        <th rowspan="2" class="th-width">sompoで乗ーる</th>
+                        <th rowspan="2" class="th-width">NORIDOKI</th>
+                        <th rowspan="2" class="th-width">ニコノリ</th>
+                        <th rowspan="2" class="th-width">モータ</th>
+                      </tr>
+                      <tr>
+                        <th class="th-w-r"><div class="th-in-f">初期費用<br>フリープラン</div></th>
+                        <th class="th-w-r"><div class="th-in-f">解約金<br>フリープラン</div></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -304,10 +322,10 @@ Template Post Type: car_lease
                       <td colspan="2">国産車</td>
                       <td>トヨタ・レクサス</td>
                       <td>トヨタ</td>
-                      <td>最安値で提供できる車のみ</td>
+                      <td>最安値で<br>提供できる<br>車のみ</td>
                       <td>国産車・全車種</td>
                       <td>国産車・輸入車</td>
-                      <td>低価格で提供できる車のみ</td>
+                      <td>低価格で<br>提供できる<br>車のみ</td>
                       <td>国産車</td>
                       <td>国産車・レクサス</td>
                     </tr>
@@ -318,7 +336,7 @@ Template Post Type: car_lease
                       <td>3・5・7年</td>
                       <td>3年</td>
                       <td>3年</td>
-                      <td>36ヶ月〜84ヶ月<br>（36ヶ月未満も可）</td>
+                      <td>36ヶ月〜84ヶ月<span class="notice-type-top">(36ヶ月未満も可)</span></td>
                       <td>3・5・7・9年</td>
                       <td>3年</td>
                       <td>1年〜9年</td>
@@ -332,53 +350,45 @@ Template Post Type: car_lease
                       <td>○</td>
                       <td>-</td>
                       <td>-</td>
-                      <td>○※オプション</td>
+                      <td>○<span class="notice-type-top">※オプション</span></td>
                       <td>-</td>
                       <td>-</td>
                       <td>-</td>
                     </tr>
                     <tr>
                       <th>走行距離制限（月間）</th>
-                      <td>2,500km<br>1,500km<span class="notice">※マイメンテプラン</span></td>
-                      <td>契約6年以下<br>1,500km</td>
-                      <td>7年以上の<br>契約無制限</td>
+                      <td>2,500km<br>1,500km<span class="notice-type-top">(マイメンテプラン)</span></td>
+
+                      <td colspan="2">無制限<span class="notice-type-bottom">(７年以上の契約)</span>1,500km<span class="notice-type-bottom">(契約６年以下)</span></td>
+
+                      <!-- <td>7年以上の<br>契約無制限</td> -->
                       <td colspan="2">1,500km</td>
-                      <td>1,000km<br>（貨物）2,000km</td>
-                      <td>以下から選択<br>
-                          500km<br>
-                          1,500km<br>
-                          2,000km
+                      <td>1,000km<br>2,000km<span class="notice-i">(貨物)</span></td>
+                      <td>
+                        500km<br>
+                        1,500km<br>
+                        2,000km<span class="notice-type-top">(上記から選択)</span>
                       </td>
-                      <td>以下から選択<br>
+                      <td>
                           1,000km<br>
                           1,500km<br>
                           2,000km<br>
                           3,000km
+                          <span class="notice-type-top">(上記から選択)</span>
                       </td>
                       <td>1,000km</td>
-                      <td>契約時に走行距離制限を決める</td>
+                      <td>契約時に<br>制限を決める</td>
                       <td>制限なし</td>
                     <tr>
                       <th>車もらえる</th>
                       <td>-</td>
-                      <td colspan="2">○<span class="notice">（7年以上の契約及び<br>月額500円のオプション加入時）</span></td>
+                      <td colspan="2">○<span class="notice-type-top">※オプション</span></td>
                       <td colspan="2">-</td>
                       <td>-</td>
-                      <td>○<br>（9年リースの場合）</td>
-                      <td>○<br>（9年リース・残価なしプラン）</td>
+                      <td>○<span class="notice-type-top">※条件あり</span></td>
+                      <td>○<span class="notice-type-top">※条件あり</span></td>
                       <td>-</td>
-                      <td>○<br>オプション加入</td>
-                      <td>○</td>
-                    <tr>
-                      <th>乗り換え</th>
-                      <td>○</td>
-                      <td colspan="2">○</td>
-                      <td colspan="2">○</td>
-                      <td>○</td>
-                      <td>-</td>
-                      <td>○</td>
-                      <td>○</td>
-                      <td>○</td>
+                      <td>○<span class="notice-type-top">※オプション</span></td>
                       <td>○</td>
                     </tr>
                     <tr>
@@ -407,21 +417,10 @@ Template Post Type: car_lease
                       <td>-</td>
                     </tr>
                     <tr>
-                      <th>ディーラーオプション</th>
+                      <th>ディーラー・メーカー<br>オプション</th>
                       <td>○</td>
                       <td colspan="2">○</td>
-                      <td colspan="2" rowspan="2">所定のオプション<br>パッケージから選択</td>
-                      <td>○</td>
-                      <td>○</td>
-                      <td>○</td>
-                      <td>○</td>
-                      <td>○</td>
-                      <td>○</td>
-                    </tr>
-                    <tr>
-                      <th>メーカーオプション</th>
-                      <td>○</td>
-                      <td colspan="2">○</td>
+                      <td colspan="2">-</td>
                       <td>○</td>
                       <td>○</td>
                       <td>○</td>
@@ -433,7 +432,7 @@ Template Post Type: car_lease
                       <th>車のカスタム</th>
                       <td>-</td>
                       <td colspan="2">-</td>
-                      <td colspan="2">指定車のみ可</td>
+                      <td colspan="2">△<span class="notice-type-top">※指定車のみ</span></td>
                       <td>-</td>
                       <td>-</td>
                       <td>-</td>
@@ -470,7 +469,7 @@ Template Post Type: car_lease
                       <th>クレジットカード払い</th>
                       <td>○</td>
                       <td colspan="2">-</td>
-                      <td colspan="2">○<span class="notice">(Dinaersのみ)</span></td>
+                      <td colspan="2">○<span class="notice-type-top">※条件あり</span></td>
                       <td>-</td>
                       <td>-</td>
                       <td>-</td>
@@ -480,7 +479,7 @@ Template Post Type: car_lease
                     </tr>
                     <tr>
                       <th>法人・個人事業主</th>
-                      <td>法人向け カーリース<br>「オートフラットBiz」</td>
+                      <td>-<span class="notice-type-top">※別サービスであり</span></td>
                       <td colspan="2">○</td>
                       <td colspan="2">○</td>
                       <td>○</td>
@@ -491,7 +490,7 @@ Template Post Type: car_lease
                       <td>-</td>
                     </tr>
                     </tbody>              
-                  </table> -->
+                  </table>
                 </div>
       
 

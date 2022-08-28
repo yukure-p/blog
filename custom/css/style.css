@@ -1748,6 +1748,7 @@ footer {
 
 .tb_basic01 {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 0;
   white-space: nowrap;
@@ -1755,6 +1756,13 @@ footer {
 .tb_basic01 > thead > tr:first-child > th {
   border: none;
   background: #fff;
+  width: 250px;
+}
+.tb_basic01 > thead > tr:nth-of-type(2) > th {
+  width: 250px !important;
+}
+.tb_basic01 > thead > tr:nth-of-type(3) > th {
+  width: 125px !important;
 }
 .tb_basic01 > thead > tr > th {
   border: solid 1px #fff;
@@ -1764,8 +1772,6 @@ footer {
   text-align: center;
   vertical-align: middle;
   background: #f3f1ed;
-  width: 200px;
-  height: 40px;
 }
 .tb_basic01 > thead > tr > td {
   border: solid 1px #d1d1d1;
@@ -1778,7 +1784,6 @@ footer {
   font-size: 1.6rem;
   vertical-align: middle;
   background: #f3f1ed;
-  width: 330px;
 }
 .tb_basic01 > tbody > tr > td, .tb_basic01 > tr > td {
   border-left: solid 1px #f2f2f2;
@@ -1819,7 +1824,7 @@ footer {
   padding: 10px 30px 10px 30px !important;
 }
 .tb_basic01 .th-w-r {
-  width: 50px !important;
+  width: 125px !important;
   padding: 10px 8px 10px 8px !important;
 }
 .tb_basic01 .notice-type-top {
@@ -1839,6 +1844,9 @@ footer {
   display: inline-block;
   position: relative;
   top: -4px;
+}
+.tb_basic01 .th-width {
+  width: 250px;
 }
 
 /*装飾のないシンプルなテーブル*/
