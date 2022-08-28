@@ -13,7 +13,7 @@
 
 .tb-box{
 	position:relative;
-	top:-30px;
+	top:-20px;
 }
 
 
@@ -31,36 +31,31 @@
 	border-collapse: collapse;
 	border-spacing: 0;
 	white-space:nowrap;
-	
 	&>thead>tr {
 		&:first-child{
 			&>th{
-			border:none;
-			background:#fff;
-			width:250px;
+				border:none;
+				background:#fff;
+				width:200px;
 			}
 		}
 		&:nth-of-type(2){
 			&>th{
-				width:250px !important;
+				height:50px;
 				&:first-child{
-					// border:none;
-					// background:#fff;
+					background:#fff;
 				}
-			}
-		}
-		&:nth-of-type(3){
-			&>th{
-				width:125px !important;
 			}
 		}
 		&>th{
 			 border: solid 1px #fff;
 			 padding:10px 15px;
-			 font-size:var(--fSize-3);
+			 font-size:var(--fSize);
 			 text-align:center;
 			 vertical-align:middle;
-			 background:#f3f1ed;
+			 background:#53b9dd;
+			 color:#fff;
+			 // height:100px;
 			 // width:250px;
 		}
 		&>td{
@@ -71,11 +66,11 @@
 	&>tr{
 		&>th{
 			border: solid 1px #fff;
-			text-align:left;
+			// text-align:left;
 			padding: 10px 20px 10px 20px;
-			font-size:var(--fSize);
+			font-size:var(--fSize-2);
 			vertical-align:middle;
-			background:#f3f1ed;
+			background:#f7f7f7;
 			// width:330px;
 		}
 		&>td {
@@ -86,38 +81,24 @@
 			font-size:var(--fSize-3);
 			padding:15px;
 			white-space:nowrap;
-		}
-		&:nth-of-type(2){
-			&>td{
-			background:#f9f9f9;
-			}
-		}
-		&:nth-of-type(4){
-			&>td{
-			border-top: solid 1px #f2f2f2;
-			}
-		}
-		&:nth-of-type(5){
-			&>td{
-			background:#f9f9f9;
-			}
-		}
-		&:nth-of-type(7){
-			&>td{
-			background:#f9f9f9;
-			}
-		}
-		&:nth-of-type(9){
-			&>td{
-			background:#f9f9f9;
-			}
-		}
-		&:last-child{
-			&>td{
-			border-bottom: solid 1px #f2f2f2;
-			}
 		}				
 	}
+	&>tbody>tr{
+		&>td{
+			&:nth-of-type(even){
+				background:#f5f9fb;
+				border: solid 1px #fff;
+			}
+			&:nth-of-type(odd){
+				border: solid 1px #f9f9f9;
+			}
+		}
+	}
+
+
+
+
+
 	&>tbody>tr>th{
 		 // width:300px;
 	}
@@ -141,18 +122,21 @@
 	.notice-type-top{
 		font-size:var(--fSize-6);
 		display:block;
+		letter-spacing:.1em;
 		// margin-top:5px;
 	}
 	.notice-type-bottom{
 		font-size:var(--fSize-6);
 		display:block;
 		margin-bottom:8px;
+		letter-spacing:.1rem;
 	}
 	.notice-i{
 		font-size:var(--fSize-6);
 		display:inline-block;
 		position:relative;
 		top:-4px;
+		letter-spacing:.1rem;
 	}
 	.th-width{
 		width:250px;

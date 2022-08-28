@@ -1194,6 +1194,7 @@ footer {
 }
 .c-box .tb-notice {
   position: absolute;
+  right: 0;
   top: 90px;
   z-index: 5;
 }
@@ -1735,7 +1736,7 @@ footer {
 /*ベーシックなテーブルスタイル*/
 .tb-box {
   position: relative;
-  top: -30px;
+  top: -20px;
 }
 
 #fix {
@@ -1756,34 +1757,34 @@ footer {
 .tb_basic01 > thead > tr:first-child > th {
   border: none;
   background: #fff;
-  width: 250px;
+  width: 200px;
 }
 .tb_basic01 > thead > tr:nth-of-type(2) > th {
-  width: 250px !important;
+  height: 50px;
 }
-.tb_basic01 > thead > tr:nth-of-type(3) > th {
-  width: 125px !important;
+.tb_basic01 > thead > tr:nth-of-type(2) > th:first-child {
+  background: #fff;
 }
 .tb_basic01 > thead > tr > th {
   border: solid 1px #fff;
   padding: 10px 15px;
-  font-size: 13px;
-  font-size: 1.3rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   text-align: center;
   vertical-align: middle;
-  background: #f3f1ed;
+  background: #53b9dd;
+  color: #fff;
 }
 .tb_basic01 > thead > tr > td {
   border: solid 1px #d1d1d1;
 }
 .tb_basic01 > tbody > tr > th, .tb_basic01 > tr > th {
   border: solid 1px #fff;
-  text-align: left;
   padding: 10px 20px 10px 20px;
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   vertical-align: middle;
-  background: #f3f1ed;
+  background: #f7f7f7;
 }
 .tb_basic01 > tbody > tr > td, .tb_basic01 > tr > td {
   border-left: solid 1px #f2f2f2;
@@ -1795,23 +1796,12 @@ footer {
   padding: 15px;
   white-space: nowrap;
 }
-.tb_basic01 > tbody > tr:nth-of-type(2) > td, .tb_basic01 > tr:nth-of-type(2) > td {
-  background: #f9f9f9;
+.tb_basic01 > tbody > tr > td:nth-of-type(even) {
+  background: #f5f9fb;
+  border: solid 1px #fff;
 }
-.tb_basic01 > tbody > tr:nth-of-type(4) > td, .tb_basic01 > tr:nth-of-type(4) > td {
-  border-top: solid 1px #f2f2f2;
-}
-.tb_basic01 > tbody > tr:nth-of-type(5) > td, .tb_basic01 > tr:nth-of-type(5) > td {
-  background: #f9f9f9;
-}
-.tb_basic01 > tbody > tr:nth-of-type(7) > td, .tb_basic01 > tr:nth-of-type(7) > td {
-  background: #f9f9f9;
-}
-.tb_basic01 > tbody > tr:nth-of-type(9) > td, .tb_basic01 > tr:nth-of-type(9) > td {
-  background: #f9f9f9;
-}
-.tb_basic01 > tbody > tr:last-child > td, .tb_basic01 > tr:last-child > td {
-  border-bottom: solid 1px #f2f2f2;
+.tb_basic01 > tbody > tr > td:nth-of-type(odd) {
+  border: solid 1px #f9f9f9;
 }
 .tb_basic01 .th-in-f {
   font-size: 10px;
@@ -1831,12 +1821,15 @@ footer {
   font-size: 10px;
   font-size: 1rem;
   display: block;
+  letter-spacing: 0.1em;
 }
 .tb_basic01 .notice-type-bottom {
   font-size: 10px;
   font-size: 1rem;
   display: block;
   margin-bottom: 8px;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
 }
 .tb_basic01 .notice-i {
   font-size: 10px;
@@ -1844,6 +1837,8 @@ footer {
   display: inline-block;
   position: relative;
   top: -4px;
+  letter-spacing: 1px;
+  letter-spacing: 0.1rem;
 }
 .tb_basic01 .th-width {
   width: 250px;
