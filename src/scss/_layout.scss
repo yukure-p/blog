@@ -189,10 +189,11 @@
 }
 
 .c-box{
-  letter-spacing: .5em;
+  letter-spacing: .2em;
 	 font-feature-settings: "palt";
 	 margin-bottom:120px;
 	 position:relative;
+	 font-size:var(--fSize-2);
 	 &:first-child{
 	 	margin-top:60px;
 	 }
@@ -211,6 +212,9 @@
 		top:90px;
 		z-index:5;
 	}
+	&.intro{
+		margin-bottom:60px;
+	}
 }
 .entry-img{
 	margin-top: 30px;
@@ -223,15 +227,17 @@
 /* ------------------------------------------------
 	
 ------------------------------------------------ */
-.box-content{
-	@include flexbox;
-	background:var(--bg-color03);
+.l-grid{
+	.box-content{
+		@include flexbox;
+		background:var(--bg-color03);
+	}
 }
-
 .box-item{
 	@include flexbox;
 	@include flex-direction($direction:column);
 	@include flex-align($align: stretch);
+	background:var(--bg-color03);
 	.box-img{
 		width:100%;
 		img{
@@ -289,26 +295,140 @@
 
 .category-tag{
 	a {
-		// background-color:var(--bg-color01);
+		background-color:var(--thema-color01);
 		padding:.3rem 1.2rem .3rem 2.4rem;
 		border-radius:12px;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 7px 5px;
+		// background-size: cover;
+		// background-repeat: no-repeat;
+		// background-position: 7px 5px;
 		display:inline-block;
 		position:relative;
-		background-image: url("/wp-content/themes/custom/img/common/icon-cate.svg");
-		background-repeat: no-repeat;
-		background-size:13px 13px;
+		color:var(--font-color02);
+		// background-repeat: no-repeat;
+		// background-size:13px 13px;
+		
+	  &:before{
+	  	content:'';
+	  	background-image: url("/wp-content/themes/custom/img/common/icon-cate.svg");
+			background-repeat: no-repeat;
+			position: absolute;
+			width:13px;
+			height:13px;
+			left:8px;
+			top:5px;
+			// filter:var(--svg-color02);
+	  }
 	}
-	a.car {
-			background-color:var(--bg-car);					
+	// a.car {
+	// 		background-color:var(--bg-car);					
+	// }
+	// a.asp {
+	// 		background-color:var(--bg-asp);
+	// }
+}
+
+
+.flame-box{
+	background:var(--bg-color06);
+	padding:20px;
+	// border:1px solid var(--border-color03);
+	position: relative;
+	border-radius: 5px;
+	&.point{
+		width:70%;
+		margin:70px auto 0 auto;
 	}
-	a.asp {
-			background-color:var(--bg-asp);
+	&.pac{
+		width:100%;
+		border-radius: 0px 0px 5px 5px;
+		@include box-sizing;
+		@include flexbox;
+		@include flex-align($align: center);
+		@include flex-justify-content($justify:center);
+		@include flex-direction($direction:column);
+		background:#fff;
+		padding:35px 20px;
+		border:1px solid var(--border-color05);
+		li{
+			margin-bottom:18px;
+			font-size:var(--fSize2);
+			&:before {
+				content: '';
+				background-image: url("/wp-content/themes/custom/img/common/icon02.svg");
+				background-repeat: no-repeat;
+				background-size: 18px 18px;
+				display: block;
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 5px;
+				left: -15px;
+				filter: var(--svg-color02);
+			}
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.f-txt{
+		font-size:var(--fSize);
+		font-weight:bold;
 	}
 }
 
+.flame-box-tit{
+	  background:#f08861;
+	  color: #fff;
+	  font-weight:bold;
+	  border-radius: 5px 5px 0px 0px;
+	  font-size: var(--fSize);
+	  line-height: 1;
+	  letter-spacing: 0.2em;
+	  display:inline-block;
+	  // text-indent:-20px;
+	  @include box-sizing;
+	  &:before{
+	  	content:'';
+	  	position:relative;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display:inline-block;
+			// filter: var(--svg-color01);
+	  }
+		&.pac{
+			  padding: 12px 20px; 
+			  font-size: var(--fSize4);
+			  width:100%;
+			  text-align:center;
+			  text-indent:-15px;
+			  &:before{
+			  	background-image: url("/wp-content/themes/custom/img/common/icon04.svg");
+					width:20px;
+					height:20px;
+					left:-10px;
+					top:2px;
+					filter: var(--svg-color01);
+			  }
+		}
+		&.point{
+			  padding:6px 20px 8px 20px; 
+			  font-size: var(--fSize);
+			  width:auto;
+			  text-align:center;
+			  text-indent:0px;
+			  position:absolute;
+			  top:-36px;
+			  left:-1px;
+			  &:before{
+			  	background-image: url("/wp-content/themes/custom/img/common/icon05.svg");
+					width:20px;
+					height:20px;
+					left:-10px;
+					top:1px;
+					filter: var(--svg-color01);
+			  }
+		}
+}
 
 /* ------------------------------------------------
 	#contentsエリアここから

@@ -102,15 +102,11 @@ a.link01 {
 
 a.link02 {
 	@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
-	background:var(--link-color02);
-	padding:5px 10px;
-	height:10px;
-	border-radius:10px;
+	border-bottom:1px solid var(--border-color04);
+	padding-bottom:5px;
 	@include media(pc){
 		&:hover {
-			// @include opacity(0.6);
-			color:var(--font-color03);
-			background:var(--link-color03);
+			@include opacity(0.6);
 			cursor:pointer;
 		}
 	}
@@ -167,11 +163,12 @@ a.link02 {
 		}
 	}
 }
-.linkBlock02 {
-	//マウスオーバーの設定
-	.PC & {
-		&:hover {
 
+@include media(pc){
+	.linkBlock02 {
+		padding:10px 20px;
+		@include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+		&:hover {
 		}
 	}
 }
@@ -180,23 +177,28 @@ a.link02 {
 	ボタン
 ------------------------------------------------ */
 .btn01 {
-
-	color:var(--font-color03);
+	color:var(--font-color02);
 	text-align: center;
-	&>a,
+	border-radius:6px;
+	@include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+	&>a
 	{
 		@include transition;
-		color:var(--font-color03);
+		color:var(--font-color02);
 		display:inline-block;
 		text-align: center;
 		width:100%;
-		padding:10px;
-		background-color:var(--bg-color02);
-		&:hover {
-			cursor:pointer;
-			@include opacity(0.6);
-		}
+		padding:10px 0;
 	}
+	&:hover {
+		cursor:pointer;
+		@include opacity(0.6);
+	}
+	&.type01 {
+		margin:0 auto;
+		width:80%;
+	}
+
 }
 
 

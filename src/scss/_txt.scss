@@ -47,21 +47,49 @@
 }
 
 .c-tit02{
-	font-size:var(--fSize7);
+	font-size:var(--fSize8);
 	margin-bottom:4rem;
 	// margin-top:4em;
-	// border-top:2px solid var(--thema-color01);
-	border-bottom:2px solid var(--border-color01);
-	padding-bottom:.3em;
+	// border:1px solid var(--thema-color01);
+	border-bottom:3px solid var(--border-color01);
+	padding:.5rem .5rem;
 	text-indent:0em;
+	font-weight:bold;
+	position:relative;
+	z-index:5;
+	// background:#ffece5;
+
+	&:after{
+		content:'';
+		background:var(--thema-color01);
+		position:absolute;
+		// border:1px solid var(--thema-color01);
+		bottom:-3px;
+		left: 0px;
+		width:20%;
+		height:3px;
+		z-index:1;
+	}
 }
 
 .c-tit03{
 	font-size:var(--fSize5);
-	border-left: solid 5px var(--border-color01);
-	text-indent:.5em;
+	text-indent:1em;
 	margin-bottom:1em;
-	margin-top:50px;
+	margin-top:60px;
+	position:relative;
+	&:before{
+		content:'';
+		// border-left: solid 5px var(--thema-color01);
+		background: var(--thema-color01);
+		position:absolute;
+		top:0;
+		left:0;
+		display:inline-block;
+		width:5px;
+		height:30px;
+
+	}
 }
 .c-tit04{
 	font-size:var(--fSize2);
@@ -73,7 +101,7 @@
 .c-txt{
 	font-size:var(--fSize);
 	margin-bottom:1em;
-	line-height:1.8;
+	line-height:2.0;
 }
 
 .bold{
@@ -91,4 +119,58 @@
 .f-bold{
 	font-weight:bold;
 }
+
+
+.txt-large{
+	font-size:var(--fSize);
+}
+.txt-notice{
+	font-size:var(--fSize-4);
+}
+.txt-line{
+	background:linear-gradient(transparent 80%,#ffe27e 0%);
+}
+
+.txt-line-thema{
+	background:linear-gradient(transparent 60%,var(--thema-color01) 0%);
+}
+
+.c-tit05{
+	position: relative;
+    margin: 40px auto 15px auto;
+    padding: 1.5rem;
+    border: 3px solid var(--bg-color02);
+    text-align: center;
+    font-weight:bold;
+    font-size:var(--fSize);
+    &:before{
+		content: '';
+	    position: absolute;
+	    border: 12px solid transparent;
+	    top: 100%;
+	    left: calc(50% - 12px);
+	    border-top: 12px solid var(--bg-color02);
+    }
+    &:after{
+		content: '';
+	    position: absolute;
+	    border: 12px solid transparent;
+	    top: 100%;
+	    left: calc(50% - 12px);
+		margin-top: -4px;
+	    border-top: 12px solid #fff;
+    }
+}
+
+.txt-border{
+	border:2px solid var(--bg-color02);
+	padding:5px 20px;
+	margin-top:10px;
+	border-radius:5px;
+}
+
+
+
+
+
 

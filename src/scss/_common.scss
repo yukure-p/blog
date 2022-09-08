@@ -12,7 +12,7 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 :root {
 
   // テーマカラー
-  --thema-color01: #ffe404;
+  --thema-color01: #f08861;
 
   // フォントカラー
   --font-color01: #333333;//
@@ -25,8 +25,9 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --bg-color01:#f6f6f6;//背景
   --bg-color02: #333333;//
   --bg-color03: #fff;//
-  --bg-color04: #e9e9e9;
+  --bg-color04: #f1f1f1;//サーチアイコン背景
   --bg-color05:#c20000;//form requirer
+  --bg-color06:#f7f7f7;//記事ない背景
   // --bg-color05: #F5F5F5;
   // --bg-color06: #535353;
   // --bg-color07: #f3f3f3;
@@ -37,7 +38,9 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   // ボーダーカラー
   --border-color01: #333333;
   --border-color02: #eeeeee;//サイドメニューライン
-  --border-color03: #e5e1c5;//tabe非アクティブ
+  --border-color03: #cfcfcf;//tabe非アクティブ
+  --border-color04: #fff;//tabe非アクティブ
+  --border-color05: #f08861;//tabe非アクティブ
   // --border-color03: #d8d8d8;//タイトル下のライン　フッターのライン
   // --border-color04: #fff;//スマホメニュー検索結果 メニューライン
 
@@ -50,6 +53,24 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --link-color01: #808080;//リンクライン
   --link-color02: #f3f3f3;//リンク背景
   --link-color03: #333333;//
+
+
+  // カーリースカラー
+  --car-bace-color:#f08861;
+  --car-bg-color01:#fff7f4;
+  --car-bg-color02:#f8f8f8;
+  --car-border-color01:#f5f9fb;
+  --car-border-color02:#f7f7f7;
+  --car-font-color01:#f08861;
+
+  // svg
+  --svg-color01:invert(100%) sepia(7%) saturate(352%) hue-rotate(244deg) brightness(120%) contrast(100%);
+  --svg-color02:invert(48%) sepia(64%) saturate(430%) hue-rotate(330deg) brightness(100%) contrast(100%);
+
+
+
+
+
   // フォントサイズ
   --fSize-7: calc((9* 0.1) * 1rem);
   --fSize-6: calc((10* 0.1) * 1rem);
@@ -77,7 +98,7 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --font-nav: calc((34* 0.1) * 1rem);
   --EnfontR: calc((34* 0.1) * 1rem);
   --EnfontL: calc((36* 0.1) * 1rem);
-  --EnfontXL: calc((40* 0.1) * 1rem);
+  --EnfontXL: calc((40* 0.1) * 1rem);//car-pcaで利用中
   --MVfont: calc((60* 0.1) * 1rem);
   --font404: calc((100* 0.1) * 1rem);
   --font4042: calc((40* 0.1) * 1rem);

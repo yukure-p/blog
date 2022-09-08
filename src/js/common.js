@@ -18,7 +18,7 @@ menuVisivble();
 
 const tableOfContents = () => {
 const boxes = document.querySelectorAll(".box");
-
+console.log(boxes);
 const options = {
   root: null, // 今回はビューポートをルート要素とする
   rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
@@ -72,7 +72,7 @@ window.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const targetId = link.hash;
       const targetElement = document.querySelector(targetId);
-      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 200;
+      const targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 80;
       
       window.scrollTo({
         top: targetOffsetTop,

@@ -23,7 +23,7 @@ function vlog_enqueue_scripts(){
 
 if (is_front_page()){
         // $scriptPath = '/js/entry.min.js';
-    } else if( is_single(63) ){
+    } else if( is_single(array( 63,34) )){
       // $scriptPath = '/js/fixed.js';
       wp_enqueue_script(
           'custom_script',
@@ -390,6 +390,9 @@ function asp_cart_rewrite_rules_array( $rules ) {
   return $new_rewrite_rules + $rules;
 }
 add_filter( 'rewrite_rules_array', 'asp_cart_rewrite_rules_array' );
+
+
+
 
 
 

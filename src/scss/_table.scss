@@ -35,7 +35,7 @@
 		&:first-child{
 			&>th{
 				border:none;
-				background:#fff;
+				background:var(--bg-color03);
 				width:200px;
 			}
 		}
@@ -43,39 +43,33 @@
 			&>th{
 				height:50px;
 				&:first-child{
-					background:#fff;
+					background:var(--bg-color03);
 				}
 			}
 		}
 		&>th{
-			 border: solid 1px #fff;
+			 border: solid 1px var(--bg-color03);
 			 padding:10px 15px;
 			 font-size:var(--fSize);
 			 text-align:center;
 			 vertical-align:middle;
-			 background:#53b9dd;
-			 color:#fff;
+			 background:var(--car-bace-color);
+			 color:var(--bg-color03);
 			 // height:100px;
 			 // width:250px;
-		}
-		&>td{
-			 border: solid 1px#d1d1d1;
 		}
 	}
 	&>tbody>tr,
 	&>tr{
 		&>th{
-			border: solid 1px #fff;
+			border: solid 1px var(--bg-color03);
 			// text-align:left;
 			padding: 10px 20px 10px 20px;
 			font-size:var(--fSize-2);
 			vertical-align:middle;
-			background:#f7f7f7;
-			// width:330px;
+			background:var(--car-border-color02);
 		}
 		&>td {
-			border-left: solid 1px #f2f2f2;
-			border-right: solid 1px #f2f2f2;
 			text-align:center;
 			vertical-align:middle;
 			font-size:var(--fSize-3);
@@ -86,39 +80,26 @@
 	&>tbody>tr{
 		&>td{
 			&:nth-of-type(even){
-				background:#f5f9fb;
-				border: solid 1px #fff;
+				background:var(--car-bg-color01);
+				border: solid 1px var(--bg-color03);
 			}
 			&:nth-of-type(odd){
-				border: solid 1px #f9f9f9;
+				border: solid 1px var(--car-border-color02);
 			}
 		}
 	}
-
-
-
-
-
-	&>tbody>tr>th{
-		 // width:300px;
+	&>tbody>tr{
+		&:last-child{
+			&>th{
+				background:none;
+				border:none;
+			}
+			&>td{
+				background:none;
+				border:none;
+			}
+		}
 	}
-
-	.th-in-f{
-		font-size:var(--fSize-6);
-		font-weight:normal;
-		letter-spacing:.1rem;
-	}
-	.th-w{
-		// width:300px !important;
-		// table-layout:initial !important;
-		padding: 10px 30px 10px 30px !important;
-	}
-
-	.th-w-r{
-		width:125px !important;
-		padding: 10px 8px 10px 8px !important;
-	}
-
 	.notice-type-top{
 		font-size:var(--fSize-6);
 		display:block;
@@ -131,6 +112,12 @@
 		margin-bottom:8px;
 		letter-spacing:.1rem;
 	}
+	.notice-type-row{
+		font-size:var(--fSize-6);
+		display:block;
+		margin-bottom:15px;
+		letter-spacing:.1rem;
+	}	
 	.notice-i{
 		font-size:var(--fSize-6);
 		display:inline-block;
@@ -140,13 +127,112 @@
 	}
 	.th-width{
 		width:250px;
-		// display:inline-block;
+	}
+	.text-row{
+		margin-bottom:5px;
 	}
 }
 
 
 
 
+
+
+
+.tb_basic02 {
+	width: 100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-spacing: 0;
+	white-space:nowrap;
+	letter-spacing:.1em;
+	&>thead>tr {
+		&>th{
+			 border: solid 1px var(--bg-color03);
+			 padding:10px 15px;
+			 font-size:clamp(var(--fSize-2), 1vw, var(--fSize));
+			 text-align:center;
+			 vertical-align:middle;
+			 background:var(--car-bace-color);
+			 color:var(--bg-color03);
+			 width:100px;
+		}
+		&:first-child{
+			&>th{
+				border:none;
+				background:var(--bg-color03);
+			}
+		}
+		&:nth-of-type(2){
+			&>th{
+				&:first-child{
+					background:var(--bg-color03);
+				}
+			}
+		}
+	}
+	&>tbody>tr,
+	&>tr{
+		&>th{
+			border: solid 1px var(--bg-color03);
+			padding:6px 15px;
+			font-size:clamp(var(--fSize-4), 1vw, var(--fSize-1));
+			vertical-align:middle;
+			background:var(--car-border-color02);
+			text-align:left;
+		}
+		&>td {
+			text-align:center;
+			vertical-align:middle;
+			font-size:var(--fSize-3);
+			padding:6px 10px;
+			white-space:nowrap;
+		}				
+	}
+	&>tbody>tr{
+		&>td{
+			&:nth-of-type(even){
+				background:var(--car-bg-color01);
+				border: solid 1px var(--bg-color03);
+			}
+			&:nth-of-type(odd){
+				border: solid 1px var(--car-border-color02);
+			}
+		}
+	}
+	.notice-type-top{
+		font-size:var(--fSize-6);
+		display:block;
+		letter-spacing:.1em;
+		// margin-top:5px;
+	}
+	.notice-type-bottom{
+		font-size:var(--fSize-6);
+		display:block;
+		margin-bottom:8px;
+		letter-spacing:.1rem;
+	}
+	.notice-type-row{
+		font-size:var(--fSize-6);
+		display:block;
+		margin-bottom:15px;
+		letter-spacing:.1rem;
+	}	
+	.notice-i{
+		font-size:var(--fSize-6);
+		display:inline-block;
+		position:relative;
+		top:-4px;
+		letter-spacing:.1rem;
+	}
+	.th-width{
+		width:250px;
+	}
+	.text-row{
+		margin-bottom:5px;
+	}
+
+}
 
 
 

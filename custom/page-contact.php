@@ -2,38 +2,49 @@
 <div class="l-frame">
 <section>
     <div class="l-entry">
-      <?php breadcrumb(); ?>
+      <ul class="breadcrumb">
+        <li><a href="<?php echo esc_url (home_url()); ?>">HOME</a></li>
+        <li>CONTACT</li>
+    </ul>  
       
     </div>
 </section>
 
 <section>
-  
     <div class="l-container">
-         <h1 class="tit-01"><span>CONTACT</span></h1>
-         <div class="l-contents">
+        <div class="l-section">
 
-        <main>
+            <main>
+                <div class="contents-box">
+                    <div class="entry">
+                        <h1 class="tit-01"><span>CONTACT</span></h1>
+                        <?php
 
-        <?php
+                        if(have_posts()): while(have_posts()): the_post();?>
 
-        if(have_posts()): while(have_posts()): the_post();?>
+                        <?php the_content(); ?>
 
-        <?php the_content(); ?>
+                        <?php endwhile; endif; ?>
 
-        <?php endwhile; endif; ?>
+                    </div>
+                </div>
+            </main>
 
-        </main>
+             <aside>
+              <div class="l-aside-outer">
+                <?php get_template_part('inc/aside'); ?>
 
+              </div>
+             </aside>
 
-      </div>
+          </div>
+    </div>
 
-  
-  
 </section>
-
-
 </div>
+
+
+
 
 
 

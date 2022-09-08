@@ -15,6 +15,7 @@ menuVisivble(); // 目次
 
 var tableOfContents = function tableOfContents() {
   var boxes = document.querySelectorAll(".box");
+  console.log(boxes);
   var options = {
     root: null,
     // 今回はビューポートをルート要素とする
@@ -72,7 +73,7 @@ var scrooll = function scrooll() {
         e.preventDefault();
         var targetId = link.hash;
         var targetElement = document.querySelector(targetId);
-        var targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 200;
+        var targetOffsetTop = window.pageYOffset + targetElement.getBoundingClientRect().top - 80;
         window.scrollTo({
           top: targetOffsetTop,
           behavior: "smooth"

@@ -87,7 +87,8 @@ footer {
 	width:var(--cn-width);
 	max-width:var(--cn-max-width);
 	display:grid;
-	grid-template-columns: 1fr var(--search-width) var(--nav-width);
+	// grid-template-columns: 1fr var(--search-width) var(--nav-width);
+	grid-template-columns: 1fr var(--search-width) ;
 	column-gap:30px;
 	nav{
 		@include media(sp){
@@ -145,10 +146,10 @@ footer {
 			&:hover{
 				&:before{
 					background:var(--bg-color04);
-					width:40px;
-					height:40px;
-					left: 3px;
-					top:-4px;
+					width:35px;
+					height:35px;
+					left: 4px;
+					top:-3px;
 					@include scale($property: 1.2);
 					display:inline-block;
 				}
@@ -471,7 +472,7 @@ $tl: 0.6s; // transition length
 
 
 	.l-aside-inner{
-	  padding:0 2rem 2rem 2rem;
+	  padding:0 1.5rem 2rem 1.5rem;
 	  @include media(tablet){
 	  	padding:0 2rem 0 2rem;
 	  	border-left:1px solid var(--bg-color04);
@@ -566,8 +567,9 @@ $tl: 0.6s; // transition length
 			}
 		}
 		.l-aside-menu-under{
-			margin-left:1em;
+			margin-left:2rem;
 			font-size:var(--fSize-2);
+			margin-bottom:.8rem;
 			li{
 				font-weight:normal;
 				margin-bottom:0px;
@@ -611,6 +613,7 @@ $tl: 0.6s; // transition length
 			}
 		}
 		.l-aside-menu{
+			margin-top:10px;
 			li{
 				border-bottom:none;
 				margin-bottom: 0px;
@@ -618,14 +621,16 @@ $tl: 0.6s; // transition length
 				a{
 					background:none;
 					text-indent:0;
-					padding: 1.4rem 0 0rem 0;
+					padding: .6rem 1rem .4rem 1rem;
 				}
 			}
 			.l-aside-menu-under{
 				margin-top:10px;
 
+
 				li{
 					margin-bottom: 10px;
+					font-size:var(--fSize-3);
 					&:last-child{
 						margin-bottom: 0;
 					}
@@ -643,17 +648,19 @@ $tl: 0.6s; // transition length
 ------------------------------------------------ */
 
 .l-footer{
-	background:var( --thema-color01);
+	background:var(--bg-color02);
 	padding-top:30px;
+	width:100%;
 	@include media(sp){
-		width:100%;
+		
 		@include box-sizing;
 	}
 }
 
 .l-footer-inner{
+	max-width:var(--cn-max-width);
 	width:var(--cn-width);
-	margin:60px auto 0 auto;
+	margin:20px auto 0 auto;
 	@include media(tablet){
 		margin:30px auto 0 auto;
 	}
@@ -677,8 +684,15 @@ $tl: 0.6s; // transition length
 	.f-logo{
 		img{
 			width:170px;
+			fill:#fff;
+			svg{
+				fill:var(--font-color02);
+			}
 			@include media(tablet){
 				width:140px;
+			}
+			svg{
+				fill:var(--font-color02);
 			}
 		}
 		
@@ -716,6 +730,7 @@ $tl: 0.6s; // transition length
 	font-size:var(--fSize-4);
 	font-weight:normal;
 	width:100%;
+	color:var(--font-color02);
 	padding-top:20px;
 	margin-bottom:20px;
 	@include media(sp){
@@ -727,12 +742,14 @@ $tl: 0.6s; // transition length
 
 .f-link-box{
 	margin-top:20px;
+	display:none;
 }
 
 
 .f-link-sns{
 	@include flexbox;
 	@include flex-direction($direction:row);
+	color:var(--font-color02);
 	@include media(sp){
 		@include flex-justify-content($justify:center);
 		margin-top:10px;
@@ -749,7 +766,7 @@ $tl: 0.6s; // transition length
 		svg{
 			width:16px;
 			height:16px;
-			fill:#333;
+			fill:var(--font-color02);
 		}
 		span{
 			margin-left:10px;
@@ -795,10 +812,12 @@ $tl: 0.6s; // transition length
 		@include flex-direction($direction:column);
 		row-gap:10px;
 		li{
-			font-size:var(--fSize-2);
 			// margin-left:10px;
 			&:last-child{
 				margin-right:0px;
+			}
+			a{
+				color:var(--font-color02);
 			}
 			ul{
 				margin-top:10px;
@@ -808,6 +827,7 @@ $tl: 0.6s; // transition length
 					margin-left:8px;
 					&:before{
 						content:'-';
+						color:var(--font-color02);
 						font-size:var(--fSize-2);
 						position:relative;
 						left:-5px;
@@ -826,6 +846,7 @@ $tl: 0.6s; // transition length
 	width:var(--cn-width);
 	margin:60px auto 0 auto;
 	font-size:var(--fSize-5);
+	color:var(--font-color02);
 	@include flexbox;
     @include flex-justify-content($justify:flex-end);
     padding-bottom:15px;

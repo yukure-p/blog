@@ -69,7 +69,7 @@
 @include media(pc){
 	.index a.active {
 	  color: #333333;
-	  background-color: #f3f3f3;
+	  background: #f3f3f3 !important;
 	}
 }
 /* ------------------------------------------------

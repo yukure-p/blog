@@ -180,16 +180,6 @@
 	 font-size:var(--fSize);
 	 position:relative;
 	 @include english;
-	 // &:before{
-	 //   content:'';
-	 //   display:inline-block;
-	 //   position:absolute;
-	 //   background:var(--font-color05);
-	 //   width:10px;
-	 //   height:2px;
-	 //   top:-5px;
-	 //   left:0px;
-	 // }
 	 a{
 		color:var(--font-color01);
 	 }
@@ -279,7 +269,206 @@
 
 
 
+/* ------------------------------------------------
+  記事ページ カーリース　オートフラットメリットデメリット
+------------------------------------------------ */
+.pac-of01{
+	padding:20px 0;
+	width:50%;
+}
+.pac-of02{
+	padding:20px 0;
+	width:84%;
+}
+.pac-of03{
+	padding:20px 0;
+	width:55%;
+}
+.pac-of04{
+	padding:20px 0;
+	width:55%;
+}
 
+.of-pca-outer{
+	@include flexbox;
+	@include flex-direction($direction:column);
+	background:var(--car-bg-color02);
+}
+
+.pca-inner{
+	@include flexbox;
+	@include flex-direction($direction:column);
+	@include flex-align($align: center);
+	@include box-sizing;
+	@include flex-justify-content($justify:center);
+	.of-pca01 & {
+		.tit{
+			font-weight:bold;
+			width:100%;
+			color:var(--font-color02);
+			text-align:center;
+			padding:10px 0;
+			border-radius:3px 3px 0 0;
+			background:var(--car-bace-color);
+		}
+		figure{
+			@include flexbox;
+			@include flex-align($align: center);
+			@include flex-justify-content($justify:center);
+			height:80px;
+			img{
+				align-self:center;
+			}
+		}
+	}
+	.of-pca02 & {
+		width:100%;
+		height:100%;
+		.tit{
+			@include flexbox;
+			@include flex-align($align: center);
+			@include box-sizing;
+			@include flex-justify-content($justify:center);
+			font-weight:bold;
+			color:var(--font-color02);
+			text-align:center;
+			padding:10px 20px;
+			border-radius:3px;
+			background:var(--car-bace-color);
+			width:100%;
+		}
+		figure{
+			@include flexbox;
+			@include flex-align($align: center);
+			@include flex-justify-content($justify:center);
+			margin-top:20px;
+		}
+	}
+}
+
+.of-pca02-tit{
+	position: relative;
+  margin: 20px auto 15px auto;
+  // padding: 1rem 2.5rem;
+  border-bottom: 3px solid var(--bg-color02);
+  text-align: center;
+  font-weight:bold;
+  font-size:var(--fSize-2);
+  width:90%;
+  &:before{
+	content: '';
+    position: absolute;
+    border: 12px solid transparent;
+    top: 100%;
+    left: calc(50% - 12px);
+    border-top: 12px solid var(--bg-color02);
+  }
+  &:after{
+	content: '';
+    position: absolute;
+    border: 12px solid transparent;
+    top: 100%;
+    left: calc(50% - 12px);
+		margin-top: -4px;
+    border-top: 12px solid #fff;
+  }
+}
+
+
+.car-grid{
+	display:grid;
+	grid-template-columns:45% 10% 45% ;
+	margin-top: 30px;
+	&>.box-content{
+			@include flexbox;
+			@include flex-direction($direction:column);
+			@include flex-align($align: center);
+			@include box-sizing;
+			@include flex-justify-content($justify:flex-start);
+			border-radius:0 0 5px 5px;
+			background:#fff6f2;
+			&:nth-of-type(2){
+					@include flex-justify-content($justify:center);
+					background:none;
+			}
+			.zanka{
+				width:70%;
+				margin:30px 0 10px 0;
+				svg{
+					width:100%;
+				}
+			}
+			.allow {
+				width:50%;
+				svg{
+					width:50%;
+				}
+			}
+	}
+	.box-inner{
+		padding:0 20px 20px 20px;
+		@include box-sizing;
+		width:100%;
+		@include flexbox;
+		@include flex-direction($direction:column);
+		@include flex-align($align: center);
+		@include flex-justify-content($justify:center);
+	}
+
+	.car-grid-tit{
+		background:var(--thema-color01);
+		color:var(--font-color02);
+		padding:8px 20px;
+		@include box-sizing;
+		width:100%;
+		border-radius: 5px 5px 0 0;
+		text-align:center;
+	}
+	.car-grid-txt{
+		font-weight:bold;
+		font-size:var(--fSize2);
+		color:var(--thema-color01);
+		text-align:center;
+		// width:100%;
+		@include box-sizing;
+		margin-top:0px;
+		padding:20px 20px;
+		background:#fff;
+		border-radius:5px;
+	}
+	.inner-txt{
+		color:var(--font-color01);
+		font-size:var(--fSize);
+		margin-top:40px;
+	}
+	.inner-txt-symbol{
+		// font-weight:bold;
+		// font-size:var(--EnfontXL);
+		// @include rotate($origin: center, $property: 90deg);
+		width:15px;
+		height:18px;
+		position:relative;
+		margin:20px 0;
+		&:before{
+			position:absolute;
+			left: 0;
+			content:'';
+			background:var(--bg-color02);
+			width:3px;
+			height:18px;
+			border-radius:5px;
+		}
+		&:after{
+			position:absolute;
+			right: 0;
+			content:'';
+			background:var(--bg-color02);
+			width:3px;
+			height:18px;
+			border-radius:5px;
+		}
+	}
+}
 
 
 
@@ -288,8 +477,8 @@
   記事ページ 似た曲の表示設定
 ------------------------------------------------ */
 .cf-tbl{
-	width: 800px;
-	margin:0 auto;
+	width: 100%;
+	margin-top:40px;
 	@include flexbox;
 	@include flex-align($align: center);
 	@include flex-direction($direction:column);
@@ -316,10 +505,10 @@
 	text-align: left;
 	vertical-align: top;
 	vertical-align: middle;
-	border-top:1px solid var(--border-color05);
+	// border-top:1px solid var(--border-color05);
 	font-size:var(--fSize);
-	border-bottom:1px solid var(--border-color05);
-	width: 35%;
+	// border-bottom:1px solid var(--border-color05);
+	width: 38%;
 	@include media(sp){
 		border-bottom:none;
 		width:100%;
@@ -333,14 +522,14 @@
 	text-align: left;
 	vertical-align: top;
 	vertical-align: middle;
-	border-top:1px solid var(--border-color05);
+	// border-top:1px solid var(--border-color05);
 	font-size:var(--fSize);
-	border-bottom:1px solid var(--border-color05);
+	// border-bottom:1px solid var(--border-color05);
 	@include media(sp){
 		border-bottom:none;
 		border-top:none;
 		&:last-child{
-			border-bottom:1px solid var(--border-color05);
+			// border-bottom:1px solid var(--border-color05);
 		}
 	}
 }
@@ -350,7 +539,7 @@
 .cf-tbl table tr{
 	&:last-child{
 		th{
-			border-bottom:1px solid var(--border-color05);
+			// border-bottom:1px solid var(--border-color05);
 			@include media(sp){
 				border-bottom:none;
 			}
@@ -376,17 +565,34 @@
 	}
 }
 
+.contact-label{
+		&:before{
+			content:'必須';
+			font-size:var(--fSize-5);
+			padding: 3px 5px;
+			background: var(--bg-color05);
+			color: var(--font-color02);
+			border-radius: 3px;
+			display:inline-block;
+			font-weight:normal;
+			margin-bottom:1px;
+			margin-right:10px;
+			position:relative;
+			top:-2px;
+		}
+}
+
 /*「必須」文字デザイン*/
 .required{
 	font-size:var(--fSize-5);
 	padding: 3px 5px;
 	background: var(--bg-color05);
-	color: var(--font-color04);
+	color: var(--font-color02);
 	border-radius: 3px;
 	display:inline-block;
-	margin-left:20px;
 	font-weight:normal;
 	margin-bottom:1px;
+	margin-right:10px;
 }
 
 
@@ -398,7 +604,7 @@ textarea.wpcf7-form-control.wpcf7-textarea {
 	margin-bottom: 10px;
 	border: none;
 	border-radius: 2px;
-	background-color: var(--bg-color03);
+	background-color: var(--bg-color01);
 	font-size:var(--fSize);
 	@include box-sizing;
 }
