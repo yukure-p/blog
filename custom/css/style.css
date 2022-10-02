@@ -446,7 +446,7 @@ footer {
   fill: var(--base-color01);
 }
 
-.l-header-search {
+.search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -457,22 +457,22 @@ footer {
       -ms-flex-align: center;
           align-items: center;
 }
-.l-header-search form {
+.search form {
   position: relative;
 }
-.l-header-search form ::-webkit-input-placeholder {
+.search form ::-webkit-input-placeholder {
   color: #8d8d8d;
 }
-.l-header-search form ::-moz-placeholder {
+.search form ::-moz-placeholder {
   color: #8d8d8d;
 }
-.l-header-search form ::-ms-input-placeholder {
+.search form ::-ms-input-placeholder {
   color: #8d8d8d;
 }
-.l-header-search form ::placeholder {
+.search form ::placeholder {
   color: #8d8d8d;
 }
-.l-header-search form:before {
+.search form:before {
   display: inline-block;
   content: "";
   background: inherit;
@@ -4819,7 +4819,7 @@ span.wpcf7-not-valid-tip,
     top: 4px;
     width: 80px;
   }
-  .l-header-search {
+  .search {
     height: 50px;
   }
   .l-gnav {
@@ -5431,7 +5431,7 @@ span.wpcf7-not-valid-tip,
   .btn-type01:hover a {
     color: #d35b2e;
   }
-  .l-header-search form:hover:before {
+  .search form:hover:before {
     background: #f1f1f1;
     width: 35px;
     height: 35px;

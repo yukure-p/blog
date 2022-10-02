@@ -137,7 +137,7 @@ footer {
 	fill:var(--base-color01);
 }
 
-.l-header-search{
+.search{
 	@include flexbox;
 	@include flex-justify-content($justify:center);
 	@include flex-align($align: center);
