@@ -77,18 +77,7 @@
       </a>
     </h1>
 
-    <!-- <div class="l-header-search">
-      <img src="<?php echo get_template_directory_uri()?>/img/common/search.svg" alt="検索" width="20" > -->
-      <?php get_search_form(); ?>
-    <!-- </div>  -->
-    
-    <!-- <div class="gnav-botton">
-      <div class="gnav-botton-inner gnav-btn">
-         <span class="gnav-line"></span>
-         <span class="gnav-line"></span>
-         <span class="gnav-line"></span>
-      </div>
-    </div> -->
+
   
   </div>
 

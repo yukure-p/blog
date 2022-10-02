@@ -104,9 +104,10 @@ footer {
 	width:var(--cn-width);
 	max-width:var(--cn-max-width);
 	display:grid;
+	justify-content:center;
+	align-items:center;
 	// grid-template-columns: 1fr var(--search-width) var(--nav-width);
-	grid-template-columns: 1fr var(--search-width) ;
-	column-gap:30px;
+	// grid-template-columns: 1fr var(--search-width) ;
 	@include media(sp){
 		height:50px;
 	}

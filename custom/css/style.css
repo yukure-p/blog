@@ -418,10 +418,12 @@ footer {
   width: 95.16129%;
   max-width: 1240px;
   display: grid;
-  grid-template-columns: 1fr 20px;
-  -webkit-column-gap: 30px;
-     -moz-column-gap: 30px;
-          column-gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .logo {
