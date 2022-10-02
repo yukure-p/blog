@@ -10,6 +10,7 @@ const rename = require("gulp-rename");      // ファイル名変更
 const sourcemaps = require("gulp-sourcemaps");  // ソースマップ作成
 const mqpacker = require("css-mqpacker");     //メディアクエリをまとめる
 const clean = require("gulp-clean");//ファイル削除
+const del = require("del");
 
 //js babel
 const babel = require("gulp-babel");
@@ -39,7 +40,7 @@ const browsers = [
 //参照元パス
 const srcPath = {
  css: 'src/scss/**/**.scss',
- js: 'src/**/*.js',
+ js: 'src/js/*.js',
  img: 'src/img/**/*',
  inc: 'src/inc/**/*.php',
  php: 'src/**/*.php',
@@ -49,23 +50,44 @@ const srcPath = {
 //出力先パス
 const destPath = {
  css: 'custom/css/',
- js: 'custom/',
+ js: 'custom/js',
  inc: 'custom/inc/',
  img: 'custom/img/',
  php: 'custom/',
- del: 'custom/',
+ delphp: 'custom/**/*.php',
+ delimg: 'custom/img/**/*',
+ // delcss: 'custom/css/**/*',
+ delinc: 'custom/inc/**/*',
+ deljs: 'custom/js/**/*',
 }
 
 
 
-//ファイル削除
-function cleanDirectory(done){
- src(destPath.del,{read: false})
- .pipe(clean())
- done()
-}
-
-
+const cleandel = (done) => {
+    del([destPath.dels]);
+    done();
+};
+const phpClean = (done) => {
+    del([destPath.delphp]);
+    done();
+};
+const imgClean = (done) => {
+    del([destPath.delimg]);
+    done();
+};
+const jsClean = (done) => {
+    del([destPath.deljs]);
+    done();
+};
+const incClean = (done) => {
+    del([destPath.delinc]);
+    done();
+};
+exports.cleandel = cleandel;
+exports.phpClean = phpClean;
+exports.imgClean = imgClean;
+exports.jsClean = jsClean;
+exports.incClean = incClean;
 
 //sass
 const cssSass = () => {
@@ -197,13 +219,13 @@ const browserSyncReload = (done) => {
 //ファイル監視
 const watchFiles = () => {
  watch(srcPath.css, series(cssSass, browserSyncReload))
- watch(srcPath.js, series(jsBabel, browserSyncReload))
- watch(srcPath.img, series(imgImagemin, browserSyncReload))
- watch(srcPath.php, series(phpCopy, browserSyncReload))
- watch(srcPath.inc, series(incCopy, browserSyncReload))
+ watch(srcPath.js, series(jsClean, jsBabel, browserSyncReload))
+ watch(srcPath.img, series(imgClean, imgImagemin, browserSyncReload))
+ watch(srcPath.php, series(phpClean, phpCopy, browserSyncReload))
+ watch(srcPath.inc, series(incClean, incCopy, browserSyncReload))
  // watch(srcPath.php, series(browserSyncReload))
 }
 
 exports.default = series(series(cssSass, jsBabel, imgImagemin, phpCopy, incCopy), parallel(watchFiles, browserSyncFunc));
 
-exports.clean = series(cleanDirectory)
+// exports.clean = series(cleanDirectory)

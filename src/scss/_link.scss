@@ -100,49 +100,34 @@ a.link01 {
 	}
 }
 
+// 記事内インラインリンク
 a.link02 {
 	@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
-	border-bottom:1px solid var(--border-color04);
-	padding-bottom:5px;
+	padding-bottom:3px;
+	border-bottom:1px solid var(--font-color01);
+	// color:var(--thema-color01);
+	color:var(--font-color01);
 	@include media(pc){
 		&:hover {
-			@include opacity(0.6);
+			// @include opacity(0.6);
+			color:var(--thema-color01);
 			cursor:pointer;
+			border-bottom:1px solid var(--thema-color01);
 		}
 	}
 }
 
-// 未使用
-// a.link03 {
-// 	position:relative;
-//     background:var(--link-color02);
-//     padding:4px 8px;
-//     height:10px;
-//     @include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
-// 	@include media(pc){
-// 		&:before{
-// 			z-index:-1;
-// 			content:'';
-// 			display:inline-block;
-// 			position:absolute;
-// 			background:var(--link-color01);
-// 			height:100%;
-// 			width:0;
-// 			left:0;
-// 			bottom:0;
-// 			@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
-// 		}
-// 		&:hover {
-// 			cursor:pointer;
-// 			background:none;
-// 			color:var(--font-color03);
-// 			width:0;
-// 			&:before{
-// 				width:100%;
-// 			}
-// 		}
-// 	}
-// }
+// テキストのカラー変更のみ
+a.link03 {
+	@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
+	color:var(--font-color01);
+	@include media(pc){
+		&:hover {
+			color:var(--thema-color01);
+			cursor:pointer;
+		}
+	}
+}
 
 
 
@@ -164,11 +149,38 @@ a.link02 {
 	}
 }
 
-@include media(pc){
-	.linkBlock02 {
-		padding:10px 20px;
-		@include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
-		&:hover {
+
+.linktxtBlock01 {
+	display:inline-block;
+	a{
+		@include transition($property: all, $time: 0.6s, $timing: cubic-bezier(0, 0, 0.2, 1));
+		color:var(--font-color01);
+		border-bottom:1px solid var(--font-color01);
+		padding-bottom:3px;
+		&:before{
+			@include transition($property: all, $time: 0.6s, $timing: cubic-bezier(0, 0, 0.2, 1));
+			display:inline-block;
+			content:'';
+			position:relative;
+			top:-1px;
+		  width: 0;
+		  height: 0;
+			border-style:solid;
+			border-width: 5px 0 5px 8px;
+			border-color: transparent transparent transparent var(--font-color01);
+			margin-right:8px;
+		}
+	}
+	@include media(pc){
+	&:hover {
+			cursor:pointer;
+			a{
+				border-bottom:1px solid var(--bg-color07);
+				color:var(--bg-color07);
+				&:before{
+					border-color: transparent transparent transparent var(--bg-color07);
+				}
+			}
 		}
 	}
 }
@@ -179,8 +191,8 @@ a.link02 {
 .btn01 {
 	color:var(--font-color02);
 	text-align: center;
-	border-radius:6px;
-	@include transition($property: all, $time: 0.8s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+	border-radius:5px;
+	@include transition($property: all, $time: 0.6s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
 	&>a
 	{
 		@include transition;
@@ -196,11 +208,70 @@ a.link02 {
 	}
 	&.type01 {
 		margin:0 auto;
-		width:80%;
+		width:90%;
 	}
 
 }
 
+.btn-type01{
+	@include flexbox;
+	// @include flex-direction($direction:row);
+	@include flex-justify-content($justify:center);
+	@include box-sizing;
+	width:80%;
+	margin:20px auto;
+	border:2px solid var(--bg-color07);
+	border-radius:5px;
+	background:var(--bg-color07);
+	color:var(--font-color02);
+	@include transition($property: all, $time: 0.6s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+		position:relative;
+		&:before,&:after{
+			@include transition($property: all, $time: 0.6s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+			content:'';
+			display:inline-block;
+			position:absolute;
+			background:var(--bg-color03);
+			width:8px;
+			height:2px;
+			border-radius:5px;
+		}
+		&:before{
+			right:12px;
+			top:23px;
+			@include rotate($origin: left center, $property: 33deg);
+		}
+		&:after{
+			right:12px;
+			bottom:25px;
+			@include rotate($origin: left center, $property: -33deg);
+		}
+	@include media(sp){
+		width:100%;
+	}
+	a{
+		font-size:var(--fSize);
+		@include transition($property: all, $time: 0.6s, $timing: cubic-bezier(0, 0.58, 0.67, 1.02));
+		font-weight:bold;
+		@include box-sizing;
+		// border:2px solid var(--thema-color01);
+		padding:16px 20px;
+
+	}
+	@include media(pc){
+		&:hover {
+			cursor:pointer;
+			background:var(--bg-color03);
+			border:2px solid var(--bg-color07);
+			&:before,&:after{
+				background:var(--bg-color07);
+			}
+			a{
+			color:var(--bg-color07);
+			}
+		}
+	}
+}
 
 
 /* ------------------------------------------------

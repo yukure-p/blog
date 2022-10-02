@@ -90,7 +90,7 @@ Template Post Type: car_lease
                         <th><a href="index6" class="link02">sompoで乗ーる</a></th>
                         <th><a href="index7" class="link02">NORIDOKI</a></th>
                         <th><a href="index8" class="link02">ニコノリ</a></th>
-                        <th><a href="index9" class="link02">モータ</a></th>
+                        <th><a href="index9" class="link02">MOTA</a></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -99,7 +99,7 @@ Template Post Type: car_lease
                         <td>国産車</td>
                         <td>国産車</td>
                         <td>トヨタ・レクサス<span class="notice-type-row">(初期費用フリープラン)</span>トヨタ<span class="notice-type-top">(解約金フリープラン)</span></td>
-                        <td>最安値で<br>提供できる<br>車のみ</td>
+                        <td>特選車のみ</td>
                         <td>国産車</td>
                         <td>国産車・輸入車</td>
                         <td>低価格で<br>提供できる<br>車のみ</td>
@@ -120,158 +120,175 @@ Template Post Type: car_lease
                       </tr>
                       <tr>
                         <th>中途解約</th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-<span class="notice-type-row">(初期費用フリープラン)</span>○<span class="notice-type-top">(解約金フリープラン)</span></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○<span class="notice-type-top">※オプション</span></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen margin"></span><span class="notice-type-row">(初期費用フリープラン)</span><span class="circle margin"></span><span class="notice-type-top">(解約金フリープラン)</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="triangle"></span></span><span class="notice-type-top">※オプション</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
                       </tr>
                       <tr>
                         <th>走行距離制限<br>(月間)</th>
-                        <td><p class="text-row">500km</p><p class="text-row">1,000km</p><p class="text-row">1,500km</p><p class="text-row">2,000km</p><p class="text-row">2,500km</p><p>1,500km<span class="notice-type-top">(マイメンテプラン)</span></p></td>
-                        <td>無制限<span class="notice-type-row">(７年以上の契約)</span>1,500km<span class="notice-type-bottom">(契約６年以下)</span></td>
+                        <td>
+                          <p>500km</p>
+                          <span class="rotate">&#133;</span>
+                          <p class="text-row">2,500km<span class="notice-type-row">(500km単位で選択)</span></p>
+                          <p>1,500km<span class="notice-type-top">(マイメンテプラン)</span></p>
+                        </td>
+                        <td>
+                          無制限
+                          <span class="notice-type-row">(７年以上の契約)</span>
+                          1,500km
+                          <span class="notice-type-bottom">(契約６年以下)</span>
+                        </td>
                         <td>1,500km</td>
-                        <td><p class="text-row">1,000km</p>2,000km<span class="notice-type-bottom">(貨物)</span></td>
+                        <td>
+                          <p class="text-row">1,000km</p>
+                          2,000km
+                          <span class="notice-type-bottom">(貨物)</span>
+                        </td>
                         <td>
                           <p class="text-row">500km</p>
+                          <p class="text-row">1,000km</p>
                           <p class="text-row">1,500km</p>
-                          <p class="text-row">2,000km</p>
                           <span class="notice-type-top">(上記から選択)</span>
                         </td>
                         <td>
-                            <p class="text-row">1,000km</p>
-                            <p class="text-row">1,500km</p>
-                            <p class="text-row">2,000km</p>
+                            <p>1,000km</p>
+                            <span class="rotate">&#133;</span>
                             <p class="text-row">3,000km</p>
-                            <span class="notice-type-top">(上記から選択)</span>
+                            <span class="notice-type-row">(500km単位で選択)</span>
                         </td>
                         <td>1,000km</td>
-                        <td>契約時に<br>制限を決める</td>
+                        <td>
+                          <p class="text-row">500km</p>
+                          <p class="text-row">1,000km</p>
+                          <span class="notice-type-row">(相談により増加可能)</span>
+                        </td>
                         <td>制限なし</td>
                       </tr>  
                       <tr>
                         <th>車もらえる</th>
-                        <td>-</td>
-                        <td>○<span class="notice-type-top">※オプション</span></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○<span class="notice-type-top">※条件あり</span></td>
-                        <td>○<span class="notice-type-top">※条件あり</span></td>
-                        <td>-</td>
-                        <td>○<span class="notice-type-top">※オプション</span></td>
-                        <td>○</td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※オプション</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※条件あり</span></td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※条件あり</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※オプション</span></td>
+                        <td><span class="circle"></span></td>
                       </tr>
                       <tr>
                         <th>再リース</th>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>-<span class="notice-type-row">(初期費用フリープラン)</span>○<span class="notice-type-top">(解約金フリープラン)</span></td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>-</td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen margin"></span><span class="notice-type-row">(初期費用フリープラン)</span><span class="circle margin"></span><span class="notice-type-top">(解約金フリープラン)</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
                       </tr>
                       <tr>
                         <th>契約車の買取</th>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>-</td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
                       </tr>
                       <tr>
                         <th>ディーラー・メーカー<br>オプション</th>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
                       </tr>
                       <tr>
                         <th>車のカスタム</th>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>△<span class="notice-type-top">※指定車のみ</span></td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○</td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※指定車のみ</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
                       </tr>
                       <tr>
                         <th>頭金対応</th>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
                       </tr>
                       <tr>
                         <th>ボーナス払い対応</th>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>○<span class="notice-type-row">(初期費用フリープラン)</span>-<span class="notice-type-top">(解約金フリープラン)</span></td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle margin"></span><span class="notice-type-row">(初期費用フリープラン)</span><span class="hyphen margin"></span><span class="notice-type-top">(解約金フリープラン)</span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
                       </tr>
                       <tr>
                         <th>クレジットカード払い</th>
-                        <td>○<span class="notice-type-top">※条件あり</span></td>
-                        <td>-</td>
-                        <td>○</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>○<span class="notice-type-top">※条件あり</span></td>
-                        <td>-</td>
-                        <td>-</td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※条件あり</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="triangle"></span><span class="notice-type-top">※条件あり</span></td>
+                        <td><span class="hyphen"></span></td>
+                        <td><span class="hyphen"></span></td>
                       </tr>
                       <tr>
                         <th>法人・個人事業主</th>
-                        <td>-<span class="notice-type-top">※別サービスで対応あり</span></td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>-</td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="circle"></span></td>
+                        <td><span class="hyphen"></span></td>
                       </tr>
                       <tr>
                         <th></th>
-                        <td><div class="btn01 type01 bg-car"><a href="">オートフラット<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">カルモくん<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">KINTO<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">クルカ<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">コスモMyカーリース<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">sompoで乗ーる<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">NORIDOKI<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">ニコノリ<br>詳細はコチラ</a></div></td>
-                        <td><div class="btn01 type01 bg-car"><a href="">モータ<br>詳細はコチラ</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">オートフラット<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">カルモくん<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">KINTO<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">クルカ<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">コスモMyカーリース<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">sompoで乗ーる<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">NORIDOKI<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">ニコノリ<br>公式サイト</a></div></td>
+                        <td><div class="btn01 type01 bg-car"><a href="">MOTA<br>公式サイト</a></div></td>
                       </tr>
                     </tbody>              
                   </table>
@@ -279,13 +296,217 @@ Template Post Type: car_lease
               </div>
 
               <div class="c-box box" id="index2">
-                <h2 class="c-tit02">オートフラット他社と比べた時の特徴</h2>
+                <h2 class="c-tit02">オートフラットのポイント</h2>
                 <p class="c-txt">オートフラットは出光興産株式会社が運営するカーリースサービスです。</p>
-                <ul class="content-list frame">
-                  <li>1. 契約終了後に残価で車の買取ができる</li>
-                  <li>2. 月間走行距離が、他社と比べて多い。月間2,500km。</li>
-                  <li>3. カードでの支払いができる。</li>
-                </ul>
+                  <div class="flame-box-tit pac">ポイント</div>
+                  <div class="flame-box pac">
+                    <ul class="ulBasic01 type01 bold">
+                      <li>契約満了時のキャッシュバック率が96％・平均20万円</li>
+                      <li>残価での車買取ができる</li>
+                      <li>オートフラット専用の任意自動車保険がお得</li>
+                      <li>免許返納による中途解約金不要が無料で付帯</li>
+                      <!-- <li>短期契約や長期契約（７年以上）ができない</li> -->
+                      <li>中途解約に解約金が発生する</li>
+                      <!-- <li>残価での車買取前提であれば、車のカスタム・改造ができる</li> -->
+                    </ul>
+                  </div>
+
+                    <div class="base-glid car-base-type01 type01">
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon04">
+                          <div class="base-tit">契約プラン<br class="sp">(3タイプ)</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <p><span class="base-txt-line">フルメンテプラン</span></p>
+                            <p><span class="base-txt-line">マイメンテプラン</span></p>
+                            <p><span class="base-txt-line">メンテなしプラン</span></p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon01">
+                          <div class="base-tit">選べる車種</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">国産車</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon02">
+                          <div class="base-tit">契約年数</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">3年～7年</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon03">
+                          <div class="base-tit">中途解約</div>
+                        </div>
+                        <div class="base-box-txt base-cross">
+                          <div class="base-txt">
+                            不可<span class="b-small">(中途解約金発生)</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon05">
+                          <div class="base-tit">走行距離制限(月間)</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <p class="base-txt-marge"><span class="base-txt-line">〜2,500km</span><span class="b-small">(500km単位で選択可)</span></p>
+                            <p><span class="base-txt-line">〜1,500km</span>
+                              <span class="b-small">(マイメンテプラン)</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>                       
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon09">
+                          <div class="base-tit">ディーラーオプション</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">選択可</span>
+                          </div>
+                        </div>
+                      </div> 
+
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon09">
+                          <div class="base-tit">メーカーオプション</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">選択可</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon10">
+                          <div class="base-tit">車のカスタム</div>
+                        </div>
+                        <div class="base-box-txt base-cross">
+                          <div class="base-txt">
+                            不可<span class="b-small">(原状回復金発生)</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon06">
+                          <div class="base-tit">新車乗換</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                           <span class="base-txt-line">精算して<br>新車に乗り換え</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon07">
+                          <div class="base-tit">再リース</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">そのまま<br>リース契約延長</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon08">
+                          <div class="base-tit">買取</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">残価での買取</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon16">
+                          <div class="base-tit">返却</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">残存価格を<br>査定し返却</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon11">
+                          <div class="base-tit">頭金対応</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">対応可</span>
+                          </div>
+                        </div>
+                      </div> 
+
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon12">
+                          <div class="base-tit">ボーナス払い対応</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">対応可</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon13">
+                          <div class="base-tit">クレジットカード払い</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">アポロステーションカードでの支払い可</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon14">
+                          <div class="base-tit">法人・個人事業主</div>
+                        </div>
+                        <div class="base-box-txt">
+                          <div class="base-txt">
+                            <span class="base-txt-line">法人向け「オートフラットBiz」で対応</span>
+                          </div>
+                        </div>
+                      </div> 
+
+                      <div class="box-content">
+                        <div class="base-box-tit car-icon15">
+                          <div class="base-tit">中古車リース</div>
+                        </div>
+                        <div class="base-box-txt base-cross">
+                          <div class="base-txt">
+                            未対応
+                          </div>
+                        </div>
+                      </div> 
+                    </div>
                 
               </div>
 

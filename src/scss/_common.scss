@@ -12,10 +12,10 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 :root {
 
   // テーマカラー
-  --thema-color01: #f08861;
+  --thema-color01: #de7751;
 
   // フォントカラー
-  --font-color01: #333333;//
+  --font-color01: #454545;//
   --font-color02: #ffffff;//
   --font-color03:#8d8d8d;//date
   // --font-color04: #ffffff;//
@@ -23,24 +23,25 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 
   // 背景カラー
   --bg-color01:#f6f6f6;//背景
-  --bg-color02: #333333;//
+  --bg-color02: #454545;//
   --bg-color03: #fff;//
   --bg-color04: #f1f1f1;//サーチアイコン背景
   --bg-color05:#c20000;//form requirer
-  --bg-color06:#f7f7f7;//記事ない背景
-  // --bg-color05: #F5F5F5;
-  // --bg-color06: #535353;
+  --bg-color06:#f7f7f7;//記事内背景
+  --bg-color07:#d35b2e;// 記事内ボタンホバーカラー
+  --bg-color08: #f6f6f6;
+  --bg-color09:#f6ebe6;//ばつ印
   // --bg-color07: #f3f3f3;
   --bg-car: #f9eb7b;
   --bg-asp: #a8e2ff;
 
 
   // ボーダーカラー
-  --border-color01: #333333;
+  --border-color01: #454545;
   --border-color02: #eeeeee;//サイドメニューライン
   --border-color03: #cfcfcf;//tabe非アクティブ
   --border-color04: #fff;//tabe非アクティブ
-  --border-color05: #f08861;//tabe非アクティブ
+  --border-color05: #de7751;//tabe非アクティブ
   // --border-color03: #d8d8d8;//タイトル下のライン　フッターのライン
   // --border-color04: #fff;//スマホメニュー検索結果 メニューライン
 
@@ -52,21 +53,24 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   // リンクカラー
   --link-color01: #808080;//リンクライン
   --link-color02: #f3f3f3;//リンク背景
-  --link-color03: #333333;//
+  --link-color03: #454545;//
 
 
   // カーリースカラー
-  --car-bace-color:#f08861;
-  --car-bg-color01:#fff7f4;
-  --car-bg-color02:#f8f8f8;
-  --car-border-color01:#f5f9fb;
+  --car-bace-color:#de7751;
+  --car-bg-color01:#f8f8f8;// 基本情報ボックス背景
+  --car-bg-color02:#fafafa;
+  --car-bg-color03:#ffdfd3;// pointの飾り背景色
+  --car-bg-color04:#fff8f6;// リンクボックス背景
+  --car-border-color01:#e1e1e1; // 基本情報
   --car-border-color02:#f7f7f7;
-  --car-font-color01:#f08861;
+  --car-font-color01:#de7751;
+
 
   // svg
   --svg-color01:invert(100%) sepia(7%) saturate(352%) hue-rotate(244deg) brightness(120%) contrast(100%);
   --svg-color02:invert(48%) sepia(64%) saturate(430%) hue-rotate(330deg) brightness(100%) contrast(100%);
-
+  --svg-color03:invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 
 
 
@@ -108,7 +112,7 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --contents-max-width: 1240px;
   --cniW: 975px;
   --cn-width:calc(1180 / 1240 * 100%);
-  --cn-sp-width:86%;
+  --cn-sp-width:88%;
   // ヘッダー
   --header-height:70px;
   --header-height-scroll:120px;
@@ -157,29 +161,29 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 //　==================================================
 @mixin media($point){
   // @if $point == spS{
-  //   @media only screen and (max-width:320px){
+  //   @media screen and (max-width:320px){
   //     @content;
   //   }
   // }
 
   @if $point == spMS{
-    @media only screen and (max-width:557px){
+    @media screen and (max-width:557px){
       @content;
     }
   }@else if $point == sp{
-    @media only screen and (max-width:767px){
+    @media screen and (max-width:767px){
       @content;
     }
   }@else if $point == tablet{
-    @media only screen and (min-width: 768px) and (max-width:1024px){
+    @media screen and (min-width: 768px) and (max-width:1024px){
       @content;
     }
   }@else if $point == pc{
-    @media only screen and (min-width:1025px){
+    @media screen and (min-width:1025px){
       @content;
     }
   }@else if $point == pcL{
-    @media only screen and (min-width:1540px){
+    @media screen and (min-width:1540px){
       @content;
     }
   }@else if $point == print{

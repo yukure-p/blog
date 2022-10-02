@@ -12,7 +12,7 @@
 					
 				</div>
 			
-				<div class="f-box">
+<!-- 				<div class="f-box">
 					
 					<div class="f-txt-box">
 						<p class="f-txt"></p>
@@ -41,12 +41,12 @@
 						<div class="f-link-menu">
 							<ul class="f-link">
 								<li><a href="<?php echo esc_url (home_url()); ?>" class="link01">TOP</a></li>
-								<!-- <li><a href="<?php echo esc_url (home_url()); ?>/about/" class="link01">ABOUT</a></li> -->
+								<li><a href="<?php echo esc_url (home_url()); ?>/about/" class="link01">ABOUT</a></li>
 								<li><a href="<?php echo esc_url (home_url()); ?>/contact/" class="link01">CONTACT</a></li>
 							</ul>
 
 						</div>
-						<!-- <div class="f-link-menu">
+						<div class="f-link-menu">
 							<ul class="f-link">
 								<li><a href="<?php echo esc_url (home_url()); ?>/list/" class="link01">記事一覧</a>
 									<ul class="c-link">
@@ -56,10 +56,10 @@
 								</li>
 							</ul>
 
-						</div> -->
-					</div>
+						</div>
+					</div> -->
 
-				</div>
+				<!-- </div> -->
 
 			</section>
 		</div>
@@ -68,6 +68,7 @@
 </footer>
 
 <?php wp_footer(); ?>
+
 </body>
 </html>
 

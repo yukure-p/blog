@@ -19,9 +19,9 @@ var tableOfContents = function tableOfContents() {
   var options = {
     root: null,
     // 今回はビューポートをルート要素とする
-    rootMargin: "-50% 0px",
+    rootMargin: "-30% 0px -70% 0px",
     // ビューポートの中心を判定基準にする
-    threshold: 0 // 閾値は0
+    threshold: [0] // 閾値は0
 
   };
   var observer = new IntersectionObserver(doWhenIntersect, options); // それぞれのboxを監視する
@@ -57,7 +57,7 @@ var tableOfContents = function tableOfContents() {
     } // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
 
 
-    var newActiveIndex = document.querySelector("a[href='#".concat(element.id, "']"));
+    var newActiveIndex = document.querySelector("#indexList a[href='#".concat(element.id, "']"));
     newActiveIndex.classList.add("active");
   }
 };

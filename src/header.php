@@ -10,7 +10,7 @@
     <meta name="description" content="<?php the_title(); ?> | sikilog(シキログ) | 月々定額カーリース、車のサブスクリプション">
     <?php } ?>
   <meta name="keywords" content="カーリース,車のサブスク,車のサブスクリプション,車リース,法人車のリース,個人事業主カーリース,法人・個人事業主,法人車のサブスクリプション">
-  <meta name="viewport" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/common/icon.svg">
   <link rel="apple-touch-icon-precomposed" href="<?php echo esc_url( get_template_directory_uri() ); ?>/img/common/icona.svg" />
   <meta property="og:site_name" content="sikilog(シキログ)は、月々定額カーリース、車のサブスクリプションについて情報をまとめたブログです。これからカーリースをお考えの方はsikiblogの記事で情報をご覧ください。" />
@@ -25,15 +25,6 @@
 
 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-221460689-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-221460689-1');
-</script>
 
 <script>
   (function(d) {
@@ -46,6 +37,15 @@
   })(document);
 </script>
 <?php wp_head(); ?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6L5QV6W7X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6L5QV6W7X1');
+</script>
 </head>
 
 
@@ -65,7 +65,6 @@
     $my_body_class = 'l-list';
   }
 
-   
 ?>
 <body id="jp" <?php echo ( $my_body_class ) ? ' class="' . $my_body_class . '"' : ''; ?>>
 
@@ -95,7 +94,7 @@
 
   <!-- /.l-header -->
 </header>
-<?php get_template_part('inc/nav'); ?>
+
 
 
 

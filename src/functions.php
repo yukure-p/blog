@@ -23,7 +23,7 @@ function vlog_enqueue_scripts(){
 
 if (is_front_page()){
         // $scriptPath = '/js/entry.min.js';
-    } else if( is_single(array( 63,34) )){
+    } else if( is_single(array( 211,225,228,229,230,231,232,233,234,34,35,63) )){
       // $scriptPath = '/js/fixed.js';
       wp_enqueue_script(
           'custom_script',
@@ -252,7 +252,7 @@ function create_post_type_car_lease() {
       // 'rewrite' => false,
       // 'rewrite' => array( 'slug' => 'car_lease' ), //変更後のスラッグ
     )
-  );         
+  );        
 }
 
 
@@ -393,7 +393,27 @@ add_filter( 'rewrite_rules_array', 'asp_cart_rewrite_rules_array' );
 
 
 
+function filter_search( $query ) {
+  if ( $query->is_search() && $query->is_main_query() && ! is_admin() ) {
+    $query->set( 'post_type', array( 'car_lease' ) );
+  }
+}
+add_filter( 'pre_get_posts', 'filter_search' );
 
+// // 記事IDスラッグ変更用
+// function slug_auto_setting( $slug, $post_ID, $post_status, $post_type ) {
+//     // 記事IDからを記事情報を取得
+//     $post = get_post($post_ID);
+
+//     // 初回の記事保存時にのみ、記事のSlugを記事IDに設定
+//     if ( $post_type == 'custom_post_name' && $post->post_date_gmt == '0000-00-00 00:00:00' ) {
+//       $slug = $post_ID;
+//       return $slug;
+//     }
+
+//     return $slug;
+//   }
+//   add_filter( 'wp_unique_post_slug', 'slug_auto_setting', 10, 4 );
 
 
 

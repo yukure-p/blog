@@ -21,8 +21,9 @@ body {
 	font-family: 'dnp-shuei-gothic-kin-std', sans-serif,'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka;
 	line-height: 1.6;
 	letter-spacing: 0.1em;
-
-	@include media(spS){
+	color:var(--font-color01);
+	@include media(sp){
+		font-family: sans-serif,'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka;
 	}
 }
 

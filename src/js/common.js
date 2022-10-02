@@ -21,8 +21,8 @@ const boxes = document.querySelectorAll(".box");
 console.log(boxes);
 const options = {
   root: null, // 今回はビューポートをルート要素とする
-  rootMargin: "-50% 0px", // ビューポートの中心を判定基準にする
-  threshold: 0 // 閾値は0
+  rootMargin: "-30% 0px -70% 0px", // ビューポートの中心を判定基準にする
+  threshold: [ 0] // 閾値は0
 };
 const observer = new IntersectionObserver(doWhenIntersect, options);
 // それぞれのboxを監視する
@@ -55,7 +55,7 @@ function activateIndex(element) {
     currentActiveIndex.classList.remove("active");
   }
   // 引数で渡されたDOMが飛び先のaタグを選択し、activeクラスを付与
-  const newActiveIndex = document.querySelector(`a[href='#${element.id}']`);
+  const newActiveIndex = document.querySelector(`#indexList a[href='#${element.id}']`);
   newActiveIndex.classList.add("active");
 }
 };
@@ -121,7 +121,5 @@ const scroll = () => {
 }
 
 scroll();
-
-
 
 

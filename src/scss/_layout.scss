@@ -47,13 +47,15 @@
 	@include flex-justify-content($justify:center);
 	column-gap:40px;
 	@include media(sp){
-		margin-bottom:100px;
+		margin: 40px auto 100px auto;
+		column-gap:0;
 	}
-	// .l-top & {
-	// 	max-width:var(--cn-max-width);
-	// }
 	.l-local & {
 		margin: 74px auto 120px auto;
+		@include media(sp){
+			margin: 30px auto 120px auto;
+			background:var(--bg-color03);
+		}
 		&.related{
 			display:block;
 			margin:0 auto 180px auto;
@@ -64,7 +66,6 @@
 
 .l-contents{
 	width:100%;
-	// margin-top:100px;
 	.l-local & {
 		&.related{
 			margin-top: 60px;
@@ -72,14 +73,13 @@
 		@include media(sp){
 			padding:0 3em;
 			@include box-sizing;
-
 		}
 		&:last-child{
 			margin-bottom:0;
 		}
 	}
 	@include media(sp){
-		margin-top:80px;
+		margin-top:0px;
 
 	}
 }
@@ -135,6 +135,7 @@
 		column-gap:0;
 	}
 	@include media(sp){
+		width:var(--cn-sp-width);
 		column-gap:0;
 		margin-bottom:80px;
 	}
@@ -149,7 +150,6 @@
 ------------------------------------------------ */
 
 .contents-box{
-  max-width:880px;
   width:100%;
   background:var(--bg-color03);
   margin-top:0;
@@ -166,10 +166,16 @@
   @include media(sp){
   	max-width:100%;
   	padding-bottom:50px;
+  	padding:0 0 8rem 0;
   }
   .entry{
   	padding-top:40px;
   }
+	// &:last-child{
+	// 	.c-box{
+ //  		margin-bottom:0;
+ //  	}
+ //  }
 }
 
 .table-of-content{
@@ -197,11 +203,11 @@
 	 &:first-child{
 	 	margin-top:60px;
 	 }
-	 &:last-child{
+	 &:last-of-type{
 	 	margin-bottom:0;
 	 }
 	 @include media(sp){
-	 	padding:0 3rem;
+	 	padding:0 .8rem;
 	 }
 	 img{
 		width:100%;
@@ -212,10 +218,25 @@
 		top:90px;
 		z-index:5;
 	}
-	&.intro{
-		margin-bottom:60px;
+	// &.intro{
+	// 	margin-bottom:120px;
+	// }
+	// &:last-child{
+
+ //  		margin-bottom:0;
+  	
+ //  }	
+}
+
+.c-box-inner{
+	margin-bottom:80px;
+	.c-box &{
+		&:last-child{
+			margin-bottom:0;
+		}
 	}
 }
+
 .entry-img{
 	margin-top: 30px;
   img{
@@ -228,7 +249,7 @@
 	
 ------------------------------------------------ */
 .l-grid{
-	.box-content{
+	&>.box-content{
 		@include flexbox;
 		background:var(--bg-color03);
 	}
@@ -333,10 +354,21 @@
 	padding:20px;
 	// border:1px solid var(--border-color03);
 	position: relative;
-	border-radius: 5px;
+	border-radius: 0px 5px 5px 5px;
 	&.point{
-		width:70%;
-		margin:70px auto 0 auto;
+		background:none;
+		border:2px solid var(--thema-color01);
+		width:100%;
+		margin:80px 0 40px 0;
+		@include box-sizing;
+		@include media(sp){
+			width:100%;
+		}
+	}
+	&.conclude{
+		background:none;
+		border:2px solid var(--thema-color01);
+		margin:80px 0 40px 0;
 	}
 	&.pac{
 		width:100%;
@@ -349,6 +381,9 @@
 		background:#fff;
 		padding:35px 20px;
 		border:1px solid var(--border-color05);
+		@include media(sp){
+			padding:25px 15px 25px 25px;
+		}
 		li{
 			margin-bottom:18px;
 			font-size:var(--fSize2);
@@ -364,6 +399,9 @@
 				top: 5px;
 				left: -15px;
 				filter: var(--svg-color02);
+				@include media(sp){
+					left:-10px;
+				}
 			}
 			&:last-child{
 				margin-bottom: 0;
@@ -377,7 +415,7 @@
 }
 
 .flame-box-tit{
-	  background:#f08861;
+	  background:var(--thema-color01);
 	  color: #fff;
 	  font-weight:bold;
 	  border-radius: 5px 5px 0px 0px;
@@ -411,14 +449,15 @@
 			  }
 		}
 		&.point{
-			  padding:6px 20px 8px 20px; 
-			  font-size: var(--fSize);
+				border-radius: 5px 5px 0 0 ;
+			  padding:8px 25px 12px 25px; 
+			  font-size: var(--fSize2);
 			  width:auto;
 			  text-align:center;
 			  text-indent:0px;
 			  position:absolute;
-			  top:-36px;
-			  left:-1px;
+			  top:-42px;
+			  left:-2px;
 			  &:before{
 			  	background-image: url("/wp-content/themes/custom/img/common/icon05.svg");
 					width:20px;
@@ -428,7 +467,33 @@
 					filter: var(--svg-color01);
 			  }
 		}
+		&.conclude{
+				// border-radius: 30px;
+			  padding:8px 25px 12px 25px; 
+			  font-size: var(--fSize2);
+			  width:auto;
+			  text-align:center;
+			  text-indent:0px;
+			  position:absolute;
+			  top:-42px;
+			  left:-2px;
+
+			  &:before{
+			  	background-image: url("/wp-content/themes/custom/img/common/icon06.svg");
+					width:20px;
+					height:20px;
+					left:-10px;
+					top:3px;
+					filter: var(--svg-color01);
+			  }
+			  &.off{
+			  	&:before{
+			  		background-image: url("/wp-content/themes/custom/img/common/icon07.svg");
+			  	}
+			  }
+		}
 }
+
 
 /* ------------------------------------------------
 	#contentsエリアここから

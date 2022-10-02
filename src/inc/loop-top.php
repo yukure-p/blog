@@ -27,16 +27,16 @@
             </a>
          </figure>
          <div class="box-info">
-         <div class="row-2col">
-            <time datetime="" class="date"><?php the_time('Y.m.d') ?></time>
-            <?php get_template_part('inc/cat-tag'); ?>
-         </div>
-         <div class="box-txt">
-            <h1 class="box-tit">
-            <a href="<?php echo get_permalink($post->ID); ?>" class="link03"><?php echo get_the_title($post->ID); ?></a>
-            </h1>
-           
-         </div>
+            <div class="row-2col">
+               <time datetime="" class="date"><?php the_time('Y.m.d') ?></time>
+               <?php get_template_part('inc/cat-tag'); ?>
+            </div>
+            <div class="box-txt">
+               <h1 class="box-tit">
+               <a href="<?php echo get_permalink($post->ID); ?>" class="link03"><?php echo get_the_title($post->ID); ?></a>
+               </h1>
+              
+            </div>
          </div>
       </div>
    </li>
