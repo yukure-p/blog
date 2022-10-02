@@ -176,7 +176,45 @@ footer {
 		}
 	}
 }
-
+.l-header-search{
+	@include flexbox;
+	@include flex-justify-content($justify:center);
+	@include flex-align($align: center);
+	@include media(sp){
+		height:50px;
+	}
+	form{
+		position:relative;
+		::placeholder {
+		color: var(--font-color03);
+		}  
+		&:before{
+			display:inline-block;
+			content:'';
+			background:inherit;
+			position:absolute;
+			width:20px;
+			height:20px;
+			top:5px;
+			left:12px;
+			border-radius:50%;
+			@include transition($property: all, $time: .5s, $timing: cubic-bezier(0, 0.49, 0.05, 0.99));
+		}
+		@include media(pc){
+			&:hover{
+				&:before{
+					background:var(--bg-color04);
+					width:35px;
+					height:35px;
+					left: 4px;
+					top:-3px;
+					@include scale($property: 1.2);
+					display:inline-block;
+				}
+			}
+		}
+	}
+}
 $tl: 0.6s; // transition length
 
 .search-box {
