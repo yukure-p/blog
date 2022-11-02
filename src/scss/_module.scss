@@ -24,7 +24,7 @@
 	color
 ------------------------------------------------ */
 .thema-color{
-	color:var(--thema-color01);
+	color:var(--font-color04);
 }
 /* ------------------------------------------------
 	囲み枠
@@ -102,6 +102,12 @@
 .space-mb-30{
 	margin-bottom:30px;
 }
+.space-mb-80{
+	margin-bottom:80px;
+	@include media(sp){
+		margin-bottom:30px;
+	}
+}
 .space-mt-80{
 	margin-top:80px;
 }
@@ -116,7 +122,7 @@
 
 
 .hyphen{
-	background:#f0d9d1;
+	background:#e6bbac;
 	width:10px;
 	height:3px;
 	display:inline-block;
@@ -130,7 +136,7 @@
 	position:relative;
 	display:inline-block;
 	// background:var(--car-bg-color03);
-	border:2px solid #ecae98;
+	border:2px solid var(--thema-color01);
 	width:18px;
 	height:18px;
 	border-radius:50%;
@@ -140,7 +146,7 @@
 	}
 }
 .triangle{
-	background:#ecae98;
+	background:var(--thema-color01);
 	width:18px;
 	height:2px;
 	display:inline-block;
@@ -154,13 +160,13 @@
 		height:16px;
 	}
 	&:before{
-		border-left:2px solid #ecae98;
+		border-left:2px solid var(--thema-color01);
 		left:4px;
 		top:-13px;
 		@include rotate($origin: center center, $property: 35deg);
 	}
 	&:after{
-		border-right:2px solid #ecae98;
+		border-right:2px solid var(--thema-color01);
 		right:4px;
 		top:-13px;
 		@include rotate($origin: center center, $property: -35deg);

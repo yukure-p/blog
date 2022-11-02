@@ -7,7 +7,9 @@
 			<section>
 				<div class="f-logo-box">
 					<div class="f-logo">
-						<a href="<?php echo esc_url (home_url()); ?>"><img src="<?php echo get_template_directory_uri()?>/img/common/f-logo.svg" alt="sikilog"></a>
+						<a href="<?php echo esc_url (home_url()); ?>"><img src="<?php echo get_template_directory_uri()?>/img/common/f-logo.svg" alt="sikilog">
+						</a>
+						<span>カーリースナビ</span>
 					</div>
 					
 				</div>
@@ -63,10 +65,13 @@
 
 			</section>
 		</div>
-		<p class="copy">© 2022 sikilog.</p>
+		<p class="copy">© 2022 clnavi.</p>
 	</div>
 </footer>
 
+<!-- <div class="pagetop-box">
+	<div class="pagetop">目次を表示</div>
+</div> -->
 <?php wp_footer(); ?>
 
 </body>

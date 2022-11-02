@@ -48,14 +48,13 @@
 	}
 }
 
-.lazyload{
-	opacity:0;
+.lazyload {
+  opacity: 0;
 
 }
-
-.is-lazyload{
-	opacity:1;
-	@include transition($property: all, $time: 2.6s, $timing: cubic-bezier(0, 0.48, 0.12, 0.99));
+.is-lazyloaded {
+  opacity: 1!important;
+  @include transition($property: all, $time: .4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
 }
 
 

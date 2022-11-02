@@ -31,7 +31,12 @@
   
   
 </section>
+        <aside>
+            <div class="l-aside-outer">
+                <?php get_template_part('inc/aside'); ?>
 
+            </div>
+        </aside>
 
 </div>
 

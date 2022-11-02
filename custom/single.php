@@ -19,10 +19,23 @@
                 <div class="l-entry-info row-2col">
                   
                   <time datetime="<?php echo get_the_date('Y.n.d'); ?>"><?php echo get_the_date('Y.n.d'); ?></time>
-                  <?php get_template_part('inc/cat-tag'); ?>
+                  
                   
                 </div>
-                <div class="entry-img"><img src="<?php echo get_template_directory_uri()?>/img/kiasmos.jpg" alt="電子商店OPEN GUIDE" width="38" ></div>
+                <div class="entry-img">
+                    <?php
+                    // アイキャッチ画像を取得
+                    $thumbnail_id = get_post_thumbnail_id($post->ID);
+                    $thumb_url = wp_get_attachment_image_src($thumbnail_id, 'small');
+                    if (get_post_thumbnail_id($post->ID)) {
+                      echo '<figure><img src="' . $thumb_url[0] . '" alt=""></figure>';
+                    } else {
+                      // アイキャッチ画像が登録されていなかったときの画像
+                      echo '<figure><img src="' . get_template_directory_uri() . '/img/img-default.png" alt=""></figure>';
+                    }
+                    ?>
+                
+                </div>
             </div>
             <!-- <div class="table-of-content">
                 <h1 class="aside-tit">この記事の目次</h1>
@@ -34,24 +47,10 @@
               </div> -->
               <article>
                 
-              <?php if( get_field('idname') == 'autoflat'):?>
-              <?php get_template_part('article/autoflat'); ?>
-              <?php elseif(get_field('idname') == 'karumo'):?>
-              <?php get_template_part('article/karumo'); ?>
-              <?php elseif(get_field('idname') == 'kinto'):?>
-              <?php get_template_part('article/kinto'); ?>
-              <?php elseif(get_field('idname') == 'mota'):?>
-              <?php get_template_part('article/mota'); ?>
-              <?php elseif(get_field('idname') == 'cosmo'):?>
-              <?php get_template_part('article/cosmo'); ?>
-              <?php elseif(get_field('idname') == 'sompo'):?>
-              <?php get_template_part('article/sompo'); ?>
-              <?php elseif(get_field('idname') == 'noridoki'):?>
-              <?php get_template_part('article/noridoki'); ?>
-              <?php elseif(get_field('idname') == 'kuruka'):?>
-              <?php get_template_part('article/kuruka'); ?>
-              <?php elseif(get_field('idname') == 'nikonori'):?>
-              <?php get_template_part('article/nikonori'); ?>
+              <?php if( get_field('idname') == 'moraeru'):?>
+              <?php get_template_part('article/moraeru'); ?>
+              <?php elseif( get_field('idname') == 'zanka'):?>
+              <?php get_template_part('article/zanka'); ?>
               <?php endif; ?>
               
               </article>
@@ -140,23 +139,7 @@ if( $posts ):
 
 
 
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <script>window.onload = function(){FixedMidashi.create();};</script>   -->
-
-
-
+<div class="breadcrumb-sp">
+ <?php breadcrumb(); ?>       
+</div>
 <?php get_footer(); ?>

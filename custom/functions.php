@@ -23,7 +23,7 @@ function vlog_enqueue_scripts(){
 
 if (is_front_page()){
         // $scriptPath = '/js/entry.min.js';
-    } else if( is_single(array( 211,225,228,229,230,231,232,233,234,34,35,63) )){
+    } else if( is_single(array( 12,23,24,26,27,28,29,30,31,32,34,35,63,37) )){
       // $scriptPath = '/js/fixed.js';
       wp_enqueue_script(
           'custom_script',

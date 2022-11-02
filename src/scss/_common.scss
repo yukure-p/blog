@@ -12,12 +12,14 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 :root {
 
   // テーマカラー
-  --thema-color01: #de7751;
+  --thema-color01: #d66941;
+  --thema-color02: #0f4768;
 
   // フォントカラー
   --font-color01: #454545;//
   --font-color02: #ffffff;//
   --font-color03:#8d8d8d;//date
+  --font-color04:#cd623b;//text強調
   // --font-color04: #ffffff;//
   // --font-color05:#656565;//list-tit a のカラー
 
@@ -41,7 +43,8 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --border-color02: #eeeeee;//サイドメニューライン
   --border-color03: #cfcfcf;//tabe非アクティブ
   --border-color04: #fff;//tabe非アクティブ
-  --border-color05: #de7751;//tabe非アクティブ
+  --border-color05: #d66941;//tabe非アクティブ
+  --border-color06: #cfcfcf;//記事内の画像枠線
   // --border-color03: #d8d8d8;//タイトル下のライン　フッターのライン
   // --border-color04: #fff;//スマホメニュー検索結果 メニューライン
 
@@ -57,14 +60,15 @@ $icoSprite01:'/common/img/sprite_ico01.png';
 
 
   // カーリースカラー
-  --car-bace-color:#de7751;
-  --car-bg-color01:#f8f8f8;// 基本情報ボックス背景
+  --car-bace-color:#d66941;
+  --car-bg-color01:#f3f3f3;// 基本情報ボックス背景
   --car-bg-color02:#fafafa;
   --car-bg-color03:#ffdfd3;// pointの飾り背景色
   --car-bg-color04:#fff8f6;// リンクボックス背景
   --car-border-color01:#e1e1e1; // 基本情報
   --car-border-color02:#f7f7f7;
-  --car-font-color01:#de7751;
+  --car-font-color01:#d66941;
+  --car-bg-color05:#fbfbfb;// tableの背景td
 
 
   // svg
@@ -112,7 +116,7 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --contents-max-width: 1240px;
   --cniW: 975px;
   --cn-width:calc(1180 / 1240 * 100%);
-  --cn-sp-width:88%;
+  --cn-sp-width:94%;
   // ヘッダー
   --header-height:70px;
   --header-height-scroll:120px;
@@ -130,7 +134,7 @@ $icoSprite01:'/common/img/sprite_ico01.png';
   --spaceContentSP: 40px;///
   // --nav-width:100px; //canter用
   --nav-width:50px; //
-  --search-width:20px; //
+  --search-width:40px; //
   --logo-width:110px;//
   --sp-nav-lang-width:60px; //
   --sp-nav-gnav-width:60px; //

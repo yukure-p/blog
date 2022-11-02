@@ -118,4 +118,84 @@ var scroll = function scroll() {
   // bar.style.overflow = "auto";
 };
 
-scroll();
+scroll(); //スクロール固定
+
+var base = function base() {
+  document.querySelectorAll('.base-btn').forEach(function (button) {
+    button.addEventListener('click', function () {
+      button.nextElementSibling.classList.toggle('show');
+      button.classList.toggle('show');
+    });
+  });
+};
+
+base(); // // 遅延読み込み
+// const　lazy = () => {
+// const $lazy = document.querySelectorAll(".load");
+// const options = {
+//   root: null, // 今回はビューポートをルート要素とする
+//   rootMargin: "0px 0px -200px 0px", // ビューポートの中心を判定基準にする
+//   threshold: 0 // 閾値は0
+// };
+// // inViewportは関数　optionsはオプション
+// const io = new IntersectionObserver(inViewport, options);
+// Array.from($lazy).forEach( element => {
+//   io.observe(element);
+// });
+// function inViewport(entries) {
+//   // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       const img = entry.target;
+//       img.addEventListener("load", ()=>{
+//         img.classList.add("is-lazyload");
+//       });
+//       const lb = entry.target;
+//       lb.classList.add("is-l-box");
+//       const imgEl = entry.target;
+//       imgEl.src = imgEl.dataset.src;
+//     }
+//   });
+// }
+// function doWhenIntersect(entries) {
+//   // 交差検知をしたもののなかで、isIntersectingがtrueのDOMを色を変える関数に渡す
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       activateIndex(entry.target);
+//     }
+//   });
+// }
+// }
+// lazy();
+// 遅延読み込み
+
+var lazy = function lazy() {
+  var $lazy = document.querySelectorAll('.lazyload');
+  var options = {
+    root: null,
+    // 今回はビューポートをルート要素とする
+    rootMargin: "0px 0px -200px 0px",
+    // ビューポートの中心を判定基準にする
+    threshold: 0 // 閾値は0
+
+  };
+  var io = new IntersectionObserver(inViewport, options);
+  Array.from($lazy).forEach(function (element) {
+    io.observe(element);
+  });
+
+  function inViewport(entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.intersectionRatio > 0) {
+        var imgEl = entry.target;
+        imgEl.src = imgEl.dataset.src;
+        imgEl.addEventListener('load', function () {
+          imgEl.classList.add('is-lazyloaded');
+        });
+        io.unobserve(entry.target);
+      }
+    });
+  }
+};
+
+lazy();

@@ -23,7 +23,6 @@
 
 
 
-
 .mv-box{
 	display:grid;
 	grid-template-columns:1fr 40% 1fr;
@@ -162,6 +161,43 @@
 	}
 }
 
+
+.profile{
+	font-size:var(--fSize-3);
+	padding:20px 10px 0 10px;
+	position:relative;
+	.name{
+		text-align:center;
+		margin:5px 0;
+		
+	}
+	.txt{
+		font-size:var(--fSize-4);
+		border-top:1px solid var(--border-color02);
+		border-bottom:1px solid var(--border-color02);
+		padding:15px;
+		@include box-sizing;
+		// margin-top: 80px;
+	}
+		&:before{
+			content: '';
+			display: inline-block;
+			width: 70px;
+			height: 70px;
+			position: relative;
+			left:calc(50% - 35px);
+			z-index:1;
+			background-image: url("/wp-content/themes/custom/img/common/profile.svg");
+			background-size: 80%;
+			background-repeat:no-repeat;
+			background-position:4px 12px;
+			// border:1px solid var(--border-color03);
+			border-radius:50%;
+			background-color:var(--thema-color01);
+
+		}
+}
+
 /* ------------------------------------------------
   使い回しアイテム
 ------------------------------------------------ */
@@ -269,8 +305,141 @@
 
 
 
+/* ------------------------------------------------
+  比較表基本情報
+------------------------------------------------ */
+.car-base-type{
+	&>.box-content {
+		display:grid;
+		grid-template-columns:auto;
+		grid-template-rows:90px 1fr;
+		height:auto;
+		width:100%;
+		border-radius:3px;
+		@include box-sizing;
+		padding:  10px 10px 15px 10px;
+		background-color:var(--car-bg-color01);
+		@include media(sp){
+			padding:  10px;
+		}
 
+	}
+	.base-box-tit{
+		display:grid;
+	  align-items: center;
+	  justify-content:center;
+		padding-bottom:10px;
+		@include box-sizing;
+		border-bottom:1px solid var(--car-border-color01);
+		margin-bottom:5px;
+		width:100%;
+		@include media(sp){
+			margin-bottom:5px;
+			padding-bottom:10px;
+		}
+		&:before {
+			content: '';
+			background-repeat: no-repeat;
+			display: block;
+			width: 100%;
+			height: 28px;
+			position: relative;
+			background-position-x:center;
+			background-position-y:center;
+			// margin-bottom:8px;
+			background-size:50% 100% !important;
+			@include media(sp){
+				margin-bottom:5px;
+			}
+		}
+		.base-tit{			
+			font-weight:bold;
+			justify-self:center;
+			text-align:center;
 
+		  @include media(sp){
+		  	font-size:var(--fSize-3);
+		  }
+		}
+	}
+	.base-box-txt{
+		display:grid;
+	  justify-items: center;
+	  align-items: center;
+	  font-weight:bold;
+	  font-size:var(--fSize);
+	  text-align:center;
+	  @include media(sp){
+	  	font-size:var(--fSize-3);
+	  }
+	}
+	.base-txt{
+	  position:relative;
+	  z-index:2;
+	  line-height:1.9;
+	  font-size:clamp(12px, 1.4vw, 16px);
+
+	}
+	.base-txt-marge{
+		margin-bottom:5px;
+	}
+	.base-cross{
+		position:relative;
+		z-index:1;
+		border:none !important;
+		&:before,&:after{
+			content: '';
+			display: inline-block;
+			width: 75px;
+			height: 10px;
+			position: absolute;
+			background:var(--bg-color09);
+			z-index:1;
+			left:calc(50% - 39px);
+			top:calc(50% - 5px);
+		}
+		&:before{
+			@include rotate($origin: center center, $property: 45deg);
+		}
+		&:after{
+			@include rotate($origin: center center, $property: -45deg);
+		}		
+	}
+	.base-triangle{
+		position:relative;
+		z-index:1;
+		border:none !important;
+		&:before,&:after{
+			content: '';
+			display: inline-block;
+			width: 75px;
+			height: 10px;
+			position: absolute;
+			// background:var(--bg-color09);
+			z-index:1;
+
+		}
+		&:before{
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 50px 62px 50px;
+			border-color: transparent transparent var(--bg-color09) transparent;
+			left:calc(50% - 50px);
+			top:calc(50% - 30px);
+		}
+		&:after{
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 30px 40px 30px;
+			border-color: transparent transparent var(--car-bg-color01) transparent;
+			// z-index:2;
+			left:calc(50% - 30px);
+			top:calc(50% - 16px);
+		}		
+	}
+}
 
 
 
@@ -279,12 +448,115 @@
 ------------------------------------------------ */
 .car-grid{
 	display:grid;
-	grid-template-columns:45% 10% 45% ;
+	
 	margin-top: 30px;
 	@include media(sp){
 		grid-template-columns:1fr ;
 		grid-template-row:auto ;
 	}
+	&.autoflat{
+		grid-template-columns:45% 10% 45% ;
+		@include media(sp){
+			grid-template-columns:1fr ;
+			grid-template-row:auto ;
+		}
+		&>.box-content{
+			&:nth-of-type(2){
+					@include flex-justify-content($justify:center);
+					background:none;
+					@include media(sp){
+						padding:20px 0;
+					}
+			}
+		}
+	}
+	&.zan01{
+		grid-template-columns:auto ;
+		&>.box-content{
+				.box-inner{
+					padding:30px 0;
+					@include media(sp){
+						padding:20px 0;
+					}
+				}
+				.zanka{
+				width:100%;
+				@include flexbox;
+				@include flex-align($align: center);
+				@include flex-justify-content($justify:center);
+				@include media(sp){
+					margin:10px 0 0 0 ;
+				}
+				img{
+					width:50%;
+					@include media(sp){
+						width:80%;
+					}
+				}
+			}
+			.txt-border{
+				font-size:var(--fSize2);
+				@include media(sp){
+					font-size:var(--fSize-2);
+					width:80%;
+				}
+			}
+		}
+		.car-grid-tit{
+			font-size:var(--fSize2);
+			@include media(sp){
+				font-size:var(--fSize);
+			}
+		}
+	}
+	&.zan02{
+		grid-template-columns:1fr 1fr ;
+		gap:0 15px;
+		@include media(sp){
+			grid-template-columns:1fr ;
+			grid-template-row:auto ;
+			gap:30px 0px;
+		}
+		&>.box-content{
+				.box-inner{
+					padding:30px 0;
+
+				}
+				.zanka{
+				width:100%;
+				margin:  10px 0 25px 0;
+				@include flexbox;
+				@include flex-align($align: center);
+				@include flex-justify-content($justify:center);
+				img{
+					width:60%;
+				}
+			}
+			.txt-border{
+				font-size:var(--fSize2);
+			}
+		}
+
+		.box-inner-txt{
+			font-size:var(--fSize);
+			font-weight:bold;
+			padding:10px 15px;
+			border:1px solid var(--border-color03);
+			@include media(sp){
+				font-size:var(--fSize-2);
+			}
+		}
+		.box-inner-txt02{
+			font-size:var(--fSize);
+			font-weight:bold;
+			color:var(--thema-color01);
+			background:#fff;
+			padding:10px 15px;
+			@include media(sp){
+				font-size:var(--fSize-2);
+			}
+		}
+	}	
 	&>.box-content{
 			@include flexbox;
 			@include flex-direction($direction:column);
@@ -293,13 +565,6 @@
 			@include flex-justify-content($justify:flex-start);
 			border-radius:0 0 5px 5px;
 			background:#fff6f2;
-			&:nth-of-type(2){
-					@include flex-justify-content($justify:center);
-					background:none;
-					@include media(sp){
-						padding:20px 0;
-					}
-			}
 			.zanka{
 				width:70%;
 				margin:30px 0 10px 0;
@@ -336,7 +601,7 @@
 		padding:8px 20px;
 		@include box-sizing;
 		width:100%;
-		border-radius: 5px 5px 0 0;
+		border-radius: 3px 3px 0 0;
 		text-align:center;
 		font-weight:bold;
 		font-size:var(--fSize);
@@ -351,7 +616,7 @@
 		margin-top:0px;
 		padding:20px 20px;
 		background:#fff;
-		border-radius:5px;
+		border-radius:3px;
 	}
 	.inner-txt{
 		color:var(--font-color01);
@@ -374,7 +639,7 @@
 			background:var(--bg-color02);
 			width:3px;
 			height:18px;
-			border-radius:5px;
+			border-radius:3px;
 		}
 		&:after{
 			position:absolute;
@@ -383,11 +648,91 @@
 			background:var(--bg-color02);
 			width:3px;
 			height:18px;
-			border-radius:5px;
+			border-radius:3px;
 		}
 	}
 }
 
+.seisan{
+	background:#fff;
+	// border:var(--border-color03);
+	border:1px solid var(--border-color03);
+	width:90%;
+	padding: 0px 20px 15px 20px;
+	@include box-sizing;
+	position:relative;
+	display:grid;
+	border-radius:3px;
+	&:nth-of-type(2){
+		margin-top:20px;
+	}
+	.txt{
+		position:relative;
+		top:-20px;
+		// left: 50%;
+		font-size:var(--fSize);
+		@include media(sp){
+			font-size:var(--fSize-2);
+		}
+	}
+	.seisan-inner{
+		border-bottom:1px solid var(--border-color03);
+		padding-bottom: 10px;
+		margin-bottom:15px;
+		display:grid;
+	}
+	.seisan-tit{
+		justify-self:center;
+		background:#fff;
+		border:1px solid var(--border-color03);
+		position:relative;
+		top:-18px;
+		padding:5px 15px;
+		border-radius:3px;
+		font-weight:bold;
+		font-size:var(--fSize);
+		@include media(sp){
+			font-size:var(--fSize-2);
+		}
+	}
+	.seisan-inner-box{
+		display:grid;
+		grid-template-columns:1fr 1fr;
+		grid-template-rows:auto;
+		justify-items:center;
+	}
+	.tit{
+		font-size:var(--fSize);
+		@include media(sp){
+			font-size:var(--fSize-2);
+		}
+	}
+	.kakaku{
+		font-size:var(--fSize);
+		@include media(sp){
+			font-size:var(--fSize-2);
+		}
+		span{
+			font-weight:bold;
+		}
+	}
+	.seisan-txt{
+		justify-self:center;
+		font-weight:bold;
+		color:var(--thema-color01);
+		font-size:var(--fSize);
+		@include media(sp){
+			font-size:var(--fSize-2);
+		}
+
+	}
+	.notice{
+		font-size:var(--fSize-6);
+		color:var(--font-color01);
+		display:inline-block;
+		margin-top:10px;
+	}
+}
 
 .car-base{
 	gap:20px 15px;
@@ -496,18 +841,30 @@
 	margin-bottom:50px;
 }
 
+.car-base-compaer{
+	width:100%;
+	margin-bottom:50px;
+	border:2px solid var(--thema-color01);
+	padding:0 10px;
+	@include box-sizing;
+	border-radius:3px;
+	@include media(sp){
+		margin-bottom:20px;
+	}
+}
+
 
 .car-base-type01{
 
 	&>.box-content {
 		display:grid;
 		grid-template-columns:auto;
-		grid-template-rows:1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 		height:auto;
 		width:100%;
-		border-radius:5px;
+		border-radius:3px;
 		@include box-sizing;
-		padding:  20px 20px 15px 20px;
+		padding:  15px 20px 15px 20px;
 		background:var(--car-bg-color01);
 		@include media(sp){
 			padding:  10px;
@@ -545,6 +902,10 @@
 			font-weight:bold;
 			justify-self:center;
 			text-align:center;
+
+		  @include media(sp){
+		  	font-size:var(--fSize-3);
+		  }
 		}
 	}
 
@@ -556,7 +917,7 @@
 	  font-size:var(--fSize);
 	  text-align:center;
 	  @include media(sp){
-	  	font-size:var(--fSize-2);
+	  	font-size:var(--fSize-3);
 	  }
 	}
 	.base-txt{
@@ -630,51 +991,51 @@
 .car-icon01{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon01.svg");
-		background-size: 45px auto;
+		background-size: 40px auto;
 	}
 }
 .car-icon02{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon02.svg");
-		background-size: auto 34px;
+		background-size: auto 28px;
 	}
 }
 .car-icon03{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon03.svg");
-		background-size: auto 34px;
+		background-size: auto 28px;
 	}
 }
 .car-icon04{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon04.svg");
-		background-size: auto 34px;
+		background-size: auto 28px;
 	}
 }
 .car-icon05{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon05.svg");
-		background-size: 58px auto;
+		background-size: 50px auto;
 		left:6px;
 	}
 }
 .car-icon06{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon06.svg");
-		background-size: 45px auto;
+		background-size: 42px auto;
 	}
 }
 .car-icon07{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon07.svg");
-		background-size: 46px auto;
+		background-size: 40px auto;
 		margin-top:5px;
 	}
 }
 .car-icon08{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon08.svg");
-		background-size: 50px auto;
+		background-size: 44px auto;
 		left:-3px;
 		width:50px !important;
 	}
@@ -682,51 +1043,51 @@
 .car-icon09{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon09.svg");
-		background-size: 45px auto;
+		background-size: 38px auto;
 	}
 }
 .car-icon10{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon10.svg");
-		background-size: auto 30px;
+		background-size: auto 26px;
 	}
 }
 .car-icon11{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon11.svg");
-		background-size: auto 34px;
+		background-size: auto 30px;
 	}
 }
 .car-icon12{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon12.svg");
-		background-size: 50px auto;
+		background-size: 40px auto;
 		top:-1px;
 	}
 }
 .car-icon13{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon13.svg");
-		background-size: 45px auto;
+		background-size: 40px auto;
 	}
 }
 .car-icon14{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon14.svg");
-		background-size: auto 34px;
+		background-size: auto 28px;
 	}
 }
 .car-icon15{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon15.svg");
-		background-size: 48px auto;
+		background-size: 42px auto;
 		top:2px;
 	}
 }
 .car-icon16{
 	&:before {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon16.svg");
-		background-size: 47px auto;
+		background-size: 42px auto;
 		width:50px !important;
 	}
 }
@@ -747,7 +1108,7 @@
 	padding: 40px 15px 0 15px;
 	@include box-sizing;
 	position:relative;
-	border-radius:5px;
+	border-radius:3px;
 }
 
 
@@ -781,6 +1142,7 @@
 			margin:10px 0 30px 0;
 			@include media(sp){
 				margin-bottom:5px;
+				background-position-y:center;
 			}
 		}
 	}
@@ -802,12 +1164,12 @@
 	&>.box-content {
 		&:first-child{
 			.tit{
-				border-radius:5px 0 0 0;
+				border-radius:3px 0 0 0;
 			}
 		}
 		&:last-child{
 			.tit{
-			border-radius:0px 5px 0 0 !important;
+			border-radius:0px 3px 0 0 !important;
 			}
 		}			
 	}
@@ -890,6 +1252,9 @@
 	&:after {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon25.svg");
 		background-size: 90px auto;
+		@include media(sp){
+			top:-6px;
+		}
 	}
 }
 .car-custom-icon26{
@@ -902,16 +1267,25 @@
 	&:after {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon27.svg");
 		background-size: 80px auto;
+		@include media(sp){
+			top:-5px;
+		}
 	}
 }
 .car-custom-icon28{
 	&:after {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon28.svg");
 		background-size: 130px auto;
+		@include media(sp){
+			background-size: 120px auto;
+		}
 	}
 	&.top{
 		&:after {
 			top:10px;
+			@include media(sp){
+				top:-2px;
+			}
 		}
 	}
 }
@@ -919,6 +1293,9 @@
 	&:after {
 		background-image: url("/wp-content/themes/custom/img/car_lease/car_lease-icon29.svg");
 		background-size: 150px auto;
+		@include media(sp){
+			background-size: 130px auto;
+		}
 	}
 }
 .car-custom-icon30{
@@ -939,6 +1316,12 @@
 		background-size: 180px auto;
 		min-height:90px !important;
 		top:8px;
+		@include media(sp){
+			width:80% !important;
+			background-size: contain;
+			@include flex-self($align: center);
+			top:0px;
+		}
 	}
 }
 .car-custom-icon33{
@@ -947,6 +1330,12 @@
 		background-size: 180px auto;
 		min-height:90px !important;
 		top:8px;
+		@include media(sp){
+			width:80% !important;
+			background-size: contain;
+			@include flex-self($align: center);
+			top:0px;
+		}
 	}
 }
 
@@ -956,6 +1345,10 @@
 		background-size: 110px auto;
 		min-height:90px !important;
 		top:8px;
+		@include media(sp){
+			background-size: 90px auto;
+			top:-4px;
+		}
 	}
 }
 
@@ -978,9 +1371,14 @@
 		width:100%;
 		@include box-sizing;
 		gap:0 5px;
-		// padding:  20px 20px 15px 20px;
+		@include media(sp){
+			grid-template-columns:30% 1fr 1fr;
+		}
 		&.combine{
 			grid-template-columns:32.9% 1fr;
+			@include media(sp){
+				grid-template-columns:30% 1fr;
+			}
 		}
 	}
 	.base-box-tit{
@@ -994,8 +1392,11 @@
 		background:var(--car-bg-color01);
 		position:relative;
 		@include media(sp){
-			margin-bottom:5px;
-			padding-bottom:10px;
+			// margin-bottom:5px;
+			// padding-bottom:10px;
+			grid-template-columns:auto;
+			grid-template-rows:1fr 1fr;
+
 		}
 		&:before {
 			grid-column:1 / 2;
@@ -1011,7 +1412,11 @@
 			// top:20px;
 			// left:0;
 			@include media(sp){
-				margin-bottom:5px;
+				// margin-bottom:5px;
+
+				grid-column:1 / 2;
+				grid-row:1 / 2;
+				@include flex-self($align: flex-end);
 			}
 		}
 		.base-tit{			
@@ -1020,6 +1425,15 @@
 			text-align:left;
 			grid-column:2 / 3;
 			grid-row:1 / 2;
+			@include media(sp){
+				grid-column:1 / 2;
+				grid-row:2 / 3;
+				@include flex-self($align: flex-start);
+				padding:0 10px;
+				@include box-sizing;
+				font-size:var(--fSize-3);
+				text-align:center;
+			}
 		}
 	}
 	.base-box-txt{
@@ -1054,6 +1468,9 @@
 		top:69px;
 		z-index:3;
 		background:var(--bg-color03);
+		@include media(sp){
+			top:50px;
+		}
 		.base-box-tit{
 			background:none;
 			padding:0;
@@ -1063,9 +1480,11 @@
 			border-bottom:5px solid var(--bg-color03);
 			@include box-sizing;
 			padding:10px 15px;
-			// &:last-child{
-			// 	background:var(--car-bg-color02);
-			// }
+			.base-txt{
+				@include media(sp){
+					line-height:1.4;
+				}
+			}
 		}
 	}
 	.base-cross{
@@ -1129,6 +1548,56 @@
 			width:100% !important;
 		}
 	}
+	@include media(sp){
+		.car-icon07{
+			&:before{
+				position:relative;
+				bottom:10px;
+			}
+		}
+		.car-icon08{
+			&:before{
+				position:relative;
+				bottom:9px;
+			}
+		}	
+		.car-icon02,.car-icon03{
+			&:before{
+				position:relative;
+				bottom:5px;
+			}
+		}	
+		.car-icon06{
+			&:before{
+				position:relative;
+				bottom:6px;
+			}
+		}
+		.car-icon16{
+			&:before{
+				position:relative;
+				bottom:3px;
+			}
+		}	
+		.car-icon11{
+			&:before{
+				position:relative;
+				bottom:7px;
+			}
+		}
+		.car-icon12{
+			&:before{
+				position:relative;
+				bottom:3px;
+			}
+		}	
+		.car-icon13{
+			&:before{
+				position:relative;
+				bottom:3px;
+			}
+		}															
+	}
 }
 
 .kinto-mente-outer{
@@ -1153,6 +1622,9 @@
 	gap:2px 2px;
 	grid-template-rows:auto;
 	grid-template-columns:1fr 1fr 1fr;
+	@include media(sp){
+		grid-template-columns:1fr;
+	}
 	&>.box-content{
 		background:var(--car-bg-color01);
 		padding:20px 20px;
@@ -1201,6 +1673,7 @@
 		justify-items:center;
 		align-items:center;
 		width:100%;
+		@include box-sizing;
 		// padding: 0 10px;
 		// background:var(--car-bg-color01);
 		gap:0 0;
@@ -1213,15 +1686,16 @@
 			border:1px solid var(--thema-color01);
 			font-size:var(--fSize-3);
 			font-weight:bold;
-			padding:15px 10px;
+			padding:0 10px;
+			height:50px;
 			@include box-sizing;
-			border-radius:0px 5px 5px 0px ;
+			border-radius:0px 3px 3px 0px ;
 			&:first-child{
-					background:var(--thema-color01);
-					color:var(--font-color02);
-					font-size:var(--fSize-2);
-					@include box-sizing;
-					border-radius:5px 0px 0px 5px;
+				background:var(--thema-color01);
+				color:var(--font-color02);
+				font-size:var(--fSize-2);
+				@include box-sizing;
+				border-radius:3px 0px 0px 3px !important;
 					
 			}
 		}
@@ -1244,7 +1718,7 @@
 					background:var(--thema-color01)!important;
 					color: var(--font-color02);
 					@include media(sp){
-						border-radius:5px 5px 0px 0px;
+						border-radius:3px 3px 0px 0px;
 					}
 				}
 			}
@@ -1280,9 +1754,9 @@
 			&>.box-content{
 					&:first-child{
 						.box-tit{
-							border-radius:5px 0px 0px 0px;
+							border-radius:3px 0px 0px 0px;
 							@include media(sp){
-								border-radius:5px 5px 0px 0px;
+								border-radius:3px 3px 0px 0px;
 							}
 						}
 					}
@@ -1292,16 +1766,18 @@
 			&>.box-content{
 					&:first-child{
 						.box-tit{
-							border-radius:0px 5px 0px 0px;
+							border-radius:0px 3px 0px 0px;
 							@include media(sp){
-								border-radius:5px 5px 0px 0px;
+								border-radius:3px 3px 0px 0px;
 							}
 						}
 					}
 			}
 		}
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
-
 }
 
 
@@ -1451,7 +1927,7 @@
 		grid-template-rows:50px 1fr;
 		height:auto;
 		width:100%;
-		border-radius:5px;
+		border-radius:3px;
 		@include box-sizing;
 		// padding:  0 20px 15px 20px;
 		background:var(--car-bg-color01);
@@ -1470,7 +1946,7 @@
 		background:var(--thema-color01);
 		font-weight:bold;
 		width:100%;
-		border-radius:5px 5px 0px 0px;
+		border-radius:3px 3px 0px 0px;
 		@include media(sp){
 			margin-bottom:5px;
 			padding-bottom:10px;
@@ -1478,6 +1954,134 @@
 	}	
 }
 
+
+/* ------------------------------------------------
+  記事ページ もらえる
+------------------------------------------------ */
+
+.grid-table{
+	display:grid;
+	grid-template-rows:auto;
+	gap:1px 0;
+	&.columns02{
+		&>.box-content{
+			grid-template-columns:1fr 1fr;
+		}
+	}
+	&.columns03{
+		&>.box-content{
+			grid-template-columns:36% 1fr 1fr;
+			@include media(sp){
+				grid-template-columns:1fr 1fr 1fr;
+			}
+		}
+	}
+	&>.box-content{
+		display:grid;
+		grid-template-rows:auto;
+		gap:0 1px;
+
+		&:first-child{
+			.inner-box{
+				justify-content:center;
+				align-items:center;
+				font-weight:bold;
+				background:var(--thema-color01) !important;
+				color:var(--font-color02);
+			}
+		}
+		&:nth-of-type(odd){
+			.inner-box{
+				background:var(--car-bg-color02);
+			}
+		}
+	}
+	.inner-box{
+		display:grid;
+		background:var(--car-bg-color01);
+		padding:20px 20px ;
+		justify-content:start;
+		align-items:center;
+		font-size:var(--fSize-1);
+		@include media(sp){
+			font-size:var(--fSize-3);
+			padding:15px 15px ;
+		}
+		&:last-child{
+			// justify-content:center;
+		}
+		p{
+			margin-bottom:5px;
+		justify-self:center;
+		align-self:center;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	.notice{
+		font-size:var(--fSize-5);
+		display:inline-block;
+		position:relative;
+		top:-5px;
+	}
+}
+
+
+
+/* ------------------------------------------------
+  記事ページ ASPカスタムリク用の画像
+------------------------------------------------ */
+.c-box-img{
+	// width:50%;
+	// margin:0 auto;
+	@include transition($property: all, $time: 0.4s, $timing: cubic-bezier(0, 0.01, 0, 1.02));
+	@include media(sp){
+		width:100%;
+	}
+	img{
+		width:100%;
+	}
+	@include media(pc){
+		&:hover{
+			cursor:pointer;
+			opacity:.6;
+		}
+	}
+	&.logo01{
+		width:60%;
+		@include media(sp){
+			width:100%;
+		}
+		a{
+			// padding:5px 10px;
+			display:inline-block;
+			// border:5px solid var(--border-color03);
+		}
+	}
+	&.logo02{
+		width:234px;
+		margin:0 auto;
+	}
+	&.banner01{
+		width:60%;
+
+		@include media(sp){
+			width:100%;
+		}
+		a{
+			background:var(--bg-color01);
+			padding:10px;
+			display:inline-block;
+		}
+	}
+	&.product-img-kuruca01{
+		margin-bottom: 30px;
+		width:50%;
+		border:1px solid var(--border-color06);
+		padding: 30px 30px 0 30px;
+	}
+}
 
 
 
@@ -1691,6 +2295,9 @@ span.wpcf7-not-valid-tip,
   @include flex-justify-content($justify:center);
   @include flex-direction($direction:column);
   margin:120px 0 120px 0;
+  @include media(sp){
+		margin:60px 0 60px 0;
+  }
 }
 
 .not-found-text01{
@@ -1700,6 +2307,9 @@ span.wpcf7-not-valid-tip,
   line-height:1;
   margin-bottom:25px;
   letter-spacing:.1em;
+  @include media(sp){
+  	font-size:var(--EnfontXL);
+  }
 }
 
 
@@ -1708,6 +2318,9 @@ span.wpcf7-not-valid-tip,
   color:var(--font-color01);
   font-weight:bold;
   line-height:1;
+  @include media(sp){
+  	font-size:var(--fSize12);
+  }
 }
 
 .not-found-link{

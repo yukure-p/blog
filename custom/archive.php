@@ -16,9 +16,9 @@
       <section>
         <div class="l-contents">
 
-          <ul class="contents-list l-gid">
+          <ul class="contents-list l-grid">
 
-            <?php get_template_part('inc/loop-list'); ?>
+            <?php get_template_part('inc/loop-top'); ?>
                
           </ul>
         </div>

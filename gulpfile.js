@@ -107,12 +107,12 @@ const cssSass = () => {
    .pipe(sourcemaps.write('/maps'))  //ソースマップの出力
    .pipe(dest(destPath.css))  //コンパイル先
    .pipe(cleanCSS()) // CSS圧縮
-   // .pipe(
-   //   rename({
-   //     extname: '.min.css' //.min.cssの拡張子にする
-   //   })
-   //   )
-   // .pipe(dest(destPath.css))  //コンパイル先
+   .pipe(
+     rename({
+       extname: '.min.css' //.min.cssの拡張子にする
+     })
+     )
+   .pipe(dest(destPath.css))  //コンパイル先
 }
 
 
@@ -174,7 +174,7 @@ const imgImagemin = () => {
      imagemin(
        [
          imageminMozjpeg({
-           quality: 80
+           quality: 90
          }),
          imageminPngquant(),
          // imageminSvgo({
